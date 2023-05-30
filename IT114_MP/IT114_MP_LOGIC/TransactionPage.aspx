@@ -42,6 +42,11 @@
             </asp:Table>
             </div>
             <asp:DropDownList runat="server" ID="prodDdl"></asp:DropDownList>
+            <asp:TextBox runat="server" ID="qtyTxt"></asp:TextBox>
+            <asp:Button runat="server" ID="addCartBtn" Text="Add To Cart"/>
+            <div id="cartContainer">
+
+            </div>
         </div>
     </form>
 </body>
