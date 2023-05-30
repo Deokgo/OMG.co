@@ -68,10 +68,11 @@ namespace IT114_MP_LOGIC
                 prodDdl.DataValueField = ds.Tables[0].Columns["prod_id"].ToString();
                 prodDdl.DataSource = ds.Tables[0];
                 prodDdl.DataBind();
+                Session["total"] = 0;
             }
             else
             {
-
+                
             }
         }
         protected void AddToCart (object sender, EventArgs e) //bali need ko muna kunin yung id pati qty pre
@@ -85,9 +86,26 @@ namespace IT114_MP_LOGIC
                 int price = Convert.ToInt32(dr["prod_price"]);
                 int prodQty = Convert.ToInt32(qtyTxt.Text);
                 int subtotal = price * prodQty;
-                ListItem cartItem = new ListItem(prodName+"\t\t"+price+"\t\t"+prodQty+"\t\t"+subtotal, prodId + "-" + prodQty.ToString());
+                ListItem cartItem = new ListItem();
+                // Add inline styles to align the item details
+                //cartItem.Attributes["style"] = "padding: 50px;";
+
+                // Add the item details as text to the cartItem
+                cartItem.Text = prodName + "            |            " + price.ToString() + "            |            " + prodQty.ToString() + "            |            " + subtotal.ToString();
+                //cartItem.Text = String.Format("{0}\t\t{1,28}{2,34}\t{3,38}", prodName, price.ToString(), prodQty.ToString(), subtotal.ToString());
+                // Set the value of the cartItem
+                cartItem.Value = prodId + "-" + prodQty.ToString();
+
+                // Add the cartItem to the cart ListBox
                 cart.Items.Add(cartItem);
+                int intSession = Convert.ToInt32(Session["total"]);
+                Session["total"] = (subtotal + intSession).ToString();
+                totalLbl.Text = "Total: " + Session["total"];
             } 
+        }
+        protected void RemoveToCart (object sender, EventArgs e)
+        {
+            cart.Items.Remove(cart.SelectedItem);
         }
     }
 }

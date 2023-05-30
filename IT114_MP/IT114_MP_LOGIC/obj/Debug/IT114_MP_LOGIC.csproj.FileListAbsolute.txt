@@ -112,10 +112,9 @@ C:\Users\Rafael\Documents\GitHub\IT114L_MP\IT114_MP\IT114_MP_LOGIC\bin\roslyn\vb
 C:\Users\Rafael\Documents\GitHub\IT114L_MP\IT114_MP\IT114_MP_LOGIC\bin\roslyn\VBCSCompiler.exe
 C:\Users\Rafael\Documents\GitHub\IT114L_MP\IT114_MP\IT114_MP_LOGIC\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Rafael\Documents\GitHub\IT114L_MP\IT114_MP\IT114_MP_LOGIC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Rafael\Documents\GitHub\IT114L_MP\IT114_MP\IT114_MP_LOGIC\bin\BouncyCastle.Crypto.dll
 C:\Users\Rafael\Documents\GitHub\IT114L_MP\IT114_MP\IT114_MP_LOGIC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Rafael\Documents\GitHub\IT114L_MP\IT114_MP\IT114_MP_LOGIC\obj\Debug\IT114_MP_LOGIC.csproj.AssemblyReference.cache
 C:\Users\Rafael\Documents\GitHub\IT114L_MP\IT114_MP\IT114_MP_LOGIC\obj\Debug\IT114_MP_LOGIC.csproj.CoreCompileInputs.cache
 C:\Users\Rafael\Documents\GitHub\IT114L_MP\IT114_MP\IT114_MP_LOGIC\obj\Debug\IT114_MP_LOGIC.csproj.CopyComplete
 C:\Users\Rafael\Documents\GitHub\IT114L_MP\IT114_MP\IT114_MP_LOGIC\obj\Debug\IT114_MP_LOGIC.dll
 C:\Users\Rafael\Documents\GitHub\IT114L_MP\IT114_MP\IT114_MP_LOGIC\obj\Debug\IT114_MP_LOGIC.pdb
+C:\Users\Rafael\Documents\GitHub\IT114L_MP\IT114_MP\IT114_MP_LOGIC\obj\Debug\IT114_MP_LOGIC.csproj.AssemblyReference.cache
