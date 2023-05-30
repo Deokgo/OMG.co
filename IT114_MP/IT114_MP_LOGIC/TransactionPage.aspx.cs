@@ -4,14 +4,73 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace IT114_MP_LOGIC
 {
     public partial class TransactionPage : System.Web.UI.Page
     {
+        MySqlConnection conn;
+        MySqlCommand command;
+        MySqlDataAdapter dbDa;
+        DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
-            TextBox1.Text = Session["role"].ToString(); // test if the role is being passed
+            //TextBox1.Text = Session["role"].ToString(); // test if the role is being passed
+            conn = new MySqlConnection("server=localhost; user id=root; database=it114l_mp;password=");
+            conn.Open();
+            command = new MySqlCommand("SELECT * FROM prod_info_tbl;", conn);
+            dbDa = new MySqlDataAdapter(command);
+            dt = new DataTable();
+            dbDa.Fill(dt);
+            conn.Close();
+            if (dt.Rows.Count > 0)
+            {
+                TableRow prodtr = new TableRow();
+                prodTable.GridLines = GridLines.Both;
+                prodtr.BackColor = System.Drawing.Color.Cornsilk;
+                TableCell prodImage = new TableCell();
+                TableCell prodName = new TableCell();
+                TableCell prodPrice = new TableCell();
+                foreach (DataRow row in dt.Rows)
+                {
+                    prodtr = new TableRow();
+                    prodImage = new TableCell(); 
+                    prodName = new TableCell();
+                    prodPrice = new TableCell();
+                    Image prodPic = new Image();
+                    prodPic.ImageUrl = "~/images/" + row["prod_photo"].ToString();
+                    prodPic.Width = Unit.Pixel(100);
+                    prodPic.Height = Unit.Pixel(100);
+
+
+                    prodImage.Controls.Add(prodPic);
+                    //prodImage.Text = row["prod_photo"].ToString();
+                    prodName.Text = row["prod_name"].ToString();
+                    prodPrice.Text = row["prod_price"].ToString();
+                    prodtr.Cells.Add(prodImage);
+                    prodtr.Cells.Add(prodName);
+                    prodtr.Cells.Add(prodPrice);
+                    prodTable.Rows.Add(prodtr);
+                }
+            }
+        }
+        protected void Page_Init (object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            {
+                DatabaseClass db = new DatabaseClass();
+                string query = "SELECT * FROM prod_info_tbl";
+                DataSet ds = db.getDataSet(query);
+                prodDdl.DataTextField = ds.Tables[0].Columns["prod_name"].ToString();
+                prodDdl.DataValueField = ds.Tables[0].Columns["prod_id"].ToString();
+                prodDdl.DataSource = ds.Tables[0];
+                prodDdl.DataBind();
+            }
+            else
+            {
+            }
         }
     }
 }

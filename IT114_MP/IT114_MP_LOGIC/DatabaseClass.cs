@@ -13,6 +13,7 @@ namespace IT114_MP_LOGIC
         MySqlCommand sqlCom;
         MySqlDataReader sqlReader;
         MySqlDataAdapter sqlAdapter;
+        DataSet ds;
         DataTable tb;
 
         string connectionStr = "server=localhost;user id=root; database=it114l_mp;Password=";
@@ -54,6 +55,25 @@ namespace IT114_MP_LOGIC
             tb = new DataTable();
             sqlAdapter.Fill(tb);
             return tb;
+        }
+        public DataSet getDataSet(string cmd)
+        {
+            sqlCon = new MySqlConnection();
+            sqlCon.ConnectionString = connectionStr;
+            sqlCon.Open();
+            sqlCom = new MySqlCommand(cmd, sqlCon);
+            sqlReader = sqlCom.ExecuteReader();
+            if (sqlReader.HasRows)
+            {
+                sqlCon.Close();
+                sqlCon.Open();
+                sqlAdapter = new MySqlDataAdapter(sqlCom);
+                ds = new DataSet();
+                sqlAdapter.Fill(ds);
+
+            }
+            sqlCon.Close();
+            return ds;
         }
 
         public void connectionclose()

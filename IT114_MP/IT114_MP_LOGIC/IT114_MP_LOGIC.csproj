@@ -73,6 +73,9 @@
     <Content Include="AddProducts.aspx" />
     <Content Include="AdminPage.aspx" />
     <Content Include="images\default.jpg" />
+    <Content Include="images\Hotdog.png" />
+    <Content Include="images\Longsilog.png" />
+    <Content Include="images\Tapsilog.png" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="ReportPage.aspx" />
