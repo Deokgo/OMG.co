@@ -14,6 +14,7 @@ namespace IT114_MP_LOGIC
         MySqlConnection conn;
         MySqlCommand command;
         MySqlDataAdapter dbDa;
+        MySqlDataReader dr;
         DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -70,7 +71,23 @@ namespace IT114_MP_LOGIC
             }
             else
             {
+
             }
+        }
+        protected void AddToCart (object sender, EventArgs e) //bali need ko muna kunin yung id pati qty pre
+        {
+            DatabaseClass db = new DatabaseClass(); //gagawin ko nalang is yung text part pangdisplay, yung value id saka qty
+            string prodName = prodDdl.SelectedItem.Text;
+            string prodId = prodDdl.SelectedItem.Value;
+            dr = db.getRec("SELECT * FROM prod_info_tbl WHERE prod_id=" + prodId + ";");
+            if (dr.Read())
+            {
+                int price = Convert.ToInt32(dr["prod_price"]);
+                int prodQty = Convert.ToInt32(qtyTxt.Text);
+                int subtotal = price * prodQty;
+                ListItem cartItem = new ListItem(prodName+"\t\t"+price+"\t\t"+prodQty+"\t\t"+subtotal, prodId + "-" + prodQty.ToString());
+                cart.Items.Add(cartItem);
+            } 
         }
     }
 }
