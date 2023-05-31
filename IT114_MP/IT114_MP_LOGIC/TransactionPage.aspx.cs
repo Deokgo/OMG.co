@@ -133,8 +133,7 @@ namespace IT114_MP_LOGIC
                 {
                     string[] itemList = item.Value.Split('-');
                     // Retrieve the tx_id value from the reader
-                    int newTx = latestTx + 1;
-                    string query = "INSERT INTO trans_tbl VALUES ('" + latestTx + "','" + itemList[0].ToString() + "'," + int.Parse(itemList[1]) + ",'" + Session["uname"].ToString() + "','" + DateTime.Now.ToString("yyyy - MM - dd HH: mm:ss") + "');";
+                    string query = "INSERT INTO trans_tbl VALUES ('" + latestTx.ToString("00000") + "','" + itemList[0].ToString() + "'," + int.Parse(itemList[1]) + ",'" + Session["uname"].ToString() + "','" + DateTime.Now.ToString("yyyy - MM - dd HH: mm:ss") + "');";
                     db.insDelUp(query);
                 }
                 cart.Items.Clear();
