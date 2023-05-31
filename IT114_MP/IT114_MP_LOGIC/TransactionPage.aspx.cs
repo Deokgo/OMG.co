@@ -15,7 +15,7 @@ namespace IT114_MP_LOGIC
         DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //TextBox1.Text = Session["role"].ToString(); // test if the role is being passed
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             DatabaseClass db = new DatabaseClass();
             dt = db.Show("SELECT * FROM prod_info_tbl;");
             if (dt.Rows.Count > 0)
@@ -29,7 +29,7 @@ namespace IT114_MP_LOGIC
                 foreach (DataRow row in dt.Rows)
                 {
                     prodtr = new TableRow();
-                    prodImage = new TableCell(); 
+                    prodImage = new TableCell();
                     prodName = new TableCell();
                     prodPrice = new TableCell();
                     Image prodPic = new Image();
@@ -39,7 +39,6 @@ namespace IT114_MP_LOGIC
 
 
                     prodImage.Controls.Add(prodPic);
-                    //prodImage.Text = row["prod_photo"].ToString();
                     prodName.Text = row["prod_name"].ToString();
                     prodPrice.Text = row["prod_price"].ToString();
                     prodtr.Cells.Add(prodImage);
@@ -49,7 +48,7 @@ namespace IT114_MP_LOGIC
                 }
             }
         }
-        protected void Page_Init (object sender, EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
@@ -67,7 +66,7 @@ namespace IT114_MP_LOGIC
 
             }
         }
-        protected void AddToCart (object sender, EventArgs e) //bali need ko muna kunin yung id pati qty pre
+        protected void AddToCart(object sender, EventArgs e) //bali need ko muna kunin yung id pati qty pre
         {
             DatabaseClass db = new DatabaseClass(); //gagawin ko nalang is yung text part pangdisplay, yung value id saka qty
             string prodName = prodDdl.SelectedItem.Text;
@@ -84,11 +83,7 @@ namespace IT114_MP_LOGIC
                 // Set the value of the cartItem
                 cartItem.Value = prodId + "-" + prodQty.ToString() + "-" + price.ToString();
 
-                // Add the cartItem to the cart ListBox
                 cart.Items.Add(cartItem);
-                //int intSession = Convert.ToInt32(Session["total"]);
-                //Session["total"] = (subtotal + intSession).ToString();
-                //totalLbl.Text = "Total: " + Session["total"];
                 Session["total"] = 0.0;
                 foreach (ListItem item in cart.Items)
                 {
@@ -101,9 +96,9 @@ namespace IT114_MP_LOGIC
                     Session["total"] = (double)Session["total"] + subtotal;
                 }
                 totalLbl.Text = "Total: " + Session["total"];
-            } 
+            }
         }
-        protected void RemoveToCart (object sender, EventArgs e)
+        protected void RemoveToCart(object sender, EventArgs e)
         {
             cart.Items.Remove(cart.SelectedItem);
             Session["total"] = 0.0;
@@ -118,6 +113,40 @@ namespace IT114_MP_LOGIC
                 Session["total"] = (double)Session["total"] + subtotal;
             }
             totalLbl.Text = "Total: " + Session["total"];
+        }
+        protected void AddTransaction(object sender, EventArgs e)
+        {
+            int latestTx = 00001;
+            DatabaseClass db = new DatabaseClass();
+            string getLatest = "SELECT * FROM trans_tbl ORDER BY order_code DESC LIMIT 1;";
+            dr = db.getRec(getLatest);
+            if (dr.Read())
+            {
+                // Retrieve the tx_id value from the reader
+                latestTx = dr.GetInt32("order_code");
+                latestTx = latestTx + 1;
+            }
+            if (cart.Items.Count > 0)
+            {
+                dr.Read();
+                foreach (ListItem item in cart.Items)
+                {
+                    string[] itemList = item.Value.Split('-');
+                    // Retrieve the tx_id value from the reader
+                    int newTx = latestTx + 1;
+                    string query = "INSERT INTO trans_tbl VALUES ('" + latestTx + "','" + itemList[0].ToString() + "'," + int.Parse(itemList[1]) + ",'" + Session["uname"].ToString() + "','" + DateTime.Now.ToString("yyyy - MM - dd HH: mm:ss") + "');";
+                    db.insDelUp(query);
+                }
+                cart.Items.Clear();
+                qtyTxt.Text = "";
+                Session["total"] = 0;
+                totalLbl.Text = "Total: 0.0";
+            }
+            else
+            {
+                Response.Write("<script>alert('Please add an item to the cart first!')</script>");
+            }
+
         }
     }
 }

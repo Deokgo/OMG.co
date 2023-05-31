@@ -53,7 +53,7 @@
     <form id="form1" runat="server">
         <div>
             <div id="tableContainer">
-                <asp:Table runat="server" ID="prodTable">
+                <asp:Table runat="server" ID="prodTable" CssClass="table">
                 <asp:TableHeaderRow>
                     <asp:TableCell ID="prodImage"></asp:TableCell>
                     <asp:TableCell ID="prodName">Name</asp:TableCell>
@@ -61,9 +61,6 @@
                 </asp:TableHeaderRow>
             </asp:Table>
             </div>
-            <asp:DropDownList runat="server" ID="prodDdl"></asp:DropDownList>
-            <asp:TextBox runat="server" ID="qtyTxt"></asp:TextBox>
-            <asp:Button runat="server" ID="addCartBtn" Text="Add To Cart" OnClick="AddToCart" CssClass="btn btn-primary"/>
             <div id="container">
                 <div class="row label-container">
                     <div class="col-3">
@@ -82,8 +79,15 @@
                 <div id="cartContainer">
                     <asp:ListBox runat="server" ID="cart"></asp:ListBox>
                 </div>
+                <div id="add-container">
+                    <asp:DropDownList runat="server" ID="prodDdl"></asp:DropDownList>
+                    <asp:TextBox runat="server" ID="qtyTxt"></asp:TextBox>
+                    <asp:Button runat="server" ID="addCartBtn" Text="Add To Cart" OnClick="AddToCart" CssClass="btn btn-primary"/>
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="qtyTxt" ErrorMessage="Quantity should be filled out." ></asp:RequiredFieldValidator>
+                </div>
                 <asp:Label runat="server" ID="totalLbl">Total: 0.0</asp:Label>
-                <asp:Button runat="server" OnClick="RemoveToCart" ID="removeCartBtn" CssClass="btn btn-secondary" Text="Remove To Cart"/>
+                <asp:Button runat="server" OnClick="RemoveToCart" ID="removeCartBtn" CssClass="btn btn-secondary" Text="Remove To Cart" CausesValidation="false"/>
+                <asp:Button runat="server" ID="transactBtn" OnClick="AddTransaction" CssClass="btn btn-success" Text="Make Order" />
             </div>
         </div>
     </form>
