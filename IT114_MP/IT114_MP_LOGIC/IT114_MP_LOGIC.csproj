@@ -83,6 +83,7 @@
     <Content Include="TransactionPage.aspx" />
     <Content Include="UpdateProducts.aspx" />
     <Content Include="Verify.aspx" />
+    <Content Include="ViewProducts.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +152,13 @@
     </Compile>
     <Compile Include="Verify.aspx.designer.cs">
       <DependentUpon>Verify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProducts.aspx.cs">
+      <DependentUpon>ViewProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewProducts.aspx.designer.cs">
+      <DependentUpon>ViewProducts.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
