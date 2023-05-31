@@ -63,7 +63,7 @@ namespace IT114_MP_LOGIC
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("HomePage.aspx");
         }
     }
 }

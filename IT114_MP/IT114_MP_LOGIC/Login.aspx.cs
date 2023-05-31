@@ -15,9 +15,9 @@ namespace IT114_MP_LOGIC
 
         }
 
-        protected void btnReg_Click(object sender, EventArgs e)
+        protected void btnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Register.aspx");
+            Response.Redirect("HomePage.aspx");
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
