@@ -21,16 +21,13 @@
                             </li>
                             <asp:Label runat="server" class="text-dark mt-4" style="font-size:20px" href="#">||||</asp:Label>
                             <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="HomePage.aspx/#aboutUsPage">Manage Your Profile</a>
+                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#editUserInfo">Manage Your Profile</a>
                             </li> 
                             <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="HomePage.aspx/#productsPage">Manage Employee Profile</a>
+                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#manageEmpInfo">Manage Employee Profile</a>
                             </li>   
                             <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="HomePage.aspx/#contactUsPage">Manage Products</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-danger font-weight-bold" style="font-size:15px" href="HomePage.aspx/#contactUsPage">Log Out</a>
+                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#manageProdInfo">Manage Products</a>
                             </li>
                         </ul>
                     </nav>
@@ -54,13 +51,14 @@
             <asp:Label class="text-white" id="Label1" runat="server" style="font-size:30px; font-family:Tahoma; font-weight:bold">What would you like to do?</asp:Label>
         </div>
         <div class="w-100"></div>
+        <div class="w-100"></div>
         <div class="row col-md-12 justify-content-center mt-3">
-            <asp:Button id="Direct" runat="server" type="button" class="btn btn-outline-light" OnClick="#editUserInfo" Text="Manage Your Profile" width="250px" height="50px"/> <div class="w-100"></div>
-            <asp:Button id="Button1" runat="server" type="button" class="btn btn-outline-light mt-3" Text="Manage Employee Profile" width="250px" height="50px"/> <div class="w-100"></div>
-            <asp:Button id="Button2" runat="server" type="button" class="btn btn-outline-light mt-3" Text="Manage Products" width="250px" height="50px"/> <div class="w-100"></div>
-            <asp:Button id="Button3" runat="server" type="button" class="btn btn-danger mt-4" Text="Log Out" width="150px" height="40px"/> 
+            <a class="badge badge-info mt-3 mr-3" style="font-size:25px" href="#editUserInfo">Manage Your Profile</a> <div class="w-100"></div>
+            <a class="badge badge-info mt-3 mr-3" style="font-size:25px" href="#manageEmpInfo">Manage Employee Profile</a> <div class="w-100"></div>
+            <a class="badge badge-info mt-3 mr-3" style="font-size:25px" href="#manageProdInfo">Manage Products</a> <div class="w-100"></div>
+            <asp:Button id="Button3" runat="server" type="button" class="btn btn-danger mt-4" OnClick="btnLogout_Click" Text="Log Out" width="150px" height="40px"/> 
         </div>
-        <div class="container-md bg-dark mt-4 pt-5 text-center" style="opacity:.5"></div>
+        <div id="editUserInfo" class="container-md bg-dark mt-4 pt-5 text-center" style="opacity:.5"></div>
         <div class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
         <div class="container-md bg-dark text-center pb-5"> 
             <span class="badge badge-pill badge-light text m-5" style="font-size:40px; font-family:Broadway ;font-weight:bold">User Information</span><br/>
@@ -71,14 +69,21 @@
             <asp:Label class="text-white" id="txtPword" runat="server" style="font-size:25px; font-family:'Century Gothic'; font-weight:bold">[Password]</asp:Label><br />
             <asp:Button id="Button4" runat="server" type="button" class="btn btn-outline-light mt-5" OnClick="btnEditMyAcc_Click" Text="Edit Profile" width="200px" height="50px"/>
         </div>
-        <div id="editUserInfo" class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
+
+        <div id="manageEmpInfo" class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
         <div class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
-        <div>
-            <asp:Button ID="btnAddProd" runat="server" Text="Add Product" OnClick="btnAddProd_Click" /><br />
-            <asp:Button ID="btnUpdatedProd" runat="server" Text="Update Product" OnClick="btnUpdatedProd_Click" /><br />
-            <asp:Button ID="btnView" runat="server" Text="View Product" OnClick="btnView_Click" /><br />
-            <asp:Button ID="btnAddAcc" runat="server" Text="Add User Account" /><br />
-            <asp:Button ID="btnLogout" runat="server" Text="Logout Account" OnClick="btnLogout_Click" /><br />
+        <div class="container-md bg-dark text-center pb-5"> 
+            <span class="badge badge-pill badge-light text m-5" style="font-size:40px; font-family:Broadway ;font-weight:bold">Employee Information</span><br/>
+            <asp:Button id="Button5" runat="server" type="button" class="btn btn-outline-light mt-5" OnClick="btnEditMyAcc_Click" Text="Add Employee Account" width="200px" height="50px"/><div class="w-100"></div>
+        </div>
+
+        <div id="manageProdInfo" class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
+        <div class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
+        <div class="container-md bg-dark text-center pb-5"> 
+            <span class="badge badge-pill badge-light text m-5" style="font-size:40px; font-family:Broadway ;font-weight:bold">Employee Information</span><br/>
+            <asp:Button id="Button6" runat="server" type="button" class="btn btn-outline-light mt-5" OnClick="btnAddProd_Click" Text="Add Product" width="200px" height="50px"/><div class="w-100"></div>
+            <asp:Button id="Button7" runat="server" type="button" class="btn btn-outline-light mt-5" OnClick="btnUpdatedProd_Click" Text="Update Product" width="200px" height="50px"/><div class="w-100"></div>
+            <asp:Button id="Button8" runat="server" type="button" class="btn btn-outline-light mt-5" OnClick="btnView_Click" Text="View Products" width="200px" height="50px"/><div class="w-100"></div>
         </div>
     </form>
 </body>
