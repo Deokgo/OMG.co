@@ -11,6 +11,7 @@
             width: 500px;
             height: 500px;
             overflow: auto;
+            float: left;
         }
         
         #prodTable {
@@ -31,6 +32,7 @@
         #container {
             width: 500px;
             height: 600px;
+            float: left;
         }
         #cartContainer {
             width: 500px;
@@ -80,7 +82,7 @@
                 <div id="cartContainer">
                     <asp:ListBox runat="server" ID="cart"></asp:ListBox>
                 </div>
-                <asp:Label runat="server" ID="totalLbl">Total: </asp:Label>
+                <asp:Label runat="server" ID="totalLbl">Total: 0.0</asp:Label>
                 <asp:Button runat="server" OnClick="RemoveToCart" ID="removeCartBtn" CssClass="btn btn-secondary" Text="Remove To Cart"/>
             </div>
         </div>
