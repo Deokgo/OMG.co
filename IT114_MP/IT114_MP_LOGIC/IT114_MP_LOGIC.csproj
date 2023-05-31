@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="AddProducts.aspx" />
     <Content Include="AdminPage.aspx" />
+    <Content Include="EditMyAccount.aspx" />
     <Content Include="images\default.jpg" />
     <Content Include="images\Hotdog.png" />
     <Content Include="images\Longsilog.png" />
@@ -80,6 +81,8 @@
     <Content Include="Register.aspx" />
     <Content Include="ReportPage.aspx" />
     <Content Include="TransactionPage.aspx" />
+    <Content Include="UpdateProducts.aspx" />
+    <Content Include="Verify.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +101,13 @@
       <DependentUpon>AdminPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="DatabaseClass.cs" />
+    <Compile Include="EditMyAccount.aspx.cs">
+      <DependentUpon>EditMyAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditMyAccount.aspx.designer.cs">
+      <DependentUpon>EditMyAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,7 +137,21 @@
     <Compile Include="TransactionPage.aspx.designer.cs">
       <DependentUpon>TransactionPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UpdateProducts.aspx.cs">
+      <DependentUpon>UpdateProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateProducts.aspx.designer.cs">
+      <DependentUpon>UpdateProducts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Validation.cs" />
+    <Compile Include="Verify.aspx.cs">
+      <DependentUpon>Verify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verify.aspx.designer.cs">
+      <DependentUpon>Verify.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

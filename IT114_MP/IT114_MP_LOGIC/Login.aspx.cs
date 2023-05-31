@@ -23,7 +23,7 @@ namespace IT114_MP_LOGIC
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             DatabaseClass db = new DatabaseClass();
-            MySqlDataReader reader = db.getRec("SELECT * FROM acc_info_tbl where uname='" + txtUname.Text + "' AND pword=MD5('" + txtPword.Text + "');");
+            MySqlDataReader reader = db.getRec("SELECT * FROM acc_info_tbl where uname='" + txtUname.Text + "' AND pword=MD5('" + txtPword.Text + "') AND acc_state='enabled';");
 
             if (reader.HasRows)
             {
