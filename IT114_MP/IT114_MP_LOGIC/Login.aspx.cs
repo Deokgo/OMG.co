@@ -22,36 +22,43 @@ namespace IT114_MP_LOGIC
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            DatabaseClass db = new DatabaseClass();
-            MySqlDataReader reader = db.getRec("SELECT * FROM acc_info_tbl where uname='" + txtUname.Text + "' AND pword=MD5('" + txtPword.Text + "') AND acc_state='enabled';");
-
-            if (reader.HasRows)
+            if(txtUname.Text == "" || txtPword.Text == "")
             {
-                reader.Read();
-                string role = reader["role"].ToString();
-                string uname = reader["uname"].ToString();
+                Response.Write("<script>alert('Username and password field are required.')</script>");
+            }
+            else
+            {
+                DatabaseClass db = new DatabaseClass();
+                MySqlDataReader reader = db.getRec("SELECT * FROM acc_info_tbl where uname='" + txtUname.Text + "' AND pword=MD5('" + txtPword.Text + "') AND acc_state='enabled';");
 
-                Session["role"] = role;
-                Session["uname"] = uname;
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    string role = reader["role"].ToString();
+                    string uname = reader["uname"].ToString();
 
-                if(role == "admin")
-                {
-                    Response.Redirect("AdminPage.aspx");
-                }
-                else if (role == "customer")
-                {
-                    Response.Redirect("TransactionPage.aspx");
+                    Session["role"] = role;
+                    Session["uname"] = uname;
+
+                    if (role == "admin")
+                    {
+                        Response.Redirect("AdminPage.aspx");
+                    }
+                    else if (role == "customer")
+                    {
+                        Response.Redirect("TransactionPage.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("ReportPage.aspx");
+                    }
                 }
                 else
                 {
-                    Response.Redirect("ReportPage.aspx");
-                }       
-            }   
-            else
-            {
-                Response.Write("<script>alert('Either your account does not exist or your username/password is wrong.')</script>");
+                    Response.Write("<script>alert('Either your account does not exist or your username/password is wrong.')</script>");
+                }
+                db.connectionclose();
             }
-            db.connectionclose();
         }
     }
 }

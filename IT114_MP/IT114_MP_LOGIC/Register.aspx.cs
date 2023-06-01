@@ -17,48 +17,56 @@ namespace IT114_MP_LOGIC
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            string username = txtUname.Text;
-
-
-            DatabaseClass db = new DatabaseClass();
-            MySqlDataReader reader = db.getRec("SELECT * FROM acc_info_tbl where uname='" + username + "';");
-
-            if (reader.HasRows)
+            if(txtPword.Text == txtPwordConfirm.Text)
             {
-                Response.Write("<script>alert('Username exists already.')</script>");
-            }
-            else
-            {
-                string fname = txtFname.Text;
-                string lname = txtLname.Text;
-                string pword = txtPword.Text;
-                string role = "customer";
-                string acc_state = "enabled";
-                string email = txtEmail.Text;
+                string username = txtUname.Text;
 
-                int returnX1 = db.insDelUp("INSERT INTO user_info_tbl(uname, fname, lname) VALUES('" +
-                    username + "','" + fname + "','" + lname + "');");
 
-                int returnX2 = db.insDelUp("INSERT INTO acc_info_tbl(uname, pword, role, acc_state, email) VALUES('" +
-                    username + "', MD5('" + pword + "'),'" + role + "','" + acc_state + "','" + email + "');");
+                DatabaseClass db = new DatabaseClass();
+                MySqlDataReader reader = db.getRec("SELECT * FROM acc_info_tbl where uname='" + username + "';");
 
-                if ((returnX1 > 0) && (returnX2 > 0))
+                if (reader.HasRows)
                 {
-                    txtFname.Text = "";
-                    txtLname.Text = "";
-                    txtUname.Text = "";
-                    txtPword.Text = "";
-                    txtEmail.Text = "";
-
-                    Response.Write("<script>alert('Account created successfully!')</script>");
+                    Response.Write("<script>alert('Username exists already.')</script>");
                 }
                 else
                 {
-                    Response.Write("<script>alert('Try Again.')</script>");
+                    string fname = txtFname.Text;
+                    string lname = txtLname.Text;
+                    string pword = txtPword.Text;
+                    string role = "customer";
+                    string acc_state = "enabled";
+                    string email = txtEmail.Text;
 
+                    int returnX1 = db.insDelUp("INSERT INTO user_info_tbl(uname, fname, lname) VALUES('" +
+                        username + "','" + fname + "','" + lname + "');");
+
+                    int returnX2 = db.insDelUp("INSERT INTO acc_info_tbl(uname, pword, role, acc_state, email) VALUES('" +
+                        username + "', MD5('" + pword + "'),'" + role + "','" + acc_state + "','" + email + "');");
+
+                    if ((returnX1 > 0) && (returnX2 > 0))
+                    {
+                        txtFname.Text = "";
+                        txtLname.Text = "";
+                        txtUname.Text = "";
+                        txtPword.Text = "";
+                        txtPwordConfirm.Text = "";
+                        txtEmail.Text = "";
+
+                        Response.Write("<script>alert('Account created successfully!')</script>");
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Try Again.')</script>");
+
+                    }
                 }
+                db.connectionclose();
             }
-            db.connectionclose();
+            else
+            {
+                Response.Write("<script>alert('Password does not match!')</script>");
+            }
         }
 
         protected void btnBack_Click(object sender, EventArgs e)

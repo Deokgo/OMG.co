@@ -53,13 +53,13 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="firstName" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">First Name:</span>
                     </div>
-                    <asp:TextBox id="txtFname" runat="server" type="text" placeholder="Enter first name..." class="form-control" aria-label="Default" aria-describedby="firstName"></asp:TextBox>
+                    <asp:TextBox ID="txtFname" runat="server" type="text" placeholder="Enter first name..." class="form-control" aria-label="Default" aria-describedby="firstName"></asp:TextBox>
                 </div>
             </div>
             <div class="col-1"></div>
             <div class="col-3">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" class="form-text text-danger" runat="server" ErrorMessage="Required field." ControlToValidate="txtFname" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" class="form-text text-danger" runat="server" ErrorMessage="Must not contain number/s." ValidationGroup="submitInfo" ControlToValidate="txtFname" ValidationExpression="^[a-zA-Z\s]+$"></asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator ID="rfvFname" class="form-text text-danger" runat="server" ErrorMessage="Required field." ControlToValidate="txtFname" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="revFname" class="form-text text-danger" runat="server" ErrorMessage="Must not contain number/s." ValidationGroup="submitInfo" ControlToValidate="txtFname" ValidationExpression="^[a-zA-Z\s]+$" Display="Dynamic"></asp:RegularExpressionValidator>
             </div>
         </div>
         <div class="row justify-content-end mt-2">
@@ -68,13 +68,13 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="lastName" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">Last Name:</span>
                     </div>
-                    <asp:TextBox id="txtLname" runat="server" type="text" placeholder="Enter last name..." class="form-control" aria-label="Default" aria-describedby="lastName"></asp:TextBox>
+                    <asp:TextBox ID="txtLname" runat="server" type="text" placeholder="Enter last name..." class="form-control" aria-label="Default" aria-describedby="lastName"></asp:TextBox>
                 </div>
             </div>
             <div class="col-1"></div>
             <div class="col-3">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" class="form-text text-danger" runat="server" ErrorMessage="Required field." ControlToValidate="txtLname" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" class="form-text text-danger" runat="server" ErrorMessage="Must not contain number/s." ValidationGroup="submitInfo" ControlToValidate="txtLname" ValidationExpression="^[a-zA-Z\s]+$"></asp:RegularExpressionValidator>          
+                <asp:RequiredFieldValidator ID="rfvLname" class="form-text text-danger" runat="server" ErrorMessage="Required field." ControlToValidate="txtLname" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="revLname" class="form-text text-danger" runat="server" ErrorMessage="Must not contain number/s." ValidationGroup="submitInfo" ControlToValidate="txtLname" ValidationExpression="^[a-zA-Z\s]+$" Display="Dynamic"></asp:RegularExpressionValidator>          
             </div>
         </div>
         <div class="row justify-content-end mt-2">
@@ -83,13 +83,13 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="userEmail" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">Email Address:</span>
                     </div>
-                    <asp:TextBox id="txtEmail" runat="server" type="text" placeholder="someone@email.com" class="form-control" aria-label="Default" aria-describedby="userEmail"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" runat="server" type="text" placeholder="someone@email.com" class="form-control" aria-label="Default" aria-describedby="userEmail"></asp:TextBox>
                 </div>
             </div>
             <div class="col-1"></div>
             <div class="col-3">
                 <asp:RequiredFieldValidator ID="rfvEmail" class="form-text text-danger" runat="server" ErrorMessage="Required field." Display="Dynamic" ValidationGroup="submitInfo" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="reEmail" class="form-text text-danger" runat="server" ErrorMessage="Invalid email format." ValidationExpression="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" ValidationGroup="submitInfo" ControlToValidate="txtEmail"></asp:RegularExpressionValidator>            
+                <asp:RegularExpressionValidator ID="reEmail" class="form-text text-danger" runat="server" ErrorMessage="Invalid email format." ValidationExpression="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" ValidationGroup="submitInfo" ControlToValidate="txtEmail" Display="Dynamic"></asp:RegularExpressionValidator>            
             </div>
         </div>
         <div class="row justify-content-end mt-2">
@@ -98,12 +98,12 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="userName" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">Username:</span>
                     </div>
-                    <asp:TextBox id="txtUname" runat="server" type="text" placeholder="Create username..." class="form-control" aria-label="Default" aria-describedby="userName"></asp:TextBox>
+                    <asp:TextBox ID="txtUname" runat="server" type="text" placeholder="Create username..." class="form-control" aria-label="Default" aria-describedby="userName"></asp:TextBox>
                 </div>
             </div>
             <div class="col-1"></div>
             <div class="col-3">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" class="form-text text-danger" runat="server" ErrorMessage="Required field." ControlToValidate="txtUname" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvUname" class="form-text text-danger" runat="server" ErrorMessage="Required field." ControlToValidate="txtUname" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
             </div>
         </div>
         <div class="row justify-content-end mt-2">
@@ -112,13 +112,13 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="userPassword" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">Password:</span>
                     </div>
-                    <asp:TextBox id="txtPword" runat="server" type="password" placeholder="Create password..." class="form-control" aria-label="Default" aria-describedby="userPassword"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvPword" class="form-text text-danger" runat="server" ErrorMessage="Required field." ControlToValidate="txtPword" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="txtPword" runat="server" type="password" placeholder="Create password..." class="form-control" aria-label="Default" aria-describedby="userPassword"></asp:TextBox>
+                    
                 </div>
             </div>
             <div class="col-1"></div>
             <div class="col-3">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" class="form-text text-danger"  runat="server" ErrorMessage="Required field." ControlToValidate="txtPword" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvPword" class="form-text text-danger" runat="server" ErrorMessage="Required field." ControlToValidate="txtPword" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
             </div>
         </div>
         <div class="row justify-content-end mt-2">
@@ -128,14 +128,17 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="confirmPassword" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">Confirm Password:</span>
                     </div>
-                    <asp:TextBox runat="server" type="password" placeholder="Re-enter password..." class="form-control" aria-label="Default" aria-describedby="confirmPassword"></asp:TextBox>
+                    <asp:TextBox ID="txtPwordConfirm" runat="server" type="password" placeholder="Re-enter password..." class="form-control" aria-label="Default" aria-describedby="confirmPassword"></asp:TextBox>   
                 </div>
             </div>
-            <div class="col-2 col-md-4"></div>
+            <div class="col-1"></div>
+            <div class="col-3">
+                <asp:RequiredFieldValidator ID="rfvPwordConfirm" class="form-text text-danger" runat="server" ErrorMessage="Required field." ControlToValidate="txtPwordConfirm" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
+            </div>
         </div>      
             
         <div class="row justify-content-center mt-5">
-            <asp:Button id="btnRegister" runat="server" type="button" class="btn btn-outline-light" OnClick="btnRegister_Click" Text="Sign Up" width="150px" height="50px"/>
+            <asp:Button id="btnRegister" runat="server" type="button" class="btn btn-outline-light" OnClick="btnRegister_Click" Text="Sign Up" width="150px" height="50px" ValidationGroup="submitInfo"/>
             <asp:Button id="btnBack" runat="server" type="button" class="btn btn-dark ml-5" OnClick="btnBack_Click" Text="Cancel" width="150px" height="50px"/>
         </div>  
         <div class="container-md bg-trasnparent pt-lg-1"> </div>

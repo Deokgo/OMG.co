@@ -74,9 +74,7 @@ namespace IT114_MP_LOGIC
             if(acc_state == "disabled")
             {
                 Session.Contents.RemoveAll();
-                // pwede ilagay dito na may notif na nakadisabled na account niya and hindi
-                // mabubuksan unless may ginawang change si db admin sa state ng acc niya
-                Response.Redirect("Login.aspx");
+                Response.Redirect("MessageAccDisabled.aspx");
             }
         }
 

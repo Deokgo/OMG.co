@@ -24,22 +24,22 @@ namespace IT114_MP_LOGIC
         protected global::System.Web.UI.WebControls.TextBox txtFname;
 
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// rfvFname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFname;
 
         /// <summary>
-        /// RegularExpressionValidator1 control.
+        /// revFname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revFname;
 
         /// <summary>
         /// txtLname control.
@@ -51,22 +51,22 @@ namespace IT114_MP_LOGIC
         protected global::System.Web.UI.WebControls.TextBox txtLname;
 
         /// <summary>
-        /// RequiredFieldValidator2 control.
+        /// rfvLname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLname;
 
         /// <summary>
-        /// RegularExpressionValidator2 control.
+        /// revLname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revLname;
 
         /// <summary>
         /// txtEmail control.
@@ -105,13 +105,13 @@ namespace IT114_MP_LOGIC
         protected global::System.Web.UI.WebControls.TextBox txtUname;
 
         /// <summary>
-        /// RequiredFieldValidator3 control.
+        /// rfvUname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUname;
 
         /// <summary>
         /// txtPword control.
@@ -132,13 +132,22 @@ namespace IT114_MP_LOGIC
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPword;
 
         /// <summary>
-        /// RequiredFieldValidator4 control.
+        /// txtPwordConfirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        protected global::System.Web.UI.WebControls.TextBox txtPwordConfirm;
+
+        /// <summary>
+        /// rfvPwordConfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPwordConfirm;
 
         /// <summary>
         /// btnRegister control.

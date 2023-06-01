@@ -51,7 +51,7 @@
             <div class="col-12 col-md-5">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">">
-                        <span class="input-group-text" id="userName" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">UserName:</span>
+                        <span class="input-group-text" id="userName" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">Username:</span>
                     </div>
                     <asp:TextBox id="txtUname" runat="server" type="text" placeholder="Enter your username..." class="form-control" aria-label="Default" aria-describedby="userName"></asp:TextBox>
                 </div>
@@ -59,7 +59,7 @@
             <div class="w-100"></div>
             <div class="col-12 col-md-5 mt-3">
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend">">
+                    <div class="input-group-prepend">
                         <span class="input-group-text" id="userPassword" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">Password:</span>
                     </div>
                     <asp:TextBox id="txtPword" runat="server" type="password" placeholder="Enter your password..." class="form-control" aria-label="Default" aria-describedby="userPassword"></asp:TextBox>
@@ -68,8 +68,8 @@
         </div>
 
         <div class="row justify-content-center mt-5">
-            <asp:Button id="Direct" runat="server" type="button" class="btn btn-outline-light" OnClick="btnSubmit_Click" Text="Login" width="150px" height="50px"/>
-            <asp:Button id="Button1" runat="server" type="button" class="btn btn-dark ml-5" OnClick="btnHome_Click" Text="Cancel" width="150px" height="50px"/>
+            <asp:Button id="btnLogin" runat="server" type="button" class="btn btn-outline-light" OnClick="btnSubmit_Click" Text="Login" width="150px" height="50px"/>
+            <asp:Button id="btnCancel" runat="server" type="button" class="btn btn-dark ml-5" OnClick="btnHome_Click" Text="Cancel" width="150px" height="50px"/>
         </div>  
         <div class="container-md bg-trasnparent pt-lg-1"> </div>
         <div class="container-md bg-trasnparent pt-lg-1"> </div>
