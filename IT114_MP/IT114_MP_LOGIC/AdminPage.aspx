@@ -80,7 +80,7 @@
         <div id="manageProdInfo" class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
         <div class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
         <div class="container-md bg-dark text-center pb-5"> 
-            <span class="badge badge-pill badge-light text m-5" style="font-size:40px; font-family:Broadway ;font-weight:bold">Employee Information</span><br/>
+            <span class="badge badge-pill badge-light text m-5" style="font-size:40px; font-family:Broadway ;font-weight:bold">Manage Products</span><br/>
             <asp:Button id="Button6" runat="server" type="button" class="btn btn-outline-light mt-5" OnClick="btnAddProd_Click" Text="Add Product" width="200px" height="50px"/><div class="w-100"></div>
             <asp:Button id="Button7" runat="server" type="button" class="btn btn-outline-light mt-5" OnClick="btnUpdatedProd_Click" Text="Update Product" width="200px" height="50px"/><div class="w-100"></div>
             <asp:Button id="Button8" runat="server" type="button" class="btn btn-outline-light mt-5" OnClick="btnView_Click" Text="View Products" width="200px" height="50px"/><div class="w-100"></div>
