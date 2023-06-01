@@ -20,19 +20,19 @@
                             </li>
                             <asp:Label runat="server" class="text-dark mt-4" style="font-size:20px" href="#">||||</asp:Label>
                             <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="HomePage.aspx/#aboutUsPage">About Us</a>
+                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="HomePage.aspx#aboutUsPage">About Us</a>
                             </li> 
                             <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="HomePage.aspx/#productsPage">Products</a>
+                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="HomePage.aspx#productsPage">Products</a>
                             </li>   
                             <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="HomePage.aspx/#contactUsPage">Contact Us</a>
+                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="HomePage.aspx#contactUsPage">Contact Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="LoginPage.aspx">Login</a>
+                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="Login.aspx">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mt-3 text-light" style="font-size:15px" href="#">Sign Up</a>
+                                <a class="nav-link mt-3 text-light" style="font-size:15px" href="Register.aspx">Sign Up</a>
                             </li>
                         </ul>
                     </nav>
