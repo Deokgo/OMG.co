@@ -10,10 +10,12 @@ namespace IT114_MP_LOGIC
 {
     public partial class EditMyAccount : System.Web.UI.Page
     {
+        private string previousPageName;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
             {
+
                 ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
                 lblRole.Text = Session["role"].ToString(); // test if the role is being passed
                 lblUname.Text = Session["uname"].ToString(); // test if the uname is being passed
@@ -80,7 +82,7 @@ namespace IT114_MP_LOGIC
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdminPage.aspx");
+            Response.Redirect(Session["page"].ToString());
         }
     }
 }

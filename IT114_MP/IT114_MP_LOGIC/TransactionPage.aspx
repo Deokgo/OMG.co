@@ -52,6 +52,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
+
+            <asp:Label ID="lblRole" runat="server" Text="Label"></asp:Label><br />
+            <asp:Label ID="lblUname" runat="server" Text="Label"></asp:Label><br />
+            <br />
+
             <div id="tableContainer">
                 <asp:Table runat="server" ID="prodTable" CssClass="table">
                 <asp:TableHeaderRow>
@@ -83,11 +88,13 @@
                     <asp:DropDownList runat="server" ID="prodDdl"></asp:DropDownList>
                     <asp:TextBox runat="server" ID="qtyTxt"></asp:TextBox>
                     <asp:Button runat="server" ID="addCartBtn" Text="Add To Cart" OnClick="AddToCart" CssClass="btn btn-primary"/>
-                    <asp:RequiredFieldValidator runat="server" ControlToValidate="qtyTxt" ErrorMessage="Quantity should be filled out." ></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="qtyTxt" ErrorMessage="Quantity should be filled out." ValidationGroup="submitOrder"></asp:RequiredFieldValidator>
                 </div>
                 <asp:Label runat="server" ID="totalLbl">Total: 0.0</asp:Label>
                 <asp:Button runat="server" OnClick="RemoveToCart" ID="removeCartBtn" CssClass="btn btn-secondary" Text="Remove To Cart" CausesValidation="false"/>
-                <asp:Button runat="server" ID="transactBtn" OnClick="AddTransaction" CssClass="btn btn-success" Text="Make Order" />
+                <asp:Button runat="server" ID="transactBtn" OnClick="AddTransaction" CssClass="btn btn-success" Text="Make Order" ValidationGroup="submitOrder"/>
+                <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
+                <asp:Button ID="btnEditAcc" runat="server" Text="Edit My Account" OnClick="btnEditAcc_Click" />
             </div>
         </div>
     </form>

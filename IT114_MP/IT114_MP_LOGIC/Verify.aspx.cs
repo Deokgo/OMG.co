@@ -10,6 +10,7 @@ namespace IT114_MP_LOGIC
 {
     public partial class Verify : System.Web.UI.Page
     {
+        private string previousPageName;
         protected void Page_Load(object sender, EventArgs e)
         {
             txtUname.Text = Session["uname"].ToString();
@@ -40,7 +41,8 @@ namespace IT114_MP_LOGIC
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdminPage.aspx");
+
+            Response.Redirect(Session["page"].ToString());
         }
     }
 }

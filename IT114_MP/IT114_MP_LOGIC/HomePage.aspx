@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>HOME PAGE</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body style="background-image: url('../images/LandingPageBG.jpg'); background-size:contain">

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>PRODUCTS REPORT</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -32,6 +32,9 @@
                 <asp:Image runat="server" ID="worstImage"/>
                 <asp:Label runat="server" ID="worstPriceLbl"></asp:Label>
                 <asp:Label runat="server" ID="worstSoldLbl"></asp:Label>
+                <br />
+                <br />
+                <asp:Button ID="btn" runat="server" Text="Back" OnClick="btn_Click" />
             </div>
         </div>
     </form>

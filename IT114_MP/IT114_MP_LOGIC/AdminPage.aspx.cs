@@ -11,8 +11,8 @@ namespace IT114_MP_LOGIC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblRole.Text = Session["role"].ToString(); // test if the role is being passed
-            lblUname.Text = Session["uname"].ToString(); // test if the uname is being passed
+            lblRole.Text = Session["role"].ToString(); // displays the role of the user that is currently login
+            lblUname.Text = Session["uname"].ToString(); // displays the username of the user that is currently login
         }
 
         protected void btnAddProd_Click(object sender, EventArgs e)
@@ -29,6 +29,7 @@ namespace IT114_MP_LOGIC
         {
             Session["role"] = lblRole.Text;
             Session["uname"] = lblUname.Text;
+            Session["page"] = "AdminPage.aspx";
             Response.Redirect("Verify.aspx");
         }
 

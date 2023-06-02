@@ -15,6 +15,9 @@ namespace IT114_MP_LOGIC
         DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblRole.Text = Session["role"].ToString(); // displays the role of the user that is currently login
+            lblUname.Text = Session["uname"].ToString(); // displays the username of the user that is currently login
+
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             DatabaseClass db = new DatabaseClass();
             dt = db.Show("SELECT * FROM prod_info_tbl;");
@@ -141,12 +144,28 @@ namespace IT114_MP_LOGIC
                 qtyTxt.Text = "";
                 Session["total"] = 0;
                 totalLbl.Text = "Total: 0.0";
+
+                Response.Write("<script>alert('Transaction success!')</script>");
             }
             else
             {
                 Response.Write("<script>alert('Please add an item to the cart first!')</script>");
             }
 
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Contents.RemoveAll();
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void btnEditAcc_Click(object sender, EventArgs e)
+        {
+            Session["role"] = lblRole.Text;
+            Session["uname"] = lblUname.Text;
+            Session["page"] = "TransactionPage.aspx";
+            Response.Redirect("Verify.aspx");
         }
     }
 }

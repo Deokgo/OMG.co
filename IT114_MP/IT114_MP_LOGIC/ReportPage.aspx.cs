@@ -11,7 +11,27 @@ namespace IT114_MP_LOGIC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TextBox1.Text = Session["role"].ToString(); // test if the role is being passed
+            lblRole.Text = Session["role"].ToString(); // displays the role of the user that is currently login
+            lblUname.Text = Session["uname"].ToString(); // displays the username of the user that is currently login
+        }
+
+        protected void btnBestLeastProduct_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PerformanceReport.aspx");
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Contents.RemoveAll();
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void btnEditAcc_Click(object sender, EventArgs e)
+        {
+            Session["role"] = lblRole.Text;
+            Session["uname"] = lblUname.Text;
+            Session["page"] = "ReportPage.aspx";
+            Response.Redirect("Verify.aspx");
         }
     }
 }

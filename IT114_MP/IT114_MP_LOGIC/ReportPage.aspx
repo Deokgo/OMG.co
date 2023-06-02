@@ -9,7 +9,16 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:Label ID="lblRole" runat="server" Text="Label"></asp:Label><br />
+            <asp:Label ID="lblUname" runat="server" Text="Label"></asp:Label><br />
+            <br />
+
+            <asp:Button ID="btnBestLeastProduct" runat="server" Text="Best And Least Product Report" OnClick="btnBestLeastProduct_Click" /><br />
+            <asp:Button ID="btnSales" runat="server" Text="Sales Report" />
+            <br />
+            <asp:Button ID="btnEditAcc" runat="server" Text="Edit My Account" OnClick="btnEditAcc_Click" />
+            <br />
+            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
         </div>
     </form>
 </body>
