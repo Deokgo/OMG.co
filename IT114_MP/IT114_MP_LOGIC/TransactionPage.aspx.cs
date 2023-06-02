@@ -24,8 +24,6 @@ namespace IT114_MP_LOGIC
             if (dt.Rows.Count > 0)
             {
                 TableRow prodtr = new TableRow();
-                prodTable.GridLines = GridLines.Both;
-                prodtr.BackColor = System.Drawing.Color.Cornsilk;
                 TableCell prodImage = new TableCell();
                 TableCell prodName = new TableCell();
                 TableCell prodPrice = new TableCell();
@@ -37,13 +35,17 @@ namespace IT114_MP_LOGIC
                     prodPrice = new TableCell();
                     Image prodPic = new Image();
                     prodPic.ImageUrl = row["prod_photo"].ToString();
-                    prodPic.Width = Unit.Pixel(100);
-                    prodPic.Height = Unit.Pixel(100);
 
+                    prodPic.Width = 250;
+                    prodPic.Height = 120;
+                    prodName.Width = 250;
+                    prodName.Height = 120;
+                    prodPrice.Width = 250;
+                    prodPrice.Height = 120;
 
                     prodImage.Controls.Add(prodPic);
                     prodName.Text = row["prod_name"].ToString();
-                    prodPrice.Text = row["prod_price"].ToString();
+                    prodPrice.Text = "PHP " + Convert.ToInt32(row["prod_price"]).ToString("N");
                     prodtr.Cells.Add(prodImage);
                     prodtr.Cells.Add(prodName);
                     prodtr.Cells.Add(prodPrice);
@@ -64,10 +66,6 @@ namespace IT114_MP_LOGIC
                 prodDdl.DataBind();
                 Session["total"] = 0.0;
             }
-            else
-            {
-
-            }
         }
         protected void AddToCart(object sender, EventArgs e) //bali need ko muna kunin yung id pati qty pre
         {
@@ -82,7 +80,7 @@ namespace IT114_MP_LOGIC
                 double subtotal = price * prodQty;
                 ListItem cartItem = new ListItem();
                 // Add the item details as text to the cartItem
-                cartItem.Text = prodName + "            |            " + price.ToString() + "            |            " + prodQty.ToString() + "            |            " + subtotal.ToString();
+                cartItem.Text = prodName + "                  " + price.ToString() + "                     " + prodQty.ToString() + "                       " + subtotal.ToString();
                 // Set the value of the cartItem
                 cartItem.Value = prodId + "-" + prodQty.ToString() + "-" + price.ToString();
 
@@ -98,7 +96,7 @@ namespace IT114_MP_LOGIC
                     subtotal = prodQty * prodPrice;
                     Session["total"] = (double)Session["total"] + subtotal;
                 }
-                totalLbl.Text = "Total: " + Session["total"];
+                totalLbl.Text = Convert.ToInt32(Session["total"]).ToString("N");
             }
         }
         protected void RemoveToCart(object sender, EventArgs e)
@@ -115,7 +113,7 @@ namespace IT114_MP_LOGIC
                 double subtotal = prodQty * prodPrice;
                 Session["total"] = (double)Session["total"] + subtotal;
             }
-            totalLbl.Text = "Total: " + Session["total"];
+            totalLbl.Text = Convert.ToInt32(Session["total"]).ToString("N");
         }
         protected void AddTransaction(object sender, EventArgs e)
         {
@@ -143,17 +141,13 @@ namespace IT114_MP_LOGIC
                 cart.Items.Clear();
                 qtyTxt.Text = "";
                 Session["total"] = 0;
-                totalLbl.Text = "Total: 0.0";
-
-                Response.Write("<script>alert('Transaction success!')</script>");
+                totalLbl.Text = "0.00";
             }
             else
             {
                 Response.Write("<script>alert('Please add an item to the cart first!')</script>");
             }
-
         }
-
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             Session.Contents.RemoveAll();
