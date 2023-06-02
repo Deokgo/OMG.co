@@ -10,7 +10,6 @@ namespace IT114_MP_LOGIC
 {
     public partial class EditMyAccount : System.Web.UI.Page
     {
-        private string previousPageName;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
