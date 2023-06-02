@@ -24,13 +24,13 @@ namespace IT114_MP_LOGIC
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblRole control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRole;
+        protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
         /// lblUname control.
@@ -40,6 +40,24 @@ namespace IT114_MP_LOGIC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblUname;
+
+        /// <summary>
+        /// lblRole control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRole;
+
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// prodTable control.
@@ -96,6 +114,15 @@ namespace IT114_MP_LOGIC
         protected global::System.Web.UI.WebControls.DropDownList prodDdl;
 
         /// <summary>
+        /// quant control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label quant;
+
+        /// <summary>
         /// qtyTxt control.
         /// </summary>
         /// <remarks>
@@ -114,15 +141,6 @@ namespace IT114_MP_LOGIC
         protected global::System.Web.UI.WebControls.Button addCartBtn;
 
         /// <summary>
-        /// totalLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label totalLbl;
-
-        /// <summary>
         /// removeCartBtn control.
         /// </summary>
         /// <remarks>
@@ -132,6 +150,15 @@ namespace IT114_MP_LOGIC
         protected global::System.Web.UI.WebControls.Button removeCartBtn;
 
         /// <summary>
+        /// totalLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label totalLbl;
+
+        /// <summary>
         /// transactBtn control.
         /// </summary>
         /// <remarks>
@@ -139,23 +166,5 @@ namespace IT114_MP_LOGIC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button transactBtn;
-
-        /// <summary>
-        /// btnLogout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogout;
-
-        /// <summary>
-        /// btnEditAcc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditAcc;
     }
 }

@@ -5,69 +5,73 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>TRANSACTION</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"/>
-    <style>
-        #tableContainer {
-            width: 500px;
-            height: 500px;
-            overflow: auto;
-            float: left;
-        }
-        
-        #prodTable {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        #prodTable th,
-        #prodTable td {
-            border: 1px solid #000;
-            padding: 5px;
-        }
-        
-        .prodImage img {
-            width: 100px;
-            height: 100px;
-        }
-        #container {
-            width: 500px;
-            height: 600px;
-            float: left;
-        }
-        #cartContainer {
-            width: 500px;
-            height: 500px;
-            overflow: auto;
-        }
-        
-        #cart {
-            width: 100%;
-            height: 100%;
-        }
-        body {
-            border: 20px;
-        }
-    </style>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>  
 </head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-
-            <asp:Label ID="lblRole" runat="server" Text="Label"></asp:Label><br />
-            <asp:Label ID="lblUname" runat="server" Text="Label"></asp:Label><br />
-            <br />
-
-            <div id="tableContainer">
-                <asp:Table runat="server" ID="prodTable" CssClass="table">
-                <asp:TableHeaderRow>
-                    <asp:TableCell ID="prodImage"></asp:TableCell>
-                    <asp:TableCell ID="prodName">Name</asp:TableCell>
-                    <asp:TableCell ID="prodPrice">Price</asp:TableCell>
-                </asp:TableHeaderRow>
-            </asp:Table>
+<body style="background-image: url('../images/LandingPageBG.jpg'); background-size:cover ">
+    <form class="justify-content-center text-center" id="form1" runat="server">
+        <!-- Navigation Bar-->
+        <div class="container-md">
+            <div class="row bg-dark">
+                <div class="col-8">
+                    <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link disabled text-light mr-lg-1" style="font-size:xx-large; font-family:Broadway" href="#">OMG <span class="badge badge-pill badge-secondary">.co</span></a>
+                                <i class="fa-sharp fa-light fa-circle-user"></i>
+                            </li>
+                            <asp:Label runat="server" class="text-dark mt-4" style="font-size:20px" href="#">||||</asp:Label>
+                            <li class="nav-item">
+                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="Verify.aspx">Edit Profile</a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#shopProducts">Shop Products</a>
+                            </li> 
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col">
+                    <span class="badge badge-pill badge-primary mt-3 mr-4" style="font-size:x-large; font-family:'Century Gothic'">dashboard</span>
+                    <asp:Button id="Button3" runat="server" type="button" class="btn btn-outline-danger w-25 pt-2" OnClick="btnLogout_Click" Text="Log Out"/>
+                </div>
             </div>
-            <div id="container">
-                <div class="row label-container">
+        </div>
+        <div class="container-md bg-light border"> </div>
+        <div class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
+        <div class="container-md bg-trasnparent mb-3 pt-lg-5"> </div>
+
+        <!-- Main Content Page -->  
+        <div class="row justify-content-md-center mt-3 mb-2">
+            <span class="badge badge-pill badge-secondary mr-3" style="font-size:60px; font-family:'Century Gothic'">Welcome,</span>
+            <asp:Label class="text-white" id="lblUname" runat="server" style="font-size:60px; font-family:Tahoma; font-weight:bold">[Fname]</asp:Label>
+        </div>
+        <asp:Label class="text-warning mr-5" id="lblRole" runat="server" style="font-size:30px; font-family:'Century Gothic'; font-weight:bold">[role]</asp:Label>
+
+        <div class="row col-md-12 justify-content-center mt-3 mb-5">
+            <a class="badge badge-info mt-3 mr-3" style="font-size:25px" href="Verify.aspx">Edit Profile</a> <div class="w-100"></div>
+        </div>
+
+        <div class="row justify-content-center mb-5">
+            <asp:Label class="text-white" id="Label1" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">Start Shopping Now!</asp:Label>
+        </div>
+
+        <div class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
+        <div id="shopProducts" class="row bg-light">
+            <div class="col-6 text-center" style="font-family:'Century Gothic'">
+                <span class="badge badge-pill badge-secondary text mt-5" style="font-size:30px; font-family:Broadway ;font-weight:bold">Products</span>
+                <div class="container-md bg-dark pt-1 m-4"></div>
+                <asp:Table class="m-3" runat="server" ID="prodTable">
+                    <asp:TableHeaderRow style="font-family:Tahoma; font-size:20px">
+                        <asp:TableCell ID="prodImage"></asp:TableCell>
+                        <asp:TableCell ID="prodName">Product Name</asp:TableCell>
+                        <asp:TableCell ID="prodPrice">Price</asp:TableCell> 
+                    </asp:TableHeaderRow>
+                </asp:Table>
+            </div>
+
+            <div class="col-6 text-center">
+                <span class="badge badge-pill badge-primary text mt-5" style="font-size:30px; font-family:Broadway ;font-weight:bold">My Cart</span>
+                <div class="container-md bg-dark pt-1 m-4"></div>
+                <div class="row text-dark text-center mb-3" style="font-family:Tahoma; font-size:20px">
                     <div class="col-3">
                         <asp:Label runat="server">Name</asp:Label>
                     </div>
@@ -81,22 +85,36 @@
                         <asp:Label runat="server">Subtotal</asp:Label>
                     </div>
                 </div>
-                <div id="cartContainer">
-                    <asp:ListBox runat="server" ID="cart"></asp:ListBox>
+                <asp:ListBox class="w-100 h-25 text-center" runat="server" ID="cart" style="font-family:Tahoma; font-size:20px" ></asp:ListBox>
+
+                <div class="m-2">
+                    <asp:Label class="mb-5" runat="server" style="font-size:25px; font-family:'Century Gothic' ;font-weight:bold">Select product:</asp:Label>
+                    <asp:DropDownList class="form-control w-100" runat="server" ID="prodDdl"></asp:DropDownList>
+                    <div class="input-group-prepend mt-3">
+                        <asp:Label class="mt-1" id="quant" runat="server" style="font-size:20px; font-family:'Century Gothic' ;font-weight:bold">Quantity:</asp:Label>
+                        <asp:TextBox class="form-control w-25 ml-2 mr-4" runat="server" ID="qtyTxt" aria-describedby="quant"></asp:TextBox>
+                        <asp:Button id="addCartBtn" runat="server" type="button" class="btn btn-success w-25" OnClick="AddToCart" Text="Add To Cart" CausesValidation="false" AutoPostback = "false"/>
+                        <asp:Button id="removeCartBtn" runat="server" type="button" class="btn btn-outline-dark w-25 ml-3" OnClick="RemoveToCart" Text="Remove To Cart" CausesValidation="false"/>
+                    </div>
+                </div>     
+                <asp:RequiredFieldValidator class="text-danger" runat="server" ControlToValidate="qtyTxt" ErrorMessage="Quantity should be filled out." ></asp:RequiredFieldValidator><br />
+                
+                <div class="row m-2">
+                    <div class="col-6">
+                        <asp:Label class="text-secondary" runat="server" style="font-size:25px; font-family:Tahoma ;font-weight:bold">Total: PHP </asp:Label>
+                        <asp:Label class="text-dark" runat="server" ID="totalLbl" style="font-size:25px; font-family:Tahoma ;font-weight:bold">0.00</asp:Label>
+                    </div>
+                    <div class="col-6">
+                        <asp:Button id="transactBtn" runat="server" type="button" class="btn btn-dark w-50 h-100 p-3" OnClick="AddTransaction" Text="Confirm Order" CausesValidation="false"/>
+                    </div>
                 </div>
-                <div id="add-container">
-                    <asp:DropDownList runat="server" ID="prodDdl"></asp:DropDownList>
-                    <asp:TextBox runat="server" ID="qtyTxt"></asp:TextBox>
-                    <asp:Button runat="server" ID="addCartBtn" Text="Add To Cart" OnClick="AddToCart" CssClass="btn btn-primary"/>
-                    <asp:RequiredFieldValidator runat="server" ControlToValidate="qtyTxt" ErrorMessage="Quantity should be filled out." ValidationGroup="submitOrder"></asp:RequiredFieldValidator>
-                </div>
-                <asp:Label runat="server" ID="totalLbl">Total: 0.0</asp:Label>
-                <asp:Button runat="server" OnClick="RemoveToCart" ID="removeCartBtn" CssClass="btn btn-secondary" Text="Remove To Cart" CausesValidation="false"/>
-                <asp:Button runat="server" ID="transactBtn" OnClick="AddTransaction" CssClass="btn btn-success" Text="Make Order" ValidationGroup="submitOrder"/>
-                <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
-                <asp:Button ID="btnEditAcc" runat="server" Text="Edit My Account" OnClick="btnEditAcc_Click" />
             </div>
         </div>
+        <div class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
+        <div class="container-md bg-dark pt-5 text-center"></div>
     </form>
 </body>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </html>

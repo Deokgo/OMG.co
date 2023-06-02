@@ -62,7 +62,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="userPassword" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">Password:</span>
                     </div>
-                    <asp:TextBox id="txtPword" runat="server" type="password" placeholder="Enter your password..." class="form-control" aria-label="Default" aria-describedby="userPassword"></asp:TextBox>
+                    <asp:TextBox id="txtPword" runat="server" type="password" placeholder="Enter your password..." class="form-control w-25" aria-label="Default" aria-describedby="userPassword"></asp:TextBox>
                 </div>
             </div>
         </div>
