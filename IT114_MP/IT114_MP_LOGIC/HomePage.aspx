@@ -84,21 +84,36 @@
             </asp:Label>
             <div class="container-md bg-dark pt-5"></div>
         </div>
-        <div id="productsPage" class="container-md bg-secondary pt-5 text-center" style="opacity:.50"></div>
-        <div id="carouselProducts" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
+        <div id="productsPage" class="container-md bg-light text-center p-5"> 
+            <span class="badge badge-pill badge-dark text" style="font-size:50px; font-family:Broadway ;font-weight:bold">Our Products</span><br/>
+            <div id="carouselProducts" class="carousel slide mx-auto" data-ride="carousel">
                 <div class="carousel-item active">
-                    <asp:Image runat="server" class="d-block w-100" src="../images/LandingPageBG2.jpg" alt="First slide"></asp:Image>
+                     <asp:Image ID="imgView1" runat="server" class="w-50 mt-5" alt="First product" Height="350px"></asp:Image> <br />
+                     <asp:Label ID="prodName1"  class="text-dark mt-5" runat="server" style="font-size:40px; font-family:Broadway"></asp:Label> <br />
+                     <asp:Label ID="prodPrice1"  class="text-secondary mb-5" runat="server" style="font-size:20px; font-family:'Century Gothic'"></asp:Label>
                 </div>
                 <div class="carousel-item">
-                    <asp:Image runat="server" class="d-block w-100" src="../images/LandingPageBG3.jpg" alt="Second slide"></asp:Image>
-                </div>
+                    <asp:Image ID="imgView2" runat="server" class="w-50 mt-5" alt="First product" Height="350px"></asp:Image> <br />
+                    <asp:Label ID="prodName2"  class="text-dark mt-5" runat="server" style="font-size:40px; font-family:Broadway"></asp:Label>  <br />
+                    <asp:Label ID="prodPrice2"  class="text-secondary mb-5" runat="server" style="font-size:20px; font-family:'Century Gothic'"></asp:Label>
+                </div>  
                 <div class="carousel-item">
-                    <asp:Image runat="server" class="d-block w-100" src="../images/LandingPageBG.jpg" alt="Third slide"></asp:Image>
+                    <asp:Image ID="imgView3" runat="server" class="w-50 mt-5" alt="First product" Height="350px"></asp:Image> <br />
+                    <asp:Label ID="prodName3"  class="text-dark mt-5" runat="server" style="font-size:40px; font-family:Broadway"></asp:Label>  <br />
+                    <asp:Label ID="prodPrice3"  class="text-secondary mb-5" runat="server" style="font-size:20px; font-family:'Century Gothic'"></asp:Label>
                 </div>
             </div>
         </div>
-        <div id="contactUsPage" class="container-md bg-secondary pt-5 text-center" style="opacity:.50"></div>
+        <div id="contactUsPage" class="container-md bg-secondary pt-5 text-center" style="opacity:.75"></div>
+        <div class="container-md bg-dark text-center"> 
+            <span class="badge badge-pill badge-light text m-5" style="font-size:50px; font-family:Broadway ;font-weight:bold">Contact Us</span><br/>
+            <asp:Label class="text-white" runat="server" style="font-size:15px; font-family:'Century Gothic'">
+                [insert content]
+            </asp:Label>
+            <div class="container-md bg-dark pt-5"></div>
+        </div>
+        <div class="container-md bg-secondary pt-5 text-center" style="opacity:.75"></div>
+        <div class="container-md bg-dark pt-5"></div>
     </form>
 </body>
     <script src="js/jquery-3.3.1.min.js"></script>
