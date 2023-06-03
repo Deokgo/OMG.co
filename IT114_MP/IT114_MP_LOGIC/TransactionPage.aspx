@@ -21,9 +21,6 @@
                             </li>
                             <asp:Label runat="server" class="text-dark mt-4" style="font-size:20px" href="#">||||</asp:Label>
                             <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#editProf">Edit Profile</a>
-                            </li> 
-                            <li class="nav-item">
                                 <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#shopProducts">Shop Products</a>
                             </li> 
                         </ul>
@@ -40,18 +37,18 @@
         <div class="container-md bg-trasnparent pt-lg-5"> </div>
 
         <!-- Main Content Page -->  
-        <div class="row justify-content-md-center mt-3 mb-2">
-            <span class="badge badge-pill badge-secondary mr-3" style="font-size:60px; font-family:'Century Gothic'">Welcome,</span>
+        <div class="row justify-content-md-center ">
+            <span class="badge badge-pill badge-dark mr-3" style="font-size:60px; font-family:'Century Gothic'">Welcome,</span>
             <asp:Label class="text-white" id="lblUname" runat="server" style="font-size:60px; font-family:Tahoma; font-weight:bold">[Fname]</asp:Label>
         </div>
         <asp:Label class="text-warning" id="lblRole" runat="server" style="font-size:30px; font-family:'Century Gothic'; font-weight:bold">[role]</asp:Label>
 
         <div class="row justify-content-center mt-4 mb-5">
             <asp:Button id="btnEditMyAcc" runat="server" type="button" class="btn btn-outline-light w-25 pt-2" OnClick="btnEditAcc_Click" Text="Edit Profile"/><div class="w-100"></div>
-            <asp:Label class="text-white mt-5" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">Start Shopping Now!</asp:Label>
+            <asp:Label class="text-white mt-3" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">Start Shopping Now!</asp:Label>
         </div>
 
-        <div id="shopProducts" class="container-md bg-dark pt-5 text-center" style="opacity:.5; z-index:-1; position:relative"></div>
+        <div id="shopProducts" class="container-md bg-light pt-5 text-center" style="opacity:.25; z-index:-1; position:relative"></div>
         <div class="row bg-light" style="z-index:-1; position:relative">
             <div class="col-6 text-center" style="font-family:'Century Gothic'">
                 <span class="badge badge-pill badge-secondary text mt-5" style="font-size:30px; font-family:Broadway ;font-weight:bold">Products</span>
@@ -107,7 +104,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
+        <div class="container-md bg-light pt-5 text-center" style="opacity:.25"></div>
         <div class="container-md bg-dark pt-5 text-center"></div>
     </form>
 </body>

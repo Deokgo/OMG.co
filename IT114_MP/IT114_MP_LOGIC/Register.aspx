@@ -144,7 +144,7 @@
         </div>  
         <div class="container-md bg-trasnparent pt-lg-1"> </div>
         <div class="container-md bg-trasnparent pt-lg-1"> </div>
-        <div class="container-md bg-dark mt-3 pt-5 text-center" style="opacity:.75"></div>
+        <div class="container-md bg-light mt-3 pt-5 text-center" style="opacity:.25"></div>
     </form>
 </body>
     <script src="js/jquery-3.3.1.min.js"></script>

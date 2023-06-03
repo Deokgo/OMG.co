@@ -65,10 +65,10 @@
             <asp:Label class="text-light m-5" runat="server" style="font-size:20px; font-family:'Century Gothic'">
                 Oh my, oh my God 예상했어 나 I was really hoping that he will come through <br/>
                 Oh my, oh my God 단 너뿐이야 Asking all the time about what I do
-            </asp:Label>  
+            </asp:Label>    
         </div>
-        <div id="aboutUsPage" class="container-md bg-light pt-5"></div>
-        <div class="container-md bg-secondary text-center"> 
+        <div id="aboutUsPage" class="container-md bg-light pt-lg-5" style="opacity:.25; z-index:-1; position:relative"></div>
+        <div class="container-md bg-dark text-center pt-4"> 
             <span class="badge badge-pill badge-light text m-5" style="font-size:50px; font-family:Broadway ;font-weight:bold">ABOUT US</span><br/>
             <asp:Label class="text-white" runat="server" style="font-size:17px; font-family:'Century Gothic'">
                 OMG.co Shop is an innovative and vibrant online retail destination that caters to individuals <br/>
@@ -83,9 +83,8 @@
                 With secure and streamlined checkout processes, reliable shipping options, and responsive customer <br/>
                 support, they prioritize delivering a seamless shopping journey from start to finish.
             </asp:Label>
-            <div class="container-md bg-secondary pt-5"></div>
         </div>
-        <div id="productsPage" class="container-md bg-secondary p-4"></div>
+        <div id="productsPage" class="container-md bg-dark pt-lg-5"></div>
         <div class="container-md bg-light text-center p-5" style="z-index:-1; position:relative"> 
             <span class="badge badge-pill badge-dark text" style="font-size:50px; font-family:Broadway ;font-weight:bold">Our Products</span><br/>
             <div id="carouselProducts" class="carousel slide mx-auto" data-ride="carousel">
@@ -106,15 +105,15 @@
                 </div>
             </div>
         </div>
-        <div id="contactUsPage" class="container-md bg-secondary pt-5 text-center" style="opacity:.75"></div>
-        <div class="container-md bg-secondary text-center"> 
+        <div id="contactUsPage" class="container-md bg-light pt-5 text-center" style="opacity:.25"></div>
+        <div class="container-md bg-dark text-center"> 
             <span class="badge badge-pill badge-light text m-5" style="font-size:50px; font-family:Broadway ;font-weight:bold">Contact Us</span><br/>
             <asp:Label class="text-white" runat="server" style="font-size:15px; font-family:'Century Gothic'">
                 [insert content]
             </asp:Label>
-            <div class="container-md bg-secondary pt-5"></div>
+            <div class="container-md bg-dark pt-5"></div>
         </div>
-        <div class="container-md bg-secondary pt-5 text-center" style="opacity:.75"></div>
+        <div class="container-md bg-light pt-5 text-center" style="opacity:.25"></div>
         <div class="container-md bg-dark pt-5"></div>
     </form>
 </body>
