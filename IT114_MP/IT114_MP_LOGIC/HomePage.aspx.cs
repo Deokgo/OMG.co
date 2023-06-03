@@ -7,6 +7,7 @@ namespace IT114_MP_LOGIC
     {
         MySqlDataReader rdr;
         string[] products;
+        string[] images;
         string[] prices;
         int prod1, prod2, prod3;
         protected void Page_Load(object sender, EventArgs e)
@@ -14,15 +15,17 @@ namespace IT114_MP_LOGIC
             DatabaseClass db = new DatabaseClass();
             Random rnd = new Random();
             rdr = db.getRec("Select * from prod_info_tbl where prod_status='available';");
+
             products = new string[(rdr.FieldCount) - 1];
+            images = new string[(rdr.FieldCount) - 1];
             prices = new string[(rdr.FieldCount) - 1];
+
             for (int i = 0; i < (rdr.FieldCount) - 1; i++)
             {
                 rdr.Read();
-                string product = rdr["prod_name"].ToString();
-                string price = rdr["prod_price"].ToString();
-                products[i] = product;
-                prices[i] = price;
+                products[i] = rdr["prod_name"].ToString();
+                prices[i] = rdr["prod_price"].ToString();
+                images[i] = rdr["prod_photo"].ToString();
             }
             prod1 = rnd.Next(products.Length);
             prod2 = rnd.Next(products.Length);
@@ -30,16 +33,18 @@ namespace IT114_MP_LOGIC
 
             if (prod1 == prod2)
             { prod2 = rnd.Next(products.Length); }
-            if (prod1 == prod3 || prod2 == prod3)
+            if (prod2 == prod3)
             { prod3 = rnd.Next(products.Length); }
+            if (prod1 == prod3)
+            { prod1 = rnd.Next(products.Length); }
 
-            imgView1.ImageUrl = "~/images/" + products[prod1].ToString() + ".png";
+            imgView1.ImageUrl = images[prod1].ToString();
             prodName1.Text = products[prod1].ToString();
             prodPrice1.Text = Convert.ToInt32(prices[prod1]).ToString("N");
-            imgView2.ImageUrl = "~/images/" + products[prod2].ToString() + ".png";
+            imgView2.ImageUrl = images[prod2].ToString();
             prodName2.Text = products[prod2].ToString();
             prodPrice2.Text = Convert.ToInt32(prices[prod2]).ToString("N");
-            imgView3.ImageUrl = "~/images/" + products[prod3].ToString() + ".png";
+            imgView3.ImageUrl = images[prod3].ToString();
             prodName3.Text = products[prod3].ToString();
             prodPrice3.Text = Convert.ToInt32(prices[prod3]).ToString("N");
         }
