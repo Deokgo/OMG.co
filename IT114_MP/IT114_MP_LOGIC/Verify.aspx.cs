@@ -26,9 +26,11 @@ namespace IT114_MP_LOGIC
                 reader.Read();
                 string role = reader["role"].ToString();
                 string uname = reader["uname"].ToString();
+                string page = Session["page"].ToString();
 
                 Session["role"] = role;
                 Session["uname"] = uname;
+                Session["page"] = page;
                 Response.Redirect("EditMyAccount.aspx");
             }
             else
@@ -41,7 +43,7 @@ namespace IT114_MP_LOGIC
         protected void btnBack_Click(object sender, EventArgs e)
         {
 
-            Response.Redirect("TransactionPage.aspx");
+            Response.Redirect(Session["page"].ToString());
         }
     }
 }

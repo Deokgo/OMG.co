@@ -73,30 +73,37 @@ namespace IT114_MP_LOGIC
             string prodName = prodDdl.SelectedItem.Text;
             string prodId = prodDdl.SelectedItem.Value;
             dr = db.getRec("SELECT * FROM prod_info_tbl WHERE prod_id=" + prodId + ";");
-            if (dr.Read())
+            try
             {
-                double price = Convert.ToInt32(dr["prod_price"]);
-                int prodQty = Convert.ToInt32(qtyTxt.Text);
-                double subtotal = price * prodQty;
-                ListItem cartItem = new ListItem();
-                // Add the item details as text to the cartItem
-                cartItem.Text = prodName + "                  " + price.ToString() + "                     " + prodQty.ToString() + "                       " + subtotal.ToString();
-                // Set the value of the cartItem
-                cartItem.Value = prodId + "-" + prodQty.ToString() + "-" + price.ToString();
-
-                cart.Items.Add(cartItem);
-                Session["total"] = 0.0;
-                foreach (ListItem item in cart.Items)
+                if (dr.Read())
                 {
-                    string[] itemList = item.Value.Split('-');
-                    prodId = itemList[0];
-                    prodQty = int.Parse(itemList[1]);
-                    double prodPrice = double.Parse(itemList[2]);
+                    double price = Convert.ToInt32(dr["prod_price"]);
+                    int prodQty = Convert.ToInt32(qtyTxt.Text);
+                    double subtotal = price * prodQty;
+                    ListItem cartItem = new ListItem();
+                    // Add the item details as text to the cartItem
+                    cartItem.Text = prodName + "                  " + price.ToString() + "                     " + prodQty.ToString() + "                       " + subtotal.ToString();
+                    // Set the value of the cartItem
+                    cartItem.Value = prodId + "-" + prodQty.ToString() + "-" + price.ToString();
 
-                    subtotal = prodQty * prodPrice;
-                    Session["total"] = (double)Session["total"] + subtotal;
+                    cart.Items.Add(cartItem);
+                    Session["total"] = 0.0;
+                    foreach (ListItem item in cart.Items)
+                    {
+                        string[] itemList = item.Value.Split('-');
+                        prodId = itemList[0];
+                        prodQty = int.Parse(itemList[1]);
+                        double prodPrice = double.Parse(itemList[2]);
+
+                        subtotal = prodQty * prodPrice;
+                        Session["total"] = (double)Session["total"] + subtotal;
+                    }
+                    totalLbl.Text = Convert.ToInt32(Session["total"]).ToString("N");
                 }
-                totalLbl.Text = Convert.ToInt32(Session["total"]).ToString("N");
+            }
+            catch
+            {
+                Response.Write("<script>alert('Quantity should be integer.')</script>");
             }
         }
         protected void RemoveToCart(object sender, EventArgs e)
@@ -138,6 +145,7 @@ namespace IT114_MP_LOGIC
 
                     db.insDelUp(query);
                 }
+                Response.Write("<script>alert('Order transaction success!')</script>");
                 cart.Items.Clear();
                 qtyTxt.Text = "";
                 Session["total"] = 0;

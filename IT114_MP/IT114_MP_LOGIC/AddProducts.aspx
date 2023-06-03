@@ -81,15 +81,15 @@
             <div class="custom-file">
                 <asp:FileUpload ID="fuPicture" CssClass="form-control-file" runat="server" Width="312px" />
             </div>
-            <asp:Button ID="btnUploadPic" CssClass="btn btn-outline-dark text-center" runat="server" Text="Upload" Width="126px"/>
+            <asp:Button ID="btnUploadPic" CssClass="btn btn-outline-dark text-center" runat="server" Text="Upload" Width="126px" OnClick="btnUploadPic_Click"/>
         </div>
     </div>
     </div>
    
     <div class="container my-5">
         <div class="col-md-12 text-center">
-            <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add" />
-            <asp:Button ID="btnBack" CssClass="btn btn-outline-dark" runat="server" Text="Back"  />
+            <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add" OnClick="btnAdd_Click" />
+            <asp:Button ID="btnBack" CssClass="btn btn-outline-dark" runat="server" Text="Back" OnClick="btnBack_Click"/>
         </div>
     </div>
     </form>

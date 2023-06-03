@@ -6,6 +6,12 @@
 <head runat="server">
     <title>TRANSACTION</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>  
+    <style type="text/css">
+        .auto-style1 {
+            left: 0px;
+            top: 1px;
+        }
+    </style>
 </head>
 <body style="background-image: url('../images/LandingPageBG.jpg'); background-size:cover ">
     <form class="justify-content-center text-center" id="form1" runat="server">
@@ -31,7 +37,8 @@
                 </div>
                 <div class="col">
                     <span class="badge badge-pill badge-primary mt-3 mr-4" style="font-size:x-large; font-family:'Century Gothic'">dashboard</span>
-                    <asp:Button id="Button3" runat="server" type="button" class="btn btn-outline-danger w-25 pt-2" OnClick="btnLogout_Click" Text="Log Out"/>
+                    <asp:Button id="btnLogout" runat="server" type="button" class="btn btn-outline-danger w-25 pt-2" OnClick="btnLogout_Click" Text="Log Out"/>
+                    
                 </div>
             </div>
         </div>
@@ -45,9 +52,10 @@
             <asp:Label class="text-white" id="lblUname" runat="server" style="font-size:60px; font-family:Tahoma; font-weight:bold">[Fname]</asp:Label>
         </div>
         <asp:Label class="text-warning mr-5" id="lblRole" runat="server" style="font-size:30px; font-family:'Century Gothic'; font-weight:bold">[role]</asp:Label>
-
-        <div class="row col-md-12 justify-content-center mt-3 mb-5">
-            <a class="badge badge-info mt-3 mr-3" style="font-size:25px" href="Verify.aspx">Edit Profile</a> <div class="w-100"></div>
+        
+        <div class="auto-style1">
+            <asp:Button ID="btnEditMyAcc" runat="server" Text="Edit Profile" type="button" class="btn btn-info" OnClick="btnEditAcc_Click" Height="35px" Width="145px" />
+            <div class="w-100"></div>
         </div>
 
         <div class="row justify-content-center mb-5">
@@ -93,11 +101,11 @@
                     <div class="input-group-prepend mt-3">
                         <asp:Label class="mt-1" id="quant" runat="server" style="font-size:20px; font-family:'Century Gothic' ;font-weight:bold">Quantity:</asp:Label>
                         <asp:TextBox class="form-control w-25 ml-2 mr-4" runat="server" ID="qtyTxt" aria-describedby="quant"></asp:TextBox>
-                        <asp:Button id="addCartBtn" runat="server" type="button" class="btn btn-success w-25" OnClick="AddToCart" Text="Add To Cart" CausesValidation="false" AutoPostback = "false"/>
+                        <asp:Button id="addCartBtn" runat="server" type="button" class="btn btn-success w-25" OnClick="AddToCart" Text="Add To Cart" ValidationGroup="submitOrder" AutoPostback = "false"/>
                         <asp:Button id="removeCartBtn" runat="server" type="button" class="btn btn-outline-dark w-25 ml-3" OnClick="RemoveToCart" Text="Remove To Cart" CausesValidation="false"/>
                     </div>
                 </div>     
-                <asp:RequiredFieldValidator class="text-danger" runat="server" ControlToValidate="qtyTxt" ErrorMessage="Quantity should be filled out." ></asp:RequiredFieldValidator><br />
+                <asp:RequiredFieldValidator class="text-danger" runat="server" ControlToValidate="qtyTxt" ErrorMessage="Quantity should be filled out." ValidationGroup="submitOrder" ></asp:RequiredFieldValidator><br />
                 
                 <div class="row m-2">
                     <div class="col-6">
