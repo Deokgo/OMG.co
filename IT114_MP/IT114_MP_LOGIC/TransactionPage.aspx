@@ -27,7 +27,7 @@
                             </li>
                             <asp:Label runat="server" class="text-dark mt-4" style="font-size:20px" href="#">||||</asp:Label>
                             <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="Verify.aspx">Edit Profile</a>
+                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#editProf">Edit Profile</a>
                             </li> 
                             <li class="nav-item">
                                 <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#shopProducts">Shop Products</a>
@@ -53,7 +53,7 @@
         </div>
         <asp:Label class="text-warning mr-5" id="lblRole" runat="server" style="font-size:30px; font-family:'Century Gothic'; font-weight:bold">[role]</asp:Label>
         
-        <div class="auto-style1">
+        <div class="auto-style1" id="editProf">
             <asp:Button ID="btnEditMyAcc" runat="server" Text="Edit Profile" type="button" class="btn btn-info" OnClick="btnEditAcc_Click" Height="35px" Width="145px" />
             <div class="w-100"></div>
         </div>
