@@ -27,28 +27,35 @@ namespace IT114_MP_LOGIC
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            Validation vd = new Validation();
-            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-            string prodName = textInfo.ToTitleCase(txtSearch.Text.Trim());
-
-            DatabaseClass search = new DatabaseClass();
-            MySqlDataReader reader = search.getRec("SELECT * FROM prod_info_tbl where prod_name='" + prodName + "' OR prod_id='" + txtSearch.Text + "';");
-
-            if (reader.HasRows)
+            if(txtSearch.Text == "")
             {
-                reader.Read();
-                txtProdName.Text = reader["prod_name"].ToString();
-                txtPrice.Text = reader["prod_price"].ToString();
-                imgProd.ImageUrl = reader["prod_photo"].ToString();
-
-                if (!(vd.CheckIfNullDesc(reader["description"])))
-                {
-                    txtDesc.Text = reader["description"].ToString();
-                }
-
-                ddlStatus.SelectedValue = reader["prod_status"].ToString();
+                Response.Write("<script>alert('Search field is required. Please put something.')</script>");
             }
-            search.connectionclose();
+            else
+            {
+                Validation vd = new Validation();
+                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+                string prodName = textInfo.ToTitleCase(txtSearch.Text.Trim());
+
+                DatabaseClass search = new DatabaseClass();
+                MySqlDataReader reader = search.getRec("SELECT * FROM prod_info_tbl where prod_name='" + prodName + "' OR prod_id='" + txtSearch.Text + "';");
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    txtProdName.Text = reader["prod_name"].ToString();
+                    txtPrice.Text = reader["prod_price"].ToString();
+                    imgProd.ImageUrl = reader["prod_photo"].ToString();
+
+                    if (!(vd.CheckIfNullDesc(reader["description"])))
+                    {
+                        txtDesc.Text = reader["description"].ToString();
+                    }
+
+                    ddlStatus.SelectedValue = reader["prod_status"].ToString();
+                }
+                search.connectionclose();
+            }
         }
 
         protected void btnUploadPic_Click(object sender, EventArgs e)

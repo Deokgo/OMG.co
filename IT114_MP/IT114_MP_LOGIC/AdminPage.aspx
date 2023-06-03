@@ -69,7 +69,8 @@
         <div id="manageEmpInfo" class="container-md bg-dark pt-5 text-center" style="opacity:.5;  z-index:-1; position:relative"></div>
         <div class="container-md bg-dark text-center pb-5"> 
             <span class="badge badge-pill badge-light text m-5" style="font-size:40px; font-family:Broadway ;font-weight:bold">Employee Information</span><br/>
-            <asp:Button id="Button5" runat="server" type="button" class="btn btn-outline-light mt-5" OnClick="btnEditMyAcc_Click" Text="Add Employee Account" width="200px" height="50px"/><div class="w-100"></div>
+            <asp:Button id="btnAddAcc" runat="server" type="button" class="btn btn-outline-light mt-5" Text="Add Employee Account" width="210px" height="50px" OnClick="btnAddAcc_Click"/><div class="w-100"></div>
+            <asp:Button id="btnUpdateAcc" runat="server" type="button" class="btn btn-outline-light mt-5" Text="Update Employee Account" width="210px" height="50px" OnClick="btnUpdateAcc_Click" /><div class="w-100"></div>
         </div>
 
         <div id="manageProdInfo" class="container-md bg-dark pt-5 text-center" style="opacity:.5;  z-index:-1; position:relative"></div>

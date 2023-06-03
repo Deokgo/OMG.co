@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddAccount.aspx" />
     <Content Include="AddProducts.aspx" />
     <Content Include="AdminPage.aspx" />
     <Content Include="css\bootstrap-grid.css" />
@@ -99,12 +100,20 @@
     <Content Include="ReportPage.aspx" />
     <Content Include="SalesReport.aspx" />
     <Content Include="TransactionPage.aspx" />
+    <Content Include="UpdateAccount.aspx" />
     <Content Include="UpdateProducts.aspx" />
     <Content Include="Verify.aspx" />
     <Content Include="ViewProducts.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAccount.aspx.cs">
+      <DependentUpon>AddAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddAccount.aspx.designer.cs">
+      <DependentUpon>AddAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddProducts.aspx.cs">
       <DependentUpon>AddProducts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -183,6 +192,13 @@
     </Compile>
     <Compile Include="TransactionPage.aspx.designer.cs">
       <DependentUpon>TransactionPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAccount.aspx.cs">
+      <DependentUpon>UpdateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAccount.aspx.designer.cs">
+      <DependentUpon>UpdateAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateProducts.aspx.cs">
       <DependentUpon>UpdateProducts.aspx</DependentUpon>

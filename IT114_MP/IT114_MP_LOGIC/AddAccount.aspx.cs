@@ -8,16 +8,16 @@ using System.Web.UI.WebControls;
 
 namespace IT114_MP_LOGIC
 {
-    public partial class Register : System.Web.UI.Page
+    public partial class AddAccount : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
-        protected void btnRegister_Click(object sender, EventArgs e)
+        protected void btnAddUser_Click(object sender, EventArgs e)
         {
-            if(txtPword.Text == txtPwordConfirm.Text)
+            if (txtPword.Text == txtConfirmPword.Text)
             {
                 string username = txtUname.Text;
 
@@ -34,7 +34,7 @@ namespace IT114_MP_LOGIC
                     string fname = txtFname.Text;
                     string lname = txtLname.Text;
                     string pword = txtPword.Text;
-                    string role = "customer";
+                    string role = ddlRole.SelectedValue;
                     string acc_state = "enabled";
                     string email = txtEmail.Text;
 
@@ -50,8 +50,9 @@ namespace IT114_MP_LOGIC
                         txtLname.Text = "";
                         txtUname.Text = "";
                         txtPword.Text = "";
-                        txtPwordConfirm.Text = "";
+                        txtConfirmPword.Text = "";
                         txtEmail.Text = "";
+                        ddlRole.SelectedValue = "";
 
                         Response.Write("<script>alert('Account created successfully!')</script>");
                     }
@@ -71,7 +72,7 @@ namespace IT114_MP_LOGIC
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("HomePage.aspx");
+            Response.Redirect("AdminPage.aspx");
         }
     }
 }

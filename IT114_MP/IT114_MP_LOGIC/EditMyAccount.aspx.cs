@@ -20,6 +20,11 @@ namespace IT114_MP_LOGIC
                 lblUname.Text = Session["uname"].ToString(); // test if the uname is being passed
                 txtUname.Enabled = false;
 
+                if (lblRole.Text == "admin")
+                {
+                    ddlAccStat.Enabled = false;
+                }
+
                 DatabaseClass db = new DatabaseClass();
                 MySqlDataReader reader1 = db.getRec("SELECT * FROM user_info_tbl where uname='" + lblUname.Text + "';");
                 MySqlDataReader reader2 = db.getRec("SELECT * FROM acc_info_tbl where uname='" + lblUname.Text + "';");

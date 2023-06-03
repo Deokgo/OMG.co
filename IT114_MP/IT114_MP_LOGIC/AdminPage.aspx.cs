@@ -43,5 +43,15 @@ namespace IT114_MP_LOGIC
         {
             Response.Redirect("ViewProducts.aspx");
         }
+
+        protected void btnAddAcc_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddAccount.aspx");
+        }
+
+        protected void btnUpdateAcc_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("UpdateAccount.aspx");
+        }
     }
 }
