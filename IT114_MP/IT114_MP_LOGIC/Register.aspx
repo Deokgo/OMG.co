@@ -10,7 +10,7 @@
 <body style="background-image: url('../images/LandingPageBG.jpg'); background-size:cover ">
     <form class="justify-content-center" runat="server"> 
         <!-- Navigation Bar-->
-        <div class="container-md">
+        <div class="container-md" style="position:fixed; top:0; width:100%">
             <div class="row bg-dark">
                 <div class="col-8">
                     <nav class="navbar navbar-expand-sm bg-dark navbar-light">
@@ -38,8 +38,9 @@
                     </nav>
                 </div>
             </div>
+            <div class="container-md bg-light border pt-lg-1"> </div>
         </div>
-        <div class="container-md bg-light border"> </div>
+        <div class="container-md bg-light border pt-lg-4 mb-5"> </div>
         <div class="container-md bg-trasnparent pt-lg-4"> </div>
 
         <!-- Content Page-->

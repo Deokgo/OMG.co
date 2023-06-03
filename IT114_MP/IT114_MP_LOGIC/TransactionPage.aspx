@@ -10,7 +10,7 @@
 <body style="background-image: url('../images/LandingPageBG.jpg'); background-size:cover ">
     <form class="justify-content-center text-center" id="form1" runat="server">
         <!-- Navigation Bar-->
-        <div class="container-md">
+        <div class="container-md" style="position:fixed; top:0; width:100%">
             <div class="row bg-dark">
                 <div class="col-8">
                     <nav class="navbar navbar-expand-sm bg-dark navbar-light">
@@ -34,10 +34,10 @@
                     <asp:Button id="btnLogout" runat="server" type="button" class="btn btn-outline-danger w-25 pt-2" OnClick="btnLogout_Click" Text="Log Out"/>                   
                 </div>
             </div>
-        </div>
-        <div class="container-md bg-light border"> </div>
-        <div class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
-        <div class="container-md bg-trasnparent mb-3 pt-lg-5"> </div>
+            <div class="container-md bg-light border pt-lg-1"> </div>
+        </div>  
+        <div class="container-md bg-light border mb-5 pt-lg-5"> </div>
+        <div class="container-md bg-trasnparent pt-lg-5"> </div>
 
         <!-- Main Content Page -->  
         <div class="row justify-content-md-center mt-3 mb-2">
@@ -51,8 +51,8 @@
             <asp:Label class="text-white mt-5" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">Start Shopping Now!</asp:Label>
         </div>
 
-        <div class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
-        <div id="shopProducts" class="row bg-light">
+        <div id="shopProducts" class="container-md bg-dark pt-5 text-center" style="opacity:.5; z-index:-1; position:relative"></div>
+        <div class="row bg-light" style="z-index:-1; position:relative">
             <div class="col-6 text-center" style="font-family:'Century Gothic'">
                 <span class="badge badge-pill badge-secondary text mt-5" style="font-size:30px; font-family:Broadway ;font-weight:bold">Products</span>
                 <div class="container-md bg-dark pt-1 m-4"></div>

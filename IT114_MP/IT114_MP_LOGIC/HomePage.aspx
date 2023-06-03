@@ -48,6 +48,7 @@
                     </div>
                 </div>
             </div>
+            <div class="container-md bg-light border pt-lg-1"> </div>
         </div>
         <div class="container-md bg-light border pt-lg-4 mt-5"> </div>
         <div class="container-md bg-trasnparent pt-lg-4"> </div>
@@ -84,21 +85,22 @@
             </asp:Label>
             <div class="container-md bg-secondary pt-5"></div>
         </div>
-        <div id="productsPage" class="container-md bg-light text-center p-5" style="z-index:-1; position:relative"> 
+        <div id="productsPage" class="container-md bg-secondary p-4"></div>
+        <div class="container-md bg-light text-center p-5" style="z-index:-1; position:relative"> 
             <span class="badge badge-pill badge-dark text" style="font-size:50px; font-family:Broadway ;font-weight:bold">Our Products</span><br/>
             <div id="carouselProducts" class="carousel slide mx-auto" data-ride="carousel">
                 <div class="carousel-item active position-sticky">
-                     <asp:Image ID="imgView1" runat="server" class="w-50 mt-5" alt="First product" Height="350px"></asp:Image> <br />
+                     <asp:Image ID="imgView1" runat="server" class="w-50 mt-5" alt="First product" Height="320px"></asp:Image> <br />
                      <asp:Label ID="prodName1"  class="text-dark mt-5" runat="server" style="font-size:40px; font-family:Broadway"></asp:Label> <br />
                      <asp:Label ID="prodPrice1"  class="text-secondary mb-5" runat="server" style="font-size:20px; font-family:'Century Gothic'"></asp:Label>
                 </div>
                 <div class="carousel-item">
-                    <asp:Image ID="imgView2" runat="server" class="w-50 mt-5" alt="First product" Height="350px"></asp:Image> <br />
+                    <asp:Image ID="imgView2" runat="server" class="w-50 mt-5" alt="First product" Height="320px"></asp:Image> <br />
                     <asp:Label ID="prodName2"  class="text-dark mt-5" runat="server" style="font-size:40px; font-family:Broadway"></asp:Label>  <br />
                     <asp:Label ID="prodPrice2"  class="text-secondary mb-5" runat="server" style="font-size:20px; font-family:'Century Gothic'"></asp:Label>
                 </div>  
                 <div class="carousel-item">
-                    <asp:Image ID="imgView3" runat="server" class="w-50 mt-5" alt="First product" Height="350px"></asp:Image> <br />
+                    <asp:Image ID="imgView3" runat="server" class="w-50 mt-5" alt="First product" Height="320px"></asp:Image> <br />
                     <asp:Label ID="prodName3"  class="text-dark mt-5" runat="server" style="font-size:40px; font-family:Broadway"></asp:Label>  <br />
                     <asp:Label ID="prodPrice3"  class="text-secondary mb-5" runat="server" style="font-size:20px; font-family:'Century Gothic'"></asp:Label>
                 </div>

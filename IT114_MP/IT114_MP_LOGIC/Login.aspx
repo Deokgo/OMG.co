@@ -39,7 +39,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-md bg-light border"> </div>
+        <div class="container-md bg-light border pt-1"> </div>
         <div class="container-md bg-trasnparent pt-lg-4"> </div>
 
         <!-- Content Page-->
