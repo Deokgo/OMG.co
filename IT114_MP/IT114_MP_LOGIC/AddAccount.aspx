@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-          <nav class="navbar navbar-expand-sm navbar-light bg-dark">
+          <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-dark">
       <!-- Brand/logo -->
         <asp:Label class="text-white navbar-brand" runat="server" style="font-size:40px; font-family:Broadway ;font-weight:bold">OMG <span class="badge badge-pill badge-secondary text">.co</span></asp:Label>
 
@@ -37,7 +37,7 @@
             <asp:Button ID="logOut" CssClass="bg-danger text-light font-weight-bold rounded p-1" runat="server" Text="Log Out" />
         </ul>
     </nav>
-    <div class="container-fluid m-lg-5">
+    <div class="container-fluid m-xl-5 p-xl-5">
         <div class="container col-5 m-lg-auto bg-light p-lg-5 my-5">
             <div class="form-group mx-5 text-center">
                 <asp:Label ID="Label7" runat="server" CssClass="h3" Text="Create User Account"></asp:Label>
@@ -98,8 +98,9 @@
         </div>
     </div>
     </form>
-</body>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+</body>
+    
 </html>
