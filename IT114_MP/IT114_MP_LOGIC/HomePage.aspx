@@ -10,7 +10,7 @@
 <body style="background-image: url('../images/LandingPageBG.jpg'); background-size:contain">
     <form class="justify-content-center" runat="server"> 
         <!-- Navigation Bar-->
-        <div class="container-md">
+        <div class="container-md" style="position:fixed; top:0; width:100%">
             <div class="row bg-dark">
                 <div class="col-8">
                     <nav class="navbar navbar-expand-sm bg-dark navbar-light">
@@ -66,7 +66,7 @@
                 Oh my, oh my God 단 너뿐이야 Asking all the time about what I do
             </asp:Label>  
         </div>
-        <div id="aboutUsPage" class="container-md bg-secondary pt-5 text-center" style="opacity:.75"></div>
+        <div id="aboutUsPage" class="container-md bg-secondary pt-5" style="opacity:.75;"></div>
         <div class="container-md bg-dark text-center"> 
             <span class="badge badge-pill badge-light text m-5" style="font-size:50px; font-family:Broadway ;font-weight:bold">ABOUT US</span><br/>
             <asp:Label class="text-white" runat="server" style="font-size:17px; font-family:'Century Gothic'">
@@ -84,10 +84,10 @@
             </asp:Label>
             <div class="container-md bg-dark pt-5"></div>
         </div>
-        <div id="productsPage" class="container-md bg-light text-center p-5"> 
+        <div id="productsPage" class="container-md bg-light text-center p-5" style="z-index:-1; position:relative"> 
             <span class="badge badge-pill badge-dark text" style="font-size:50px; font-family:Broadway ;font-weight:bold">Our Products</span><br/>
             <div id="carouselProducts" class="carousel slide mx-auto" data-ride="carousel">
-                <div class="carousel-item active">
+                <div class="carousel-item active position-sticky">
                      <asp:Image ID="imgView1" runat="server" class="w-50 mt-5" alt="First product" Height="350px"></asp:Image> <br />
                      <asp:Label ID="prodName1"  class="text-dark mt-5" runat="server" style="font-size:40px; font-family:Broadway"></asp:Label> <br />
                      <asp:Label ID="prodPrice1"  class="text-secondary mb-5" runat="server" style="font-size:20px; font-family:'Century Gothic'"></asp:Label>
