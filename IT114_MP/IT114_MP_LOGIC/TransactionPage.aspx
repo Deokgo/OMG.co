@@ -6,12 +6,6 @@
 <head runat="server">
     <title>TRANSACTION</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>  
-    <style type="text/css">
-        .auto-style1 {
-            left: 0px;
-            top: 1px;
-        }
-    </style>
 </head>
 <body style="background-image: url('../images/LandingPageBG.jpg'); background-size:cover ">
     <form class="justify-content-center text-center" id="form1" runat="server">
@@ -37,8 +31,7 @@
                 </div>
                 <div class="col">
                     <span class="badge badge-pill badge-primary mt-3 mr-4" style="font-size:x-large; font-family:'Century Gothic'">dashboard</span>
-                    <asp:Button id="btnLogout" runat="server" type="button" class="btn btn-outline-danger w-25 pt-2" OnClick="btnLogout_Click" Text="Log Out"/>
-                    
+                    <asp:Button id="btnLogout" runat="server" type="button" class="btn btn-outline-danger w-25 pt-2" OnClick="btnLogout_Click" Text="Log Out"/>                   
                 </div>
             </div>
         </div>
@@ -51,15 +44,11 @@
             <span class="badge badge-pill badge-secondary mr-3" style="font-size:60px; font-family:'Century Gothic'">Welcome,</span>
             <asp:Label class="text-white" id="lblUname" runat="server" style="font-size:60px; font-family:Tahoma; font-weight:bold">[Fname]</asp:Label>
         </div>
-        <asp:Label class="text-warning mr-5" id="lblRole" runat="server" style="font-size:30px; font-family:'Century Gothic'; font-weight:bold">[role]</asp:Label>
-        
-        <div class="auto-style1" id="editProf">
-            <asp:Button ID="btnEditMyAcc" runat="server" Text="Edit Profile" type="button" class="btn btn-info" OnClick="btnEditAcc_Click" Height="35px" Width="145px" />
-            <div class="w-100"></div>
-        </div>
+        <asp:Label class="text-warning" id="lblRole" runat="server" style="font-size:30px; font-family:'Century Gothic'; font-weight:bold">[role]</asp:Label>
 
-        <div class="row justify-content-center mb-5">
-            <asp:Label class="text-white" id="Label1" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">Start Shopping Now!</asp:Label>
+        <div class="row justify-content-center mt-4 mb-5">
+            <asp:Button id="btnEditMyAcc" runat="server" type="button" class="btn btn-outline-light w-25 pt-2" OnClick="btnEditAcc_Click" Text="Edit Profile"/><div class="w-100"></div>
+            <asp:Label class="text-white mt-5" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">Start Shopping Now!</asp:Label>
         </div>
 
         <div class="container-md bg-dark pt-5 text-center" style="opacity:.5"></div>
