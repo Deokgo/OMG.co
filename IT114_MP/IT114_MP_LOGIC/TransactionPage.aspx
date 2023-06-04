@@ -34,7 +34,7 @@
             <div class="container-md bg-light border pt-lg-1"> </div>
         </div>  
         <div class="container-md bg-light border mb-5 pt-lg-5"> </div>
-        <div class="container-md bg-trasnparent pt-lg-5"> </div>
+        <div class="container-md bg-trasnparent pt-lg-5 mb-5"> </div>
 
         <!-- Main Content Page -->  
         <div class="row justify-content-md-center ">
@@ -44,11 +44,11 @@
         <asp:Label class="text-warning" id="lblRole" runat="server" style="font-size:30px; font-family:'Century Gothic'; font-weight:bold">[role]</asp:Label>
 
         <div class="row justify-content-center mt-4 mb-5">
-            <asp:Button id="btnEditMyAcc" runat="server" type="button" class="btn btn-outline-light w-25 pt-2" OnClick="btnEditAcc_Click" Text="Edit Profile"/><div class="w-100"></div>
-            <asp:Label class="text-white mt-3" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">Start Shopping Now!</asp:Label>
+            <asp:Button id="btnEditMyAcc" runat="server" type="button" class="btn btn-outline-light w-25 pt-2 mt-4" OnClick="btnEditAcc_Click" Text="Edit Profile"/><div class="w-100"></div>
+            <asp:Label class="text-white mt-5" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">Start Shopping Now!</asp:Label>
         </div>
-
-        <div id="shopProducts" class="container-md bg-light pt-5 text-center" style="opacity:.25; z-index:-1; position:relative"></div>
+        <div class="container-md bg-trasnparent pt-lg-4"> </div>
+        <div id="shopProducts" class="container-md bg-light pt-lg-5 text-center" style="opacity:.25; z-index:-1; position:relative"></div>
         <div class="row bg-light" style="z-index:-1">
             <div class="col-6 text-center" style="font-family:'Century Gothic'; z-index:0">
                 <span class="badge badge-pill badge-secondary text mt-5" style="font-size:30px; font-family:Broadway ;font-weight:bold">Products</span>
