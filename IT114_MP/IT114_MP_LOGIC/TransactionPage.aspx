@@ -10,7 +10,7 @@
 <body style="background-image: url('../images/LandingPageBG.jpg'); background-size:cover ">
     <form class="justify-content-center text-center" id="form1" runat="server">
         <!-- Navigation Bar-->
-        <div class="container-md" style="position:fixed; top:0; width:100%">
+        <div class="container-md" style="position:fixed; z-index:1; top:0; width:100%">
             <div class="row bg-dark">
                 <div class="col-8">
                     <nav class="navbar navbar-expand-sm bg-dark navbar-light">
@@ -49,8 +49,8 @@
         </div>
 
         <div id="shopProducts" class="container-md bg-light pt-5 text-center" style="opacity:.25; z-index:-1; position:relative"></div>
-        <div class="row bg-light" style="z-index:-1; position:relative">
-            <div class="col-6 text-center" style="font-family:'Century Gothic'">
+        <div class="row bg-light" style="z-index:-1">
+            <div class="col-6 text-center" style="font-family:'Century Gothic'; z-index:0">
                 <span class="badge badge-pill badge-secondary text mt-5" style="font-size:30px; font-family:Broadway ;font-weight:bold">Products</span>
                 <div class="container-md bg-dark pt-1 m-4"></div>
                 <asp:Table class="m-3" runat="server" ID="prodTable">
@@ -62,7 +62,7 @@
                 </asp:Table>
             </div>
 
-            <div class="col-6 text-center">
+            <div class="col-6 text-center" style="z-index:0">
                 <span class="badge badge-pill badge-primary text mt-5" style="font-size:30px; font-family:Broadway ;font-weight:bold">My Cart</span>
                 <div class="container-md bg-dark pt-1 m-4"></div>
                 <div class="row text-dark text-center mb-3" style="font-family:Tahoma; font-size:20px">
