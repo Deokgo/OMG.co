@@ -10,7 +10,7 @@
 <body style="background-image: url('../images/LandingPageBG.jpg'); background-size:cover ">
     <form class="justify-content-center" runat="server"> 
         <!-- Navigation Bar-->
-        <div class="container-md">
+        <div class="container-md" style="position:fixed; top:0; width:100%">
             <div class="row bg-dark">
                 <div class="col-8">
                     <nav class="navbar navbar-expand-sm bg-dark navbar-light">
@@ -38,36 +38,33 @@
                     </nav>
                 </div>
             </div>
+            <div class="container-md bg-light border pt-lg-1"> </div>
         </div>
-        <div class="container-md bg-light border pt-1"> </div>
-        <div class="container-md bg-trasnparent pt-lg-4"> </div>
+        <div class="container-md bg-light border pt-lg-4 mb-5"> </div>
+        <div class="container-md bg-trasnparent pt-lg-5"> </div>
 
         <!-- Content Page-->
         <div class="row justify-content-md-center mt-5 mb-5">
             <asp:Label class="text-white" runat="server" style="font-size:70px; font-family:Broadway; font-weight:bold">LOG <span class="badge badge-pill badge-secondary text">IN</span></asp:Label>  
         </div>
 
-        <div class="row m-5 justify-content-center">
-            <div class="col-12 col-md-5">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">">
-                        <span class="input-group-text" id="userName" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">Username:</span>
-                    </div>
-                    <asp:TextBox id="txtUname" runat="server" type="text" placeholder="Enter your username..." class="form-control" aria-label="Default" aria-describedby="userName"></asp:TextBox>
+        <div class="row m-5 justify-content-center" style="z-index:0 ; position:relative">
+            <div class="col-12 col-md-5 input-group mb-3" >
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="userName" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">Username:</span>
                 </div>
+                <asp:TextBox id="txtUname" runat="server" type="text" placeholder="Enter your username..." class="form-control" aria-label="Default" aria-describedby="userName"></asp:TextBox>
             </div>
             <div class="w-100"></div>
-            <div class="col-12 col-md-5 mt-3">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="userPassword" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">Password:</span>
-                    </div>
-                    <asp:TextBox id="txtPword" runat="server" type="password" placeholder="Enter your password..." class="form-control w-25" aria-label="Default" aria-describedby="userPassword"></asp:TextBox>
+            <div class="col-12 col-md-5 mt-3 input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="userPassword" style="font-size:20px; font-family:'Century Gothic'; font-weight:bold">Password:</span>
                 </div>
+                <asp:TextBox id="txtPword" runat="server" type="password" placeholder="Enter your password..." class="form-control w-25" aria-label="Default" aria-describedby="userPassword"></asp:TextBox>
             </div>
         </div>
 
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center mt-5" style="z-index:-1">
             <asp:Button id="btnLogin" runat="server" type="button" class="btn btn-outline-light" OnClick="btnSubmit_Click" Text="Login" width="150px" height="50px"/>
             <asp:Button id="btnCancel" runat="server" type="button" class="btn btn-dark ml-5" OnClick="btnHome_Click" Text="Cancel" width="150px" height="50px"/>
         </div>  

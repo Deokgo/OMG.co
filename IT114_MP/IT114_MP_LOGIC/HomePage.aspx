@@ -37,16 +37,6 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col">
-                    <div class="input-group-md mt-4 mr-3">
-                        <div class="input-group">
-                            <asp:Textbox runat="server" class="form-control" type="search" placeholder="Search" aria-label="Search"></asp:Textbox>
-                                <div class="input-group-append">
-                                    <asp:Button runat="server" class="btn btn-secondary my-2 my-sm-0" type="submit" Text="Search"></asp:Button>
-                                </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="container-md bg-light border pt-lg-1"> </div>
         </div>
