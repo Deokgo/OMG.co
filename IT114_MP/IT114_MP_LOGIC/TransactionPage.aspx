@@ -87,8 +87,8 @@
                     <div class="input-group-prepend mt-3">
                         <asp:Label class="mt-1" id="quant" runat="server" style="font-size:20px; font-family:'Century Gothic' ;font-weight:bold">Quantity:</asp:Label>
                         <asp:TextBox class="form-control w-25 ml-2 mr-4" runat="server" ID="qtyTxt" aria-describedby="quant"></asp:TextBox>
-                        <asp:Button id="addCartBtn" runat="server" type="button" class="btn btn-success w-25" OnClick="AddToCart" Text="Add To Cart" ValidationGroup="submitOrder" AutoPostback = "false"/>
-                        <asp:Button id="removeCartBtn" runat="server" type="button" class="btn btn-outline-dark w-25 ml-3" OnClick="RemoveToCart" Text="Remove To Cart" CausesValidation="false"/>
+                        <asp:Button id="addCartBtn" runat="server" type="button" class="btn btn-success w-25" OnClick="AddToCart" Text="Add To Cart" ValidationGroup="submitOrder" AutoPostback = "false" />
+                        <asp:Button id="removeCartBtn" runat="server" type="button" class="btn btn-outline-dark w-25 ml-3" OnClick="RemoveToCart" Text="Remove To Cart" CausesValidation="false" />
                     </div>
                 </div>     
                 <asp:RequiredFieldValidator class="text-danger" runat="server" ControlToValidate="qtyTxt" ErrorMessage="Quantity should be filled out." ValidationGroup="submitOrder" ></asp:RequiredFieldValidator><br />

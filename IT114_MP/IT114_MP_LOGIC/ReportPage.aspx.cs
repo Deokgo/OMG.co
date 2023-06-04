@@ -11,8 +11,15 @@ namespace IT114_MP_LOGIC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblRole.Text = Session["role"].ToString(); // displays the role of the user that is currently login
-            lblUname.Text = Session["uname"].ToString(); // displays the username of the user that is currently login
+            if (string.IsNullOrEmpty(Session["role"] as string) || string.IsNullOrEmpty(Session["uname"] as string))
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+            else
+            {
+                lblRole.Text = Session["role"].ToString(); // displays the role of the user that is currently login
+                lblUname.Text = Session["uname"].ToString(); // displays the username of the user that is currently login
+            }   
         }
 
         protected void btnBestLeastProduct_Click(object sender, EventArgs e)

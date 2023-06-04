@@ -67,10 +67,10 @@
                 <asp:Label ID="Label4" runat="server" Text="Roles"></asp:Label>
                 <asp:DropDownList ID="ddlRole" CssClass="form-control" runat="server">
                     <asp:ListItem Text="Select Account Type..." Value=""></asp:ListItem>
-                    <asp:ListItem Text="Admin" Value=""></asp:ListItem>
-                    <asp:ListItem Text="Manager" Value=""></asp:ListItem>
+                    <asp:ListItem Text="Admin" Value="admin"></asp:ListItem>
+                    <asp:ListItem Text="Manager" Value="manager"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="rfvRole" runat="server" ErrorMessage="Required field." ControlToValidate="ddlRole" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvRole" runat="server" class="form-text text-danger" ErrorMessage="Required field." ControlToValidate="ddlRole" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group mx-5">
                 <asp:Label ID="Label3" runat="server" Text="Username"></asp:Label>

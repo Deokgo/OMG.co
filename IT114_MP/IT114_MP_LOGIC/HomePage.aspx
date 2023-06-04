@@ -71,17 +71,13 @@
         <div class="container-md bg-dark text-center pt-4"> 
             <span class="badge badge-pill badge-light text m-5" style="font-size:50px; font-family:Broadway ;font-weight:bold">ABOUT US</span><br/>
             <asp:Label class="text-white" runat="server" style="font-size:17px; font-family:'Century Gothic'">
-                OMG.co Shop is an innovative and vibrant online retail destination that caters to individuals <br/>
-                seeking unique and trend-setting products. With an emphasis on curating a diverse selection of <br/>
-                items, OMG.co offers an exciting shopping experience for customers who appreciate quality, <br/>
-                style, and a touch of whimsy. <br/><br/>
-                What sets OMG.co Shop apart is its commitment to showcasing emerging brands and designers, <br/>
-                as well as offering a platform for independent creators to present their unique creations <br/>
-                to a global audience. By championing originality and craftsmanship, OMG.co fosters a sense <br/>
-                of discovery and supports a community of talented artisans, designers, and entrepreneurs. <br/> <br/>
-                When it comes to customer experience, OMG.co Shop goes above and beyond to ensure satisfaction. <br/>
-                With secure and streamlined checkout processes, reliable shipping options, and responsive customer <br/>
-                support, they prioritize delivering a seamless shopping journey from start to finish.
+                Born and brewed in Southern California since 2023, The OMG.co has always <br/>
+                been passionate about connecting loyal customers with carefully handcrafted products. <br/><br/>
+
+                Our coffee master, Mr. OMG, only selects the top 1% of Arabica beans from the world’s <br/>
+                best growing regions. When our tea master Mr. OMG became the Tea Ambassador of Sri Lanka, <br/>
+                we figured we were doing something right. Our CBTL single serve beverage system combines the <br/>
+                handcrafted taste and quality that is the hallmark of OMG.co with the finest Italian technology and design. <br/>
             </asp:Label>
         </div>
         <div id="productsPage" class="container-md bg-dark pt-lg-5"></div>
@@ -109,7 +105,7 @@
         <div class="container-md bg-dark text-center"> 
             <span class="badge badge-pill badge-light text m-5" style="font-size:50px; font-family:Broadway ;font-weight:bold">Contact Us</span><br/>
             <asp:Label class="text-white" runat="server" style="font-size:15px; font-family:'Century Gothic'">
-                [insert content]
+                omg@gmail.com
             </asp:Label>
             <div class="container-md bg-dark pt-5"></div>
         </div>

@@ -12,8 +12,15 @@ namespace IT114_MP_LOGIC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtUname.Text = Session["uname"].ToString();
-            txtUname.Enabled = false;
+            if (string.IsNullOrEmpty(Session["role"] as string) || string.IsNullOrEmpty(Session["uname"] as string))
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+            else
+            {
+                txtUname.Text = Session["uname"].ToString();
+                txtUname.Enabled = false;
+            } 
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

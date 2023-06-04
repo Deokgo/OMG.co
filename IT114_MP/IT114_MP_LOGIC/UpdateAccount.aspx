@@ -82,7 +82,7 @@
                 <asp:TextBox ID="txtUname" CssClass="form-control" placeholder="Username" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvUname" class="form-text text-danger" runat="server" ErrorMessage="Required field." ControlToValidate="txtUname" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
             </div>
-            <div class="form-row mx-5">
+            <%--<div class="form-row mx-5">
                 <div class="form-group col-md-6">
                     <asp:Label ID="Label5" runat="server" Text="Password"></asp:Label>
                     <asp:TextBox ID="txtPword" CssClass="form-control" placeholder="Password" runat="server" TextMode="Password"></asp:TextBox>
@@ -93,10 +93,10 @@
                     <asp:TextBox ID="txtConfirmPword" CssClass="form-control" placeholder="Confirm Password" runat="server" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvPwordConfirm" class="form-text text-danger" runat="server" ErrorMessage="Required field." ControlToValidate="txtConfirmPword" Display="Dynamic" ValidationGroup="submitInfo"></asp:RequiredFieldValidator>
                 </div>
-            </div>
+            </div>--%>
             <div class="container my-5">
                 <div class="col-md-12 text-center">
-                    <asp:Button ID="btnUpdateAcc" CssClass="btn btn-success px-3" runat="server" Text="Add User" OnClick="btnUpdateAcc_Click" ValidationGroup="submitInfo"  />
+                    <asp:Button ID="btnUpdateAcc" CssClass="btn btn-success px-3" runat="server" Text="Update User" OnClick="btnUpdateAcc_Click" ValidationGroup="submitInfo"  />
                     <asp:Button ID="btnBack" CssClass="btn btn-outline-dark px-3" runat="server" Text="Back" OnClick="btnBack_Click" />
                 </div>
             </div>        

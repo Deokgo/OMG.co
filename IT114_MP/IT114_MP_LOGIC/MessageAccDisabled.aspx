@@ -18,7 +18,7 @@
                  <asp:Label ID="Label1" CssClass="font-weight-bold h4" runat="server" Text="Your account has been disabled. "></asp:Label>
              </div>
              <div>
-                 <asp:Label ID="Label2" runat="server" Text="Contact the database administrator to enable your account."></asp:Label>
+                 <asp:Label ID="Label2" runat="server" Text="Contact the system administrator to enable your account."></asp:Label>
              </div>
             <asp:Button ID="btnOk" CssClass="btn btn-danger btn-md my-xl-5" runat="server" Text="Okay" OnClick="btnOk_Click" />
            </div>

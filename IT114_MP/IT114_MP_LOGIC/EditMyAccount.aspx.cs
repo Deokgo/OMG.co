@@ -12,40 +12,48 @@ namespace IT114_MP_LOGIC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
+            if (string.IsNullOrEmpty(Session["role"] as string) || string.IsNullOrEmpty(Session["uname"] as string))
             {
-
-                ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-                lblRole.Text = Session["role"].ToString(); // test if the role is being passed
-                lblUname.Text = Session["uname"].ToString(); // test if the uname is being passed
-                txtUname.Enabled = false;
-
-                if (lblRole.Text == "admin")
-                {
-                    ddlAccStat.Enabled = false;
-                }
-
-                DatabaseClass db = new DatabaseClass();
-                MySqlDataReader reader1 = db.getRec("SELECT * FROM user_info_tbl where uname='" + lblUname.Text + "';");
-                MySqlDataReader reader2 = db.getRec("SELECT * FROM acc_info_tbl where uname='" + lblUname.Text + "';");
-
-                if (reader1.HasRows)
-                {
-                    reader1.Read();
-                    txtFname.Text = reader1["fname"].ToString();
-                    txtLname.Text = reader1["lname"].ToString();
-                }
-
-                if (reader2.HasRows)
-                {
-                    reader2.Read();
-                    txtUname.Text = reader2["uname"].ToString();
-                    txtEmail.Text = reader2["email"].ToString();
-                    ddlAccStat.SelectedValue = reader2["acc_state"].ToString();
-                }
-
-                db.connectionclose();
+                Response.Redirect("HomePage.aspx");
             }
+            else
+            {
+                if (!this.IsPostBack)
+                {
+
+                    ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+                    lblRole.Text = Session["role"].ToString(); // test if the role is being passed
+                    lblUname.Text = Session["uname"].ToString(); // test if the uname is being passed
+                    txtUname.Enabled = false;
+
+                    if (lblRole.Text == "admin")
+                    {
+                        ddlAccStat.Enabled = false;
+                    }
+
+                    DatabaseClass db = new DatabaseClass();
+                    MySqlDataReader reader1 = db.getRec("SELECT * FROM user_info_tbl where uname='" + lblUname.Text + "';");
+                    MySqlDataReader reader2 = db.getRec("SELECT * FROM acc_info_tbl where uname='" + lblUname.Text + "';");
+
+                    if (reader1.HasRows)
+                    {
+                        reader1.Read();
+                        txtFname.Text = reader1["fname"].ToString();
+                        txtLname.Text = reader1["lname"].ToString();
+                    }
+
+                    if (reader2.HasRows)
+                    {
+                        reader2.Read();
+                        txtUname.Text = reader2["uname"].ToString();
+                        txtEmail.Text = reader2["email"].ToString();
+                        ddlAccStat.SelectedValue = reader2["acc_state"].ToString();
+                    }
+
+                    db.connectionclose();
+                }
+            }
+            
         }
 
         protected void btnSave_Click(object sender, EventArgs e)

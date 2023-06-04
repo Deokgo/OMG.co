@@ -15,43 +15,50 @@ namespace IT114_MP_LOGIC
         DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblRole.Text = Session["role"].ToString(); // displays the role of the user that is currently login
-            lblUname.Text = Session["uname"].ToString(); // displays the username of the user that is currently login
-
-            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-            DatabaseClass db = new DatabaseClass();
-            dt = db.Show("SELECT * FROM prod_info_tbl;");
-            if (dt.Rows.Count > 0)
+            if (string.IsNullOrEmpty(Session["role"] as string) || string.IsNullOrEmpty(Session["uname"] as string))
             {
-                TableRow prodtr = new TableRow();
-                TableCell prodImage = new TableCell();
-                TableCell prodName = new TableCell();
-                TableCell prodPrice = new TableCell();
-                foreach (DataRow row in dt.Rows)
-                {
-                    prodtr = new TableRow();
-                    prodImage = new TableCell();
-                    prodName = new TableCell();
-                    prodPrice = new TableCell();
-                    Image prodPic = new Image();
-                    prodPic.ImageUrl = row["prod_photo"].ToString();
-
-                    prodPic.Width = 250;
-                    prodPic.Height = 120;
-                    prodName.Width = 250;
-                    prodName.Height = 120;
-                    prodPrice.Width = 250;
-                    prodPrice.Height = 120;
-
-                    prodImage.Controls.Add(prodPic);
-                    prodName.Text = row["prod_name"].ToString();
-                    prodPrice.Text = "PHP " + Convert.ToInt32(row["prod_price"]).ToString("N");
-                    prodtr.Cells.Add(prodImage);
-                    prodtr.Cells.Add(prodName);
-                    prodtr.Cells.Add(prodPrice);
-                    prodTable.Rows.Add(prodtr);
-                }
+                Response.Redirect("HomePage.aspx");
             }
+            else
+            {
+                lblRole.Text = Session["role"].ToString(); // displays the role of the user that is currently login
+                lblUname.Text = Session["uname"].ToString(); // displays the username of the user that is currently login
+
+                ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+                DatabaseClass db = new DatabaseClass();
+                dt = db.Show("SELECT * FROM prod_info_tbl;");
+                if (dt.Rows.Count > 0)
+                {
+                    TableRow prodtr = new TableRow();
+                    TableCell prodImage = new TableCell();
+                    TableCell prodName = new TableCell();
+                    TableCell prodPrice = new TableCell();
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        prodtr = new TableRow();
+                        prodImage = new TableCell();
+                        prodName = new TableCell();
+                        prodPrice = new TableCell();
+                        Image prodPic = new Image();
+                        prodPic.ImageUrl = row["prod_photo"].ToString();
+
+                        prodPic.Width = 250;
+                        prodPic.Height = 120;
+                        prodName.Width = 250;
+                        prodName.Height = 120;
+                        prodPrice.Width = 250;
+                        prodPrice.Height = 120;
+
+                        prodImage.Controls.Add(prodPic);
+                        prodName.Text = row["prod_name"].ToString();
+                        prodPrice.Text = "PHP " + Convert.ToInt32(row["prod_price"]).ToString("N");
+                        prodtr.Cells.Add(prodImage);
+                        prodtr.Cells.Add(prodName);
+                        prodtr.Cells.Add(prodPrice);
+                        prodTable.Rows.Add(prodtr);
+                    }
+                }
+            }   
         }
         protected void Page_Init(object sender, EventArgs e)
         {

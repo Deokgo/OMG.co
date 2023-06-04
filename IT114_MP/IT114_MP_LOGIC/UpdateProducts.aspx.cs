@@ -51,6 +51,10 @@ namespace IT114_MP_LOGIC
                     {
                         txtDesc.Text = reader["description"].ToString();
                     }
+                    else
+                    {
+                        txtDesc.Text = "";
+                    }
 
                     ddlStatus.SelectedValue = reader["prod_status"].ToString();
                 }
