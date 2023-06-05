@@ -24,7 +24,7 @@
                                 <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="PerformanceReport.aspx">View Products Report</a>
                             </li> 
                             <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#">View Sales Report</a>
+                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="SalesReport.aspx">View Sales Report</a>
                             </li> 
                         </ul>
                     </nav>

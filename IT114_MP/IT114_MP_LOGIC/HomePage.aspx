@@ -6,6 +6,22 @@
 <head runat="server">
     <title>HOME PAGE</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        .map-container{
+          overflow:hidden;
+          padding-bottom:26.25%;
+          position:relative;
+          height:0;
+        }
+        .map-container iframe{
+          left:0;
+          top:0;
+          height:100%;
+          width:100%;
+          position:absolute;
+        }
+    </style>
 </head>
 <body style="background-image: url('../images/LandingPageBG.jpg'); background-size:contain">
     <form class="justify-content-center" runat="server"> 
@@ -91,12 +107,28 @@
                 </div>
             </div>
         </div>
-        <div id="contactUsPage" class="container-md bg-light pt-5 text-center" style="opacity:.25"></div>
+        <div id="contactUsPage" class="container-md bg-light pt-5 text-center" style="opacity:.25;z-index:-1; position:relative"></div>
         <div class="container-md bg-dark text-center"> 
             <span class="badge badge-pill badge-light text m-5" style="font-size:50px; font-family:Broadway ;font-weight:bold">Contact Us</span><br/>
-            <asp:Label class="text-white" runat="server" style="font-size:15px; font-family:'Century Gothic'">
-                omg@gmail.com
+            <asp:Label class="text-white " runat="server" style="font-size:20px; font-family:'Century Gothic'">
+                <i class="fa-solid fa-phone fa-xl mr-3" style="color: #ffffff;"></i>
+                63+ 915642003
+            </asp:Label><br />
+            <div class="container-md bg-trasnparent pt-lg-4"> </div>
+            <asp:Label class="text-white" runat="server" style="font-size:20px; font-family:'Century Gothic'">
+                <i class="fa-solid fa-envelope fa-xl mr-3" style="color: #ffffff;"></i>
+                omg.co@gmail.com
+            </asp:Label><br />
+            <div class="container-md bg-trasnparent pt-lg-4"> </div>
+            <asp:Label class="text-white" runat="server" style="font-size:20px; font-family:'Century Gothic'">
+                <i class="fa-solid fa-compass fa-xl mr-3" style="color: #ffffff;"></i>
+                Makati, Philippines
             </asp:Label>
+            <div class="container-md bg-dark pt-5"></div>
+            <div id="map-container-google-1" class="z-depth-1-half map-container" style="z-index:0">
+                <iframe src="https://maps.google.com/maps?width=700&amp;height=400&amp;hl=en&amp;q=Makati,Philippines&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" frameborder="0"
+                    style="border:0"></iframe>
+            </div>
             <div class="container-md bg-dark pt-5"></div>
         </div>
         <div class="container-md bg-light pt-5 text-center" style="opacity:.25"></div>
