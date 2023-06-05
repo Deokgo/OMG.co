@@ -23,7 +23,7 @@
         }
     </style>
 </head>
-<body style="background-image: url('../images/LandingPageBG.jpg'); background-size:contain">
+<body style="background-image: url('../images/lofiBG.png'); background-size:contain">
     <form class="justify-content-center" runat="server"> 
         <!-- Navigation Bar-->
         <div class="container-md" style="position:fixed; top:0; width:100%">
@@ -45,10 +45,15 @@
                                 <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#contactUsPage">Contact Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="Login.aspx">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mt-3 text-light" style="font-size:15px" href="Register.aspx">Sign Up</a>
+                                <div class="dropdown">
+                                    <button class="btn btn-dark dropdown-toggle mt-3 mr-3 text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Get Started
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item font-weight-bold" href="Register.aspx">Sign Up</a>
+                                        <a class="dropdown-item" href="Login.aspx">Log In</a>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -61,7 +66,7 @@
 
         <!-- Content Page -->
         <div class="row justify-content-md-center mt-5">
-            <asp:Label class="text-white" runat="server" style="font-size:130px; font-family:Broadway ;font-weight:bold">OMG <span class="badge badge-pill badge-secondary text">.co</span></asp:Label>  
+            <asp:Label class="text-white shadow" runat="server" style="font-size:130px; font-family:Broadway ;font-weight:bold">OMG <span class="badge badge-pill badge-secondary text">.co</span></asp:Label>  
         </div>
         <div class="row justify-content-center mt-5">
             <asp:Button id="Direct" runat="server" type="button" class="btn btn-outline-light" OnClick="Login_Click" Text="Login" width="150px" height="50px"/>
@@ -76,6 +81,7 @@
         <div id="aboutUsPage" class="container-md bg-light pt-lg-5" style="opacity:.25; z-index:-1; position:relative"></div>
         <div class="container-md bg-dark text-center pt-4"> 
             <span class="badge badge-pill badge-light text m-5" style="font-size:50px; font-family:Broadway ;font-weight:bold">ABOUT US</span><br/>
+            <asp:Image runat="server" class="mb-5" ImageUrl="~/images/coffee-icon.png" Height="150px" Width="150px" alt="coffee icon"></asp:Image><br/>
             <asp:Label class="text-white" runat="server" style="font-size:17px; font-family:'Century Gothic'">
                 Born and brewed in Southern California since 2023, The OMG.co has always <br/>
                 been passionate about connecting loyal customers with carefully handcrafted products. <br/><br/>
@@ -108,6 +114,7 @@
             </div>
         </div>
         <div id="contactUsPage" class="container-md bg-light pt-5 text-center" style="opacity:.25;z-index:-1; position:relative"></div>
+        <div class="container-md bg-dark pt-3"></div>
         <div class="container-md bg-dark text-center"> 
             <span class="badge badge-pill badge-light text m-5" style="font-size:50px; font-family:Broadway ;font-weight:bold">Contact Us</span><br/>
             <asp:Label class="text-white " runat="server" style="font-size:20px; font-family:'Century Gothic'">
@@ -131,7 +138,6 @@
             </div>
             <div class="container-md bg-dark pt-5"></div>
         </div>
-        <div class="container-md bg-light pt-5 text-center" style="opacity:.25"></div>
         <div class="container-md bg-dark pt-5"></div>
     </form>
 </body>

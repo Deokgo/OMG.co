@@ -7,7 +7,7 @@
     <title>TRANSACTION</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>  
 </head>
-<body style="background-image: url('../images/LandingPageBG.jpg'); background-size:cover ">
+<body style="background-image: url('../images/minishopBG.png'); background-size:contain ">
     <form class="justify-content-center text-center" id="form1" runat="server">
         <!-- Navigation Bar-->
         <div class="container-md" style="position:fixed; z-index:1; top:0; width:100%">
@@ -45,10 +45,11 @@
 
         <div class="row justify-content-center mt-4 mb-5">
             <asp:Button id="btnEditMyAcc" runat="server" type="button" class="btn btn-outline-light w-25 pt-2 mt-4" OnClick="btnEditAcc_Click" Text="Edit Profile"/><div class="w-100"></div>
-            <asp:Label class="text-white mt-5" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">Start Shopping Now!</asp:Label>
+            <asp:Label class="text-white mt-5 border-dark" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">Start Shopping Now!</asp:Label>
         </div>
         <div class="container-md bg-trasnparent pt-lg-4"> </div>
         <div id="shopProducts" class="container-md bg-light pt-lg-5 text-center" style="opacity:.25; z-index:-1; position:relative"></div>
+        <div class="container-md bg-white pt-3"></div>
         <div class="row bg-light" style="z-index:-1">
             <div class="col-6 text-center" style="font-family:'Century Gothic'; z-index:0">
                 <span class="badge badge-pill badge-secondary text mt-5" style="font-size:30px; font-family:Broadway ;font-weight:bold">Products</span>
