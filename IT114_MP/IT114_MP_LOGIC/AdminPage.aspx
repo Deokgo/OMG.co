@@ -7,7 +7,7 @@
     <title>ADMIN</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-<body style="background-image: url('../images/LandingPageBG3.jpg'); background-size:cover ">
+<body style="background-image: url('../images/minishopBG2.png'); background-size:cover ">
     <form class="justify-content-center text-center" runat="server"> 
         <!-- Navigation Bar-->
         <div class="container-md" style="position:fixed; top:0; width:100%">

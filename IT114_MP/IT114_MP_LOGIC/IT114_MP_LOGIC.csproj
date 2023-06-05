@@ -84,7 +84,7 @@
     <Content Include="images\default.jpg" />
     <Content Include="images\Hotdog.png" />
     <Content Include="images\image404.png" />
-    <Content Include="images\LandingPageBG2.jpg" />
+    <Content Include="images\lofiBG.png" />
     <Content Include="images\Longsilog.png" />
     <Content Include="images\Tapsilog.png" />
     <Content Include="js\bootstrap.bundle.js" />

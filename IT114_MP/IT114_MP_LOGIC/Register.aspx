@@ -7,7 +7,7 @@
     <title>REGISTER</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-<body style="background-image: url('../images/LandingPageBG.jpg'); background-size:cover ">
+<body style="background-image: url('../images/lofiBG.png'); background-size:cover ">
     <form class="justify-content-center" runat="server"> 
         <!-- Navigation Bar-->
         <div class="container-md" style="position:fixed; top:0; width:100%">
@@ -29,10 +29,15 @@
                                 <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="HomePage.aspx#contactUsPage">Contact Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="Login.aspx">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mt-3 text-light" style="font-size:15px" href="Register.aspx">Sign Up</a>
+                                <div class="dropdown">
+                                    <button class="btn btn-dark dropdown-toggle mt-3 mr-3 text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Get Started
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item font-weight-bold" href="Register.aspx">Sign Up</a>
+                                        <a class="dropdown-item" href="Login.aspx">Log In</a>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </nav>

@@ -7,7 +7,7 @@
     <title>REPORT</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>  
 </head>
-<body style="background-image: url('../images/LandingPageBG3.jpg'); background-size:cover">
+<body style="background-image: url('../images/minishopBG2.png'); background-size:cover">
     <form class="justify-content-center text-center" id="form1" runat="server">
         <!-- Navigation Bar-->
         <div class="container-md" style="position:fixed; z-index:1; top:0; width:100%">
@@ -48,8 +48,11 @@
 
         <div class="row justify-content-center mt-4 mb-5">
             <asp:Button id="btnEditAcc" runat="server" type="button" class="btn btn-outline-light w-25 pt-2 mt-4" OnClick="btnEditAcc_Click" Text="Edit Profile"/><div class="w-100"></div>
-            <asp:Label class="text-white mt-5" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">Start Shopping Now!</asp:Label>
+            <asp:Label class="text-white mt-5" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">What would you like to see?</asp:Label>
         </div>
+        <div class="container-md bg-trasnparent pt-lg-2 mt-5"> </div>
+        <div id="editUserInfo" class="container-md bg-light mt-4 pt-lg-5 text-center" style="opacity:.25; z-index:-1; position:relative"></div>
+        <div class="container-md bg-dark text-center" style="z-index:-1; position:relative"></div>
     </form>
 </body>
     <script src="js/jquery-3.3.1.min.js"></script>
