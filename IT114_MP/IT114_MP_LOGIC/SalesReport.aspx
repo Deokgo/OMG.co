@@ -9,6 +9,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <div id="daily-sales-container">
+                <asp:Label runat="server" ID="dailyLbl">Daily Sales</asp:Label><br />
+                <asp:Label runat="server" ID="dateLbl"></asp:Label><br />
+                <asp:Label runat="server" ID="dailySales"></asp:Label>
+            </div>
         </div>
     </form>
 </body>

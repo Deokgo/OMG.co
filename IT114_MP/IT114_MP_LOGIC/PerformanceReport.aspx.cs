@@ -15,7 +15,7 @@ namespace IT114_MP_LOGIC
         protected void Page_Load(object sender, EventArgs e)
         {
             DatabaseClass db = new DatabaseClass();
-            dt = db.Show("SELECT pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo, SUM(tt.qty) AS total_qty FROM prod_info_tbl pi INNER JOIN trans_tbl tt ON pi.prod_id = tt.prod_id WHERE pi.prod_status = 'Available' GROUP BY pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo ORDER BY SUM(tt.qty) DESC LIMIT 3; ");
+            dt = db.Show("SELECT pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo, SUM(tt.qty) AS total_qty FROM prod_info_tbl pi INNER JOIN trans_tbl tt ON pi.prod_id = tt.prod_id WHERE pi.prod_status = 'Available' AND YEAR(tt.trans_date) = YEAR(CURDATE()) AND MONTH(tt.trans_date) = MONTH(CURDATE()) GROUP BY pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo ORDER BY SUM(tt.qty) DESC LIMIT 3; ");
             if (dt.Rows.Count > 0)
             {
                 bestNameLbl.Text = dt.Rows[0]["prod_name"].ToString();
@@ -39,7 +39,7 @@ namespace IT114_MP_LOGIC
                     thirdSoldLbl.Text = "Sold: " + dt.Rows[2]["total_qty"].ToString();
                 }
             }
-            dt = db.Show("SELECT pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo, SUM(tt.qty) AS total_qty FROM prod_info_tbl pi INNER JOIN trans_tbl tt ON pi.prod_id = tt.prod_id WHERE pi.prod_status = 'Available' GROUP BY pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo ORDER BY SUM(tt.qty) ASC LIMIT 1; ");
+            dt = db.Show("SELECT pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo, SUM(tt.qty) AS total_qty FROM prod_info_tbl pi INNER JOIN trans_tbl tt ON pi.prod_id = tt.prod_id WHERE pi.prod_status = 'Available' AND YEAR(tt.trans_date) = YEAR(CURDATE()) AND MONTH(tt.trans_date) = MONTH(CURDATE()) GROUP BY pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo ORDER BY SUM(tt.qty) ASC LIMIT 1; ");
             if (dt.Rows.Count > 0)
             {
                 worstNameLbl.Text = dt.Rows[0]["prod_name"].ToString();
