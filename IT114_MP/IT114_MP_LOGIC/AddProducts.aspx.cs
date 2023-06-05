@@ -53,41 +53,67 @@ namespace IT114_MP_LOGIC
             }
             else
             {
-                Random r = new Random();
-                var x = r.Next(0, 1000000);
-                string prod_id = x.ToString("00000");
-                string prod_status = "available";
-
-                DatabaseClass db = new DatabaseClass();
-                MySqlDataReader reader = db.getRec("SELECT * FROM prod_info_tbl where prod_id='" + prod_id + "';");
-
-                while (reader.HasRows)
+                try
                 {
-                    r = new Random();
-                    x = r.Next(0, 1000000);
-                    prod_id = x.ToString("000000");
+                    DatabaseClass db = new DatabaseClass();
+                    MySqlDataReader reader1 = db.getRec("SELECT * FROM prod_info_tbl where prod_name='" + txtProdName.Text.Trim() + "';");
 
-                    db = new DatabaseClass();
-                    reader = db.getRec("SELECT * FROM prod_info_tbl where prod_id='" + prod_id + "';");
+                    if (reader1.HasRows)
+                    {
+                        Response.Write("<script>alert('Product cannot be added.')</script>");
+                    }
+                    else
+                    {
+                        double price = Convert.ToDouble(txtPrice.Text);
+
+                        if (price <= 0)
+                        {
+                            Response.Write("<script>alert('Invalid price.')</script>");
+                        }
+                        else
+                        {
+                            Random r = new Random();
+                            var x = r.Next(0, 1000000);
+                            string prod_id = x.ToString("00000");
+                            string prod_status = "available";
+
+
+                            MySqlDataReader reader2 = db.getRec("SELECT * FROM prod_info_tbl where prod_id='" + prod_id + "';");
+
+                            while (reader2.HasRows)
+                            {
+                                r = new Random();
+                                x = r.Next(0, 1000000);
+                                prod_id = x.ToString("000000");
+
+                                db = new DatabaseClass();
+                                reader2 = db.getRec("SELECT * FROM prod_info_tbl where prod_id='" + prod_id + "';");
+                            }
+
+                            string sql = vd.GetSQLInsertStatement(prod_id, txtProdName.Text, txtPrice.Text, imgProd.ImageUrl,
+                                txtDesc.Text, prod_status);
+
+                            int returnX = db.insDelUp(sql);
+
+                            if (returnX > 0)
+                            {
+                                txtProdName.Text = "";
+                                txtPrice.Text = "";
+                                imgProd.ImageUrl = "~/images/default.jpg";
+                                txtDesc.Text = "";
+                                Response.Write("<script>alert('Product Added Successfully!')</script>");
+                            }
+                            else
+                            {
+                                Response.Write("<script>alert('Try Again.')</script>");
+
+                            }
+                        }
+                    }      
                 }
-
-                string sql = vd.GetSQLInsertStatement(prod_id, txtProdName.Text, txtPrice.Text, imgProd.ImageUrl,
-                    txtDesc.Text, prod_status);
-
-                int returnX = db.insDelUp(sql);
-
-                if (returnX > 0)
+                catch
                 {
-                    txtProdName.Text = "";
-                    txtPrice.Text = "";
-                    imgProd.ImageUrl = "~/images/default.jpg";
-                    txtDesc.Text = "";
-                    Response.Write("<script>alert('Product Added Successfully!')</script>");
-                }
-                else
-                {
-                    Response.Write("<script>alert('Try Again.')</script>");
-
+                    Response.Write("<script>alert('Product price should be numeric.')</script>");
                 }
             }
         }

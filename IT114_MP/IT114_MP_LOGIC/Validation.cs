@@ -44,7 +44,7 @@ namespace IT114_MP_LOGIC
 
         public string GetSQLUpdate(string searchedText, string name, string price, string photo, string description, string status)
         {
-            if (description == "")
+            if (string.IsNullOrWhiteSpace(description))
             {
                 sqlStatement = "UPDATE prod_info_tbl SET prod_name='" + name + "', prod_price='" + price + "', prod_photo='" + photo +
                     "', prod_status='" + status + "' WHERE prod_name='" + searchedText + "' OR prod_id='" +

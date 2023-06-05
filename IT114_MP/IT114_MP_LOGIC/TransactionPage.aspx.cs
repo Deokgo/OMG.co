@@ -26,7 +26,7 @@ namespace IT114_MP_LOGIC
 
                 ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
                 DatabaseClass db = new DatabaseClass();
-                dt = db.Show("SELECT * FROM prod_info_tbl;");
+                dt = db.Show("SELECT * FROM prod_info_tbl WHERE prod_status <> 'not available';");
                 if (dt.Rows.Count > 0)
                 {
                     TableRow prodtr = new TableRow();
@@ -51,7 +51,7 @@ namespace IT114_MP_LOGIC
 
                         prodImage.Controls.Add(prodPic);
                         prodName.Text = row["prod_name"].ToString();
-                        prodPrice.Text = "PHP " + Convert.ToInt32(row["prod_price"]).ToString("N");
+                        prodPrice.Text = string.Format("PHP {0:0.##}", row["prod_price"].ToString());
                         prodtr.Cells.Add(prodImage);
                         prodtr.Cells.Add(prodName);
                         prodtr.Cells.Add(prodPrice);
@@ -65,7 +65,7 @@ namespace IT114_MP_LOGIC
             if (!Page.IsPostBack)
             {
                 DatabaseClass db = new DatabaseClass();
-                string query = "SELECT * FROM prod_info_tbl";
+                string query = "SELECT * FROM prod_info_tbl WHERE prod_status <> 'not available';";
                 DataSet ds = db.getDataSet(query);
                 prodDdl.DataTextField = ds.Tables[0].Columns["prod_name"].ToString();
                 prodDdl.DataValueField = ds.Tables[0].Columns["prod_id"].ToString();
@@ -80,11 +80,12 @@ namespace IT114_MP_LOGIC
             string prodName = prodDdl.SelectedItem.Text;
             string prodId = prodDdl.SelectedItem.Value;
             dr = db.getRec("SELECT * FROM prod_info_tbl WHERE prod_id=" + prodId + ";");
+
             try
             {
                 if (dr.Read())
                 {
-                    double price = Convert.ToInt32(dr["prod_price"]);
+                    double price = Convert.ToDouble(dr["prod_price"]);
                     int prodQty = Convert.ToInt32(qtyTxt.Text);
                     double subtotal = price * prodQty;
                     ListItem cartItem = new ListItem();
@@ -105,7 +106,7 @@ namespace IT114_MP_LOGIC
                         subtotal = prodQty * prodPrice;
                         Session["total"] = (double)Session["total"] + subtotal;
                     }
-                    totalLbl.Text = Convert.ToInt32(Session["total"]).ToString("N");
+                    totalLbl.Text = string.Format("{0:0.##}", Session["total"].ToString());
                 }
             }
             catch
@@ -127,7 +128,7 @@ namespace IT114_MP_LOGIC
                 double subtotal = prodQty * prodPrice;
                 Session["total"] = (double)Session["total"] + subtotal;
             }
-            totalLbl.Text = Convert.ToInt32(Session["total"]).ToString("N");
+            totalLbl.Text = string.Format("{0:0.##}", Session["total"].ToString());
         }
         protected void AddTransaction(object sender, EventArgs e)
         {

@@ -40,13 +40,13 @@ namespace IT114_MP_LOGIC
 
             imgView1.ImageUrl = images[prod1].ToString();
             prodName1.Text = products[prod1].ToString();
-            prodPrice1.Text = Convert.ToInt32(prices[prod1]).ToString("N");
+            prodPrice1.Text = string.Format("Only for {0:0.##}", prices[prod1].ToString()+" pesos!");
             imgView2.ImageUrl = images[prod2].ToString();
             prodName2.Text = products[prod2].ToString();
-            prodPrice2.Text = Convert.ToInt32(prices[prod2]).ToString("N");
+            prodPrice2.Text = string.Format("Only for {0:0.##}", prices[prod2].ToString()+" pesos!");
             imgView3.ImageUrl = images[prod3].ToString();
             prodName3.Text = products[prod3].ToString();
-            prodPrice3.Text = Convert.ToInt32(prices[prod3]).ToString("N");
+            prodPrice3.Text = string.Format("Only for for {0:0.##}", prices[prod3].ToString()+" pesos!");
         }
         protected void Login_Click(object sender, EventArgs e)
         {

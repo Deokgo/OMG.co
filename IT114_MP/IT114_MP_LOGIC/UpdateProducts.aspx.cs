@@ -58,6 +58,10 @@ namespace IT114_MP_LOGIC
 
                     ddlStatus.SelectedValue = reader["prod_status"].ToString();
                 }
+                else
+                {
+                    Response.Write("<script>alert('Product not found.')</script>");
+                }
                 search.connectionclose();
             }
         }
@@ -79,27 +83,50 @@ namespace IT114_MP_LOGIC
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             Validation vd = new Validation();
-            string sql = vd.GetSQLUpdate(txtSearch.Text, txtProdName.Text, txtPrice.Text, imgProd.ImageUrl,
-                txtDesc.Text, ddlStatus.SelectedValue);
-
-            DatabaseClass db = new DatabaseClass();
-            int returnX = db.insDelUp(sql);
-
-            if (returnX > 0)
+            if (vd.IsNameAndPriceNull(txtProdName.Text, txtPrice.Text))
             {
-                txtSearch.Text = "";
-                txtProdName.Text = "";
-                txtPrice.Text = "";
-                imgProd.ImageUrl = "~/images/default.jpg";
-                txtDesc.Text = "";
-                ddlStatus.SelectedValue = "available";
-                Response.Write("<script>alert('Product Updated Successfully!')</script>");
+                Response.Write("<script>alert('Product Name and Price is a required field!')</script>");
             }
             else
             {
-                Response.Write("<script>alert('Try Again.')</script>");
+                try
+                {
+                    double price = Convert.ToDouble(txtPrice.Text);
 
-            }
+                    if (price <= 0)
+                    {
+                        Response.Write("<script>alert('Invalid price.')</script>");
+                    }
+                    else
+                    {
+                        string sql = vd.GetSQLUpdate(txtSearch.Text, txtProdName.Text, txtPrice.Text, imgProd.ImageUrl,
+                            txtDesc.Text, ddlStatus.SelectedValue);
+
+                        DatabaseClass db = new DatabaseClass();
+                        int returnX = db.insDelUp(sql);
+
+                        if (returnX > 0)
+                        {
+                            txtSearch.Text = "";
+                            txtProdName.Text = "";
+                            txtPrice.Text = "";
+                            imgProd.ImageUrl = "~/images/default.jpg";
+                            txtDesc.Text = "";
+                            ddlStatus.SelectedValue = "available";
+                            Response.Write("<script>alert('Product Updated Successfully!')</script>");
+                        }
+                        else
+                        {
+                            Response.Write("<script>alert('Try Again.')</script>");
+
+                        }
+                    }
+                }
+                catch
+                {
+                    Response.Write("<script>alert('Product price should be numeric.')</script>");
+                }
+            }              
         }
 
         protected void btnBack_Click(object sender, EventArgs e)

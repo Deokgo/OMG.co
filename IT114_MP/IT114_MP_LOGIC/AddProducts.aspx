@@ -7,7 +7,7 @@
 <head runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title>Add Product</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>ipt>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -64,7 +64,7 @@
                             <span class="input-group-text" id="inputGroup-sizing-sm1">
                                 <asp:Label ID="Label2" runat="server" CssClass="font-weight-bold text-sm-left" Text="Product Price"></asp:Label></span>
                             </div>
-                            <asp:TextBox ID="txtPrice" CssClass="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtPrice" CssClass="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" runat="server" ></asp:TextBox>
                         </div>
                     </div>
                     <div class="container-fluid my-4">
