@@ -116,19 +116,27 @@ namespace IT114_MP_LOGIC
         }
         protected void RemoveToCart(object sender, EventArgs e)
         {
-            cart.Items.Remove(cart.SelectedItem);
-            Session["total"] = 0.0;
-            foreach (ListItem item in cart.Items)
+            if (cart.SelectedIndex == -1)
             {
-                string[] itemList = item.Value.Split('-');
-                string prodId = itemList[0];
-                int prodQty = int.Parse(itemList[1]);
-                double prodPrice = double.Parse(itemList[2]);
-
-                double subtotal = prodQty * prodPrice;
-                Session["total"] = (double)Session["total"] + subtotal;
+                Response.Write("<script>alert('Please select an order to remove first.')</script>");
             }
-            totalLbl.Text = string.Format("{0:0.##}", Session["total"].ToString());
+            else
+            {
+                cart.Items.Remove(cart.SelectedItem);
+                Session["total"] = 0.0;
+                foreach (ListItem item in cart.Items)
+                {
+                    string[] itemList = item.Value.Split('-');
+                    string prodId = itemList[0];
+                    int prodQty = int.Parse(itemList[1]);
+                    double prodPrice = double.Parse(itemList[2]);
+
+                    double subtotal = prodQty * prodPrice;
+                    Session["total"] = (double)Session["total"] + subtotal;
+                }
+                totalLbl.Text = string.Format("{0:0.##}", Session["total"].ToString());
+            }
+            
         }
         protected void AddTransaction(object sender, EventArgs e)
         {

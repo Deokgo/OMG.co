@@ -55,6 +55,7 @@ namespace IT114_MP_LOGIC
                 }
                 else
                 {
+                    txtPword.Text = "";
                     Response.Write("<script>alert('Either your account does not exist or your username/password is wrong.')</script>");
                 }
                 db.connectionclose();

@@ -65,6 +65,8 @@ namespace IT114_MP_LOGIC
             }
             else
             {
+                txtPword.Text = "";
+                txtPwordConfirm.Text = "";
                 Response.Write("<script>alert('Password does not match!')</script>");
             }
         }
