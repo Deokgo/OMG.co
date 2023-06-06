@@ -37,7 +37,7 @@
             <asp:Button ID="logOut" CssClass="bg-danger text-light font-weight-bold rounded p-1" runat="server" Text="Log Out" />
         </ul>
     </nav>
-         <div class="container-fluid m-xl-5 p-xl-5">
+         <div class="container-fluid m-xl-5 p-xl-5" style="margin:100px 0px 0px 0px">
         <div class="container col-5 m-lg-auto bg-light p-lg-5 my-5">
             <div class="form-group mx-5 text-center">
                 <div class="form-row">
@@ -48,7 +48,7 @@
                     <asp:Label ID="Label8" runat="server" CssClass="h3 pr-1" Text="! "></asp:Label>
                 </div>
                 <div class="form-row">
-                    <asp:Label ID="Label6" runat="server" CssClass="h6" Text="What would you like to edit on your account? "></asp:Label>
+                    <asp:Label ID="Label6" runat="server" CssClass="h6 text-left" Text="What would you like to edit on your account? "></asp:Label>
                 </div>
             </div>
             <div class="form-row mx-5">
