@@ -46,7 +46,15 @@ namespace IT114_MP_LOGIC
                     }
                     else if (role == "customer")
                     {
-                        Response.Redirect("TransactionPage.aspx");
+                        MySqlDataReader prodReader = db.getRec("SELECT * FROM prod_info_tbl;");
+                        if (prodReader.HasRows)
+                        {
+                            Response.Redirect("TransactionPage.aspx");
+                        }
+                        else
+                        {
+                            Response.Write("<script>alert('No products yet.')</script>");
+                        }
                     }
                     else
                     {

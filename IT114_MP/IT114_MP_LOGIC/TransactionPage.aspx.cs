@@ -15,17 +15,32 @@ namespace IT114_MP_LOGIC
         DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             if (string.IsNullOrEmpty(Session["role"] as string) || string.IsNullOrEmpty(Session["uname"] as string))
             {
                 Response.Redirect("HomePage.aspx");
             }
             else
             {
+                DatabaseClass db = new DatabaseClass();
+                if (!Page.IsPostBack)
+                {
+                    //DatabaseClass db = new DatabaseClass();
+                    string query = "SELECT * FROM prod_info_tbl WHERE prod_status <> 'not available';";
+                    DataSet ds = db.getDataSet(query);
+                    prodDdl.DataTextField = ds.Tables[0].Columns["prod_name"].ToString();
+                    prodDdl.DataValueField = ds.Tables[0].Columns["prod_id"].ToString();
+                    prodDdl.DataSource = ds.Tables[0];
+                    prodDdl.DataBind();
+                    Session["total"] = 0.0;
+                }
+
                 lblRole.Text = Session["role"].ToString(); // displays the role of the user that is currently login
                 lblUname.Text = Session["uname"].ToString(); // displays the username of the user that is currently login
 
+                //DatabaseClass db = new DatabaseClass();
                 ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-                DatabaseClass db = new DatabaseClass();
                 dt = db.Show("SELECT * FROM prod_info_tbl WHERE prod_status <> 'not available';");
                 if (dt.Rows.Count > 0)
                 {
@@ -62,17 +77,7 @@ namespace IT114_MP_LOGIC
         }
         protected void Page_Init(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
-                DatabaseClass db = new DatabaseClass();
-                string query = "SELECT * FROM prod_info_tbl WHERE prod_status <> 'not available';";
-                DataSet ds = db.getDataSet(query);
-                prodDdl.DataTextField = ds.Tables[0].Columns["prod_name"].ToString();
-                prodDdl.DataValueField = ds.Tables[0].Columns["prod_id"].ToString();
-                prodDdl.DataSource = ds.Tables[0];
-                prodDdl.DataBind();
-                Session["total"] = 0.0;
-            }
+            
         }
         protected void AddToCart(object sender, EventArgs e) //bali need ko muna kunin yung id pati qty pre
         {
@@ -85,28 +90,36 @@ namespace IT114_MP_LOGIC
             {
                 if (dr.Read())
                 {
-                    double price = Convert.ToDouble(dr["prod_price"]);
+                    
                     int prodQty = Convert.ToInt32(qtyTxt.Text);
-                    double subtotal = price * prodQty;
-                    ListItem cartItem = new ListItem();
-                    // Add the item details as text to the cartItem
-                    cartItem.Text = prodName + "                  " + price.ToString() + "                     " + prodQty.ToString() + "                       " + subtotal.ToString();
-                    // Set the value of the cartItem
-                    cartItem.Value = prodId + "-" + prodQty.ToString() + "-" + price.ToString();
-
-                    cart.Items.Add(cartItem);
-                    Session["total"] = 0.0;
-                    foreach (ListItem item in cart.Items)
+                    if(prodQty <= 0)
                     {
-                        string[] itemList = item.Value.Split('-');
-                        prodId = itemList[0];
-                        prodQty = int.Parse(itemList[1]);
-                        double prodPrice = double.Parse(itemList[2]);
-
-                        subtotal = prodQty * prodPrice;
-                        Session["total"] = (double)Session["total"] + subtotal;
+                        Response.Write("<script>alert('Product quantity must be greater than zero.')</script>");
                     }
-                    totalLbl.Text = string.Format("{0:0.##}", Session["total"].ToString());
+                    else
+                    {
+                        double price = Convert.ToDouble(dr["prod_price"]);
+                        double subtotal = price * prodQty;
+                        ListItem cartItem = new ListItem();
+                        // Add the item details as text to the cartItem
+                        cartItem.Text = prodName + "                  " + price.ToString() + "                     " + prodQty.ToString() + "                       " + subtotal.ToString();
+                        // Set the value of the cartItem
+                        cartItem.Value = prodId + "-" + prodQty.ToString() + "-" + price.ToString();
+
+                        cart.Items.Add(cartItem);
+                        Session["total"] = 0.0;
+                        foreach (ListItem item in cart.Items)
+                        {
+                            string[] itemList = item.Value.Split('-');
+                            prodId = itemList[0];
+                            prodQty = int.Parse(itemList[1]);
+                            double prodPrice = double.Parse(itemList[2]);
+
+                            subtotal = prodQty * prodPrice;
+                            Session["total"] = (double)Session["total"] + subtotal;
+                        }
+                        totalLbl.Text = string.Format("{0:0.##}", Session["total"].ToString());
+                    }
                 }
             }
             catch

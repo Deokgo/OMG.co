@@ -41,7 +41,7 @@
     <div class="container-fluid m-lg-5">
         <div class="container col-5 m-lg-auto bg-light p-lg-5 my-5">
             <div class="form-group mx-5 text-center">
-                <asp:Label ID="Label7" runat="server" CssClass="h3" Text="Edit My Account"></asp:Label>
+                <asp:Label ID="Label7" runat="server" CssClass="h3" Text="Edit Account"></asp:Label>
             </div>
             <div class="input-group mx-3 pb-lg-5">
                 <asp:TextBox ID="txtSearch" CssClass="form-control" placeholder="Username" aria-label="Recipient's username" aria-describedby="basic-addon2" runat="server"></asp:TextBox>

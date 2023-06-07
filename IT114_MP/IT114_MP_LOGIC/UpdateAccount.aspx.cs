@@ -81,7 +81,7 @@ namespace IT114_MP_LOGIC
                 }
                 else
                 {
-                    Response.Write("<script>alert('No records.')</script>");
+                    Response.Write("<script>alert('Account not found.')</script>");
                 }
 
                 db.connectionclose();
