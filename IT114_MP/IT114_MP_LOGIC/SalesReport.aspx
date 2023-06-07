@@ -12,7 +12,16 @@
             <div id="daily-sales-container">
                 <asp:Label runat="server" ID="dailyLbl">Daily Sales</asp:Label><br />
                 <asp:Label runat="server" ID="dateLbl"></asp:Label><br />
-                <asp:Label runat="server" ID="dailySales"></asp:Label>
+                <asp:Label runat="server" ID="dailySales" Text="0"></asp:Label>
+            </div>
+            <div id="monthly-sales-container">
+                <asp:Label runat="server" ID="monthlyLbl">Monthly Sales</asp:Label><br />
+                <asp:Label runat="server" ID="monthLbl"></asp:Label><br />
+                <asp:Label runat="server" ID="monthlySales">0</asp:Label>
+            </div>
+            <div id="overall-sales-container">
+                <asp:Label runat="server" ID="overallLbl">Overall Sales</asp:Label><br />
+                <asp:Label runat="server" ID="overallSales">0</asp:Label>
             </div>
         </div>
     </form>
