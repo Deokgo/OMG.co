@@ -43,6 +43,13 @@ namespace IT114_MP_LOGIC
             Response.Redirect("AdminPage.aspx");
         }
 
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Contents.RemoveAll();
+            Response.Redirect("Login.aspx");
+        }
+
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             Validation vd = new Validation();

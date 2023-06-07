@@ -98,7 +98,7 @@ namespace IT114_MP_LOGIC
             {
                 TableRow tr = new TableRow();
                 MyTable.GridLines = GridLines.Both;
-                tr.BackColor = System.Drawing.Color.Black;
+                tr.BackColor = System.Drawing.Color.Indigo;
                 tr.ForeColor = System.Drawing.Color.White;
                 TableCell cellProdImg = new TableCell();
                 cellProdImg.Width = 600;
