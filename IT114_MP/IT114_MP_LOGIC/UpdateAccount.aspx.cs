@@ -12,6 +12,14 @@ namespace IT114_MP_LOGIC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(Session["role"] as string) || string.IsNullOrEmpty(Session["uname"] as string))
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+            else
+            {
+                admin_name.Text = "Hi, " + Session["uname"] + "!";
+            }
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             txtUname.Enabled = false;
         }

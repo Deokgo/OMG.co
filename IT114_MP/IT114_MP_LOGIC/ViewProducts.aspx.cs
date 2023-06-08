@@ -13,6 +13,15 @@ namespace IT114_MP_LOGIC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(Session["role"] as string) || string.IsNullOrEmpty(Session["uname"] as string))
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+            else
+            {
+                admin_name.Text = "Hi, " + Session["uname"] + "!";
+            }
+
             if (!this.IsPostBack)
             {
                 Validation vd = new Validation();
@@ -24,7 +33,7 @@ namespace IT114_MP_LOGIC
                 {
                     TableRow tr = new TableRow();
                     MyTable.GridLines = GridLines.Both;
-                    tr.BackColor = System.Drawing.Color.Black;
+                    tr.BackColor = System.Drawing.Color.Indigo;
                     tr.ForeColor = System.Drawing.Color.White;
                     TableCell cellProdImg = new TableCell();
                     cellProdImg.Width = 600;

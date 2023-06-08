@@ -14,6 +14,15 @@ namespace IT114_MP_LOGIC
     {
         protected void Page_Init(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(Session["role"] as string) || string.IsNullOrEmpty(Session["uname"] as string))
+            {
+                Response.Redirect("HomePage.aspx");
+            }
+            else
+            {
+                admin_name.Text = "Hi, " + Session["uname"] + "!";
+            }
+
             if (!Page.IsPostBack)
             {
                 imgProd.ImageUrl = "~/images/default.jpg"; // Default Picture

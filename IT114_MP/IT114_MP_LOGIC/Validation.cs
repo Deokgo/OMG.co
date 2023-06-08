@@ -46,8 +46,11 @@ namespace IT114_MP_LOGIC
         {
             if (string.IsNullOrWhiteSpace(description))
             {
+                //sqlStatement = "UPDATE prod_info_tbl SET prod_name='" + name + "', prod_price='" + price + "', prod_photo='" + photo +
+                //    "', prod_status='" + status + "' WHERE prod_name='" + searchedText + "' OR prod_id='" +
+                //    searchedText + "';";
                 sqlStatement = "UPDATE prod_info_tbl SET prod_name='" + name + "', prod_price='" + price + "', prod_photo='" + photo +
-                    "', prod_status='" + status + "' WHERE prod_name='" + searchedText + "' OR prod_id='" +
+                    "', description=NULL, prod_status='" + status + "' WHERE prod_name='" + searchedText + "' OR prod_id='" +
                     searchedText + "';";
             }
             else
