@@ -35,7 +35,7 @@
             </div>
             <div class="form-group mx-5">
                 <div class="form-group mx-5">
-                     <asp:Table ID="MyTableDaily" CssClass="table table-hover m-lg-3" runat="server"></asp:Table>
+                     <asp:Table ID="MyTableDaily" CssClass="table table-hover m-lg-3 text-center" runat="server"></asp:Table>
                 </div>
             </div>
             </div>
@@ -60,7 +60,7 @@
                         <asp:ListItem Text="December" Value="12"></asp:ListItem>
                     </asp:DropDownList>
                     <div class="form-group mx-5">
-                        <asp:Table ID="MyTableMonthly" CssClass="table table-hover m-lg-3" runat="server"></asp:Table>
+                        <asp:Table ID="MyTableMonthly" CssClass="table table-hover m-lg-3 text-center" runat="server"></asp:Table>
                     </div>
                 </div>
                 </div>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="form-group mx-5">
                         <div class="form-group mx-5">
-                            <asp:Table ID="MyTableOverall"  CssClass="table table-hover m-lg-3"  runat="server"></asp:Table>
+                            <asp:Table ID="MyTableOverall"  CssClass="table table-hover m-lg-3 text-center"  runat="server"></asp:Table>
                         </div>
                     </div>
                     </div>
