@@ -11,45 +11,56 @@
     <form class="justify-content-center text-center" runat="server"> 
         <!-- Navigation Bar-->
         <div class="container-md" style="position:fixed; top:0; width:100%">
-            <div class="row bg-dark">
-                <div class="col-8">
-                    <nav class="navbar navbar-expand-sm bg-dark navbar-light">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link disabled text-light mr-lg-1" style="font-size:xx-large; font-family:Broadway" href="#">OMG <span class="badge badge-pill badge-secondary">.co</span></a>
-                                <i class="fa-sharp fa-light fa-circle-user"></i>
-                            </li>
-                            <asp:Label runat="server" class="text-dark mt-4" style="font-size:20px" href="#">||||</asp:Label>
-                            <li class="nav-item">
-                                <div class="dropdown">
-                                    <button class="btn btn-dark dropdown-toggle mt-3 mr-3 text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Manage Employee
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="AddAccount.aspx">Add Employee Account</a>
-                                        <a class="dropdown-item" href="UpdateAccount.aspx">Update Employee Account</a>
-                                    </div>
+            <div class="row-md bg-dark">
+                <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link disabled text-light mr-lg-1" style="font-size:40px; font-family:Broadway" href="#">OMG <span class="badge badge-pill badge-secondary">.co</span></a>
+                            <i class="fa-sharp fa-light fa-circle-user"></i>
+                        </li>
+                        <asp:Label runat="server" class="text-dark mt-4" style="font-size:20px" href="#">||||</asp:Label>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn btn-dark dropdown-toggle mt-4 mr-3 text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Manage Employee
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="AddAccount.aspx">Add Employee Account</a>
+                                    <a class="dropdown-item" href="UpdateAccount.aspx">Update Employee Account</a>
                                 </div>
-                            </li>   
-                            <li class="nav-item">
-                                <div class="dropdown">
-                                    <button class="btn btn-dark dropdown-toggle mt-3 mr-3 text-light" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Manage Products
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                        <a class="dropdown-item" href="AddProducts.aspx">Add Product Information</a>
-                                        <a class="dropdown-item" href="UpdateProducts.aspx">Update Product Information</a>
-                                        <a class="dropdown-item" href="ViewProducts.aspx">View Product Information</a>
-                                    </div>
+                            </div>
+                        </li>   
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn btn-dark dropdown-toggle mt-4 mr-3 text-light" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Manage Products
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="AddProducts.aspx">Add Product Information</a>
+                                    <a class="dropdown-item" href="UpdateProducts.aspx">Update Product Information</a>
+                                    <a class="dropdown-item" href="ViewProducts.aspx">View Product Information</a>
                                 </div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col">
-                    <span class="badge badge-pill badge-primary mt-3 mr-4" style="font-size:x-large; font-family:'Century Gothic'">dashboard</span>
-                    <asp:Button id="btnLogout" runat="server" type="button" class="btn btn-outline-danger w-25 pt-2" OnClick="btnLogout_Click" Text="Log Out"/>
-                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <span class="badge badge-pill badge-primary mx-auto" style="font-size:x-large; font-family:'Century Gothic'">dashboard</span>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light mx-3" href="#" id="navbardrop3" data-toggle="dropdown">
+                            <asp:Label ID="Label2" CssClass="text-light" style="font-size:16px; font-weight:bold" runat="server" Text="Admin"></asp:Label>
+                            </a>
+                            <div class="dropdown-menu">
+                                <asp:LinkButton ID="LinkButton1" class="dropdown-item mx-auto " runat="server" OnClick="btnEditMyAcc_Click">Edit My Profile</asp:LinkButton>
+                                <div class="dropdown-divider"></div>
+                                <asp:LinkButton ID="LinkButton2" class="dropdown-item mx-auto " runat="server" OnClick="btnLogout_Click">Log Out</asp:LinkButton>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
             </div>
             <div class="container-md bg-light border pt-lg-1"> </div>
         </div>

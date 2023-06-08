@@ -75,5 +75,9 @@ namespace IT114_MP_LOGIC
         {
             Response.Redirect("HomePage.aspx");
         }
+        protected void Register_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
+        }
     }
 }
