@@ -19,17 +19,8 @@
                         </li>
                         <asp:Label runat="server" class="text-dark mt-4" style="font-size:20px" href="#">||||</asp:Label>
                         <li class="nav-item">
-                            <a class="nav-link mt-3 mr-3 text-primary" style="font-size:15px" href="HomePage.aspx">Home</a>
+                            <a class="nav-link mt-4 mr-3 text-light" style="font-size:15px" href="HomePage.aspx">Home</a>
                         </li> 
-                        <li class="nav-item">
-                            <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#aboutUsPage">About Us</a>
-                        </li> 
-                        <li class="nav-item">
-                            <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#productsPage">Products</a>
-                        </li>   
-                        <li class="nav-item">
-                            <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#contactUsPage">Contact Us</a>
-                        </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
