@@ -62,9 +62,10 @@
                     </ul>
                 </nav>
             </div>
-            <div class="container-md bg-light border pt-lg-1"> </div>
+            <div class="container-md bg-light border pt-1"> </div>
         </div>
         <div class="container-md bg-light border pt-lg-4 mt-5"> </div>
+        <div class="container-md bg-trasnparent pt-lg-5"> </div>
         <div class="container-md bg-trasnparent pt-lg-5"> </div>
 
         <!-- Content Page-->
@@ -75,11 +76,10 @@
         <asp:Label class="text-warning mr-4" id="lblRole" runat="server" style="font-size:30px; font-family:'Century Gothic'; font-weight:bold">[role]</asp:Label>
     
         <div class="row justify-content-center mt-5">
-            <asp:Button id="btnEditMyAcc" runat="server" type="button" class="btn btn-outline-light w-25 pt-2" OnClick="btnEditMyAcc_Click" Text="Edit Profile"/><div class="w-100"></div>
             <asp:Label class="text-white mt-5" id="Label1" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">What would you like to do?</asp:Label>
         </div>
 
-        <div class="container-md bg-trasnparent pt-lg-4 mt-5"> </div>
+        <div class="container-md bg-trasnparent pt-lg-5 mt-5"> </div>
         <div id="editUserInfo" class="container-md bg-light mt-4 pt-lg-5 text-center" style="opacity:.25; z-index:-1; position:relative"></div>
         <div class="container-md bg-dark text-center" style="z-index:-1; position:relative"></div>
     </form>

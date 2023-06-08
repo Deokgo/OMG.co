@@ -42,10 +42,11 @@
                     </ul>
                 </nav>
             </div>
-            <div class="container-md bg-light border pt-lg-1"> </div>
+            <div class="container-md bg-light border pt-1"> </div>
         </div>  
         <div class="container-md bg-light border mb-5 pt-lg-5"> </div>
         <div class="container-md bg-trasnparent pt-lg-5 mb-5"> </div>
+        <div class="container-md bg-trasnparent pt-lg-5"> </div>
 
         <!-- Main Content Page -->  
         <div class="row justify-content-md-center ">
@@ -54,8 +55,7 @@
         </div>
         <asp:Label class="text-warning" id="lblRole" runat="server" style="font-size:30px; font-family:'Century Gothic'; font-weight:bold">[role]</asp:Label>
 
-        <div class="row justify-content-center mt-4 mb-5">
-            <asp:Button id="btnEditMyAcc" runat="server" type="button" class="btn btn-outline-light w-25 pt-2 mt-4" OnClick="btnEditAcc_Click" Text="Edit Profile"/><div class="w-100"></div>
+        <div class="row justify-content-center mt-5 mb-5">
             <asp:Label class="text-white mt-5 border-dark" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">Start Shopping Now!</asp:Label>
         </div>
         <div class="container-md bg-trasnparent pt-lg-4"> </div>
