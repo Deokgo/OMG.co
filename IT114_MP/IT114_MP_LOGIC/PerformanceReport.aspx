@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div id="best-container">
+            <%--<div id="best-container">
                 <asp:Label runat="server" Text="BEST PRODUCT SOLD"></asp:Label>
                 <asp:Label runat="server" ID="bestNameLbl"></asp:Label>
                 <asp:Image runat="server" ID="bestImage"/>
@@ -34,9 +34,12 @@
                 <asp:Label runat="server" ID="worstSoldLbl"></asp:Label>
                 <br />
                 <br />
-                <asp:Button ID="btn" runat="server" Text="Back" OnClick="btn_Click" />
-            </div>
+                
+            </div>--%>
+            <asp:Table ID="MyTable" runat="server"></asp:Table>
+            <asp:Button ID="btn" runat="server" Text="Back" OnClick="btn_Click" />
         </div>
+        
     </form>
 </body>
 </html>

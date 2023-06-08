@@ -24,75 +24,48 @@ namespace IT114_MP_LOGIC
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// dailyLbl control.
+        /// ddlMonths control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dailyLbl;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMonths;
 
         /// <summary>
-        /// dateLbl control.
+        /// MyTableMonthly control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dateLbl;
+        protected global::System.Web.UI.WebControls.Table MyTableMonthly;
 
         /// <summary>
-        /// dailySales control.
+        /// MyTableDaily control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dailySales;
+        protected global::System.Web.UI.WebControls.Table MyTableDaily;
 
         /// <summary>
-        /// monthlyLbl control.
+        /// MyTableOverall control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label monthlyLbl;
+        protected global::System.Web.UI.WebControls.Table MyTableOverall;
 
         /// <summary>
-        /// monthLbl control.
+        /// btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label monthLbl;
-
-        /// <summary>
-        /// monthlySales control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label monthlySales;
-
-        /// <summary>
-        /// overallLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label overallLbl;
-
-        /// <summary>
-        /// overallSales control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label overallSales;
+        protected global::System.Web.UI.WebControls.Button btn;
     }
 }
