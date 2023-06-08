@@ -69,5 +69,9 @@ namespace IT114_MP_LOGIC
                 db.connectionclose();
             }
         }
+        protected void Register_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
+        }
     }
 }
