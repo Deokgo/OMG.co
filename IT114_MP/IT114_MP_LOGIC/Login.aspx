@@ -5,39 +5,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>LOGIN</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>       
 </head>
 <body style="background-image: url('../images/lofiBG.png'); background-size:cover ">
     <form class="justify-content-center" runat="server"> 
         <!-- Navigation Bar-->
         <div class="container-md" style="position:fixed; top:0; width:100%">
-            <div class="row bg-dark">
-                <div class="col-10">
-                    <nav class="navbar navbar-expand-sm bg-dark navbar-light">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link text-light mr-lg-1" style="font-size:xx-large; font-family:Broadway" href="HomePage.aspx">OMG <span class="badge badge-pill badge-secondary">.co</span></a>
-                            </li>
-                            <asp:Label runat="server" class="text-dark mt-4" style="font-size:20px" href="#">||||</asp:Label>
-                            <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-primary" style="font-size:15px" href="HomePage.aspx">Home</a>
-                            </li> 
-                            <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#aboutUsPage">About Us</a>
-                            </li> 
-                            <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#productsPage">Products</a>
-                            </li>   
-                            <li class="nav-item">
-                                <a class="nav-link mt-3 mr-3 text-light" style="font-size:15px" href="#contactUsPage">Contact Us</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-md-2 mt-4">
-                    <a class="text-light mr-3" style="font-size:15px" href="Login.aspx">Login</a>
-                    <asp:Button  runat="server" class="btn btn-primary" type="button" text="Get Started" id="dropdownMenuButton" OnClick="Register_Click"/>
-                </div>
+            <div class="row-md bg-dark">
+                <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link text-light mr-lg-1" style="font-size:40px; font-family:Broadway" href="HomePage.aspx">OMG <span class="badge badge-pill badge-secondary">.co</span></a>
+                        </li>
+                        <asp:Label runat="server" class="text-dark mt-4" style="font-size:20px" href="#">||||</asp:Label>
+                        <li class="nav-item">
+                            <a class="nav-link mt-4 mr-3 text-primary" style="font-size:15px" href="HomePage.aspx">Home</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link mt-4 mr-3 text-light" style="font-size:15px" href="#aboutUsPage">About Us</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link mt-4 mr-3 text-light" style="font-size:15px" href="#productsPage">Products</a>
+                        </li>   
+                        <li class="nav-item">
+                            <a class="nav-link mt-4 mr-3 text-light" style="font-size:15px" href="#contactUsPage">Contact Us</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="text-light mr-3" style="font-size:15px" href="Login.aspx">Login</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <asp:Button  runat="server" class="btn btn-primary" type="button" text="Get Started" id="Button2" OnClick="Register_Click"/>
+                        </li>
+                    </ul>
+                </nav>
             </div>
             <div class="container-md bg-light border pt-lg-1"> </div>
         </div>
