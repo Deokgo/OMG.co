@@ -10,14 +10,15 @@ namespace IT114_MP_LOGIC
         string[] images;
         string[] prices;
         int prod1, prod2, prod3;
+        string alterImage = "~/images/no-product-found.png";
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            DatabaseClass db = new DatabaseClass();
+            Random rnd = new Random();
             try
             {
-                DatabaseClass db = new DatabaseClass();
-                Random rnd = new Random();
                 rdr = db.getRec("Select * from prod_info_tbl where prod_status='available';");
-
                 products = new string[(rdr.FieldCount) - 1];
                 images = new string[(rdr.FieldCount) - 1];
                 prices = new string[(rdr.FieldCount) - 1];
@@ -52,8 +53,11 @@ namespace IT114_MP_LOGIC
             }
             catch
             {
-                Response.Redirect("Login.aspx");
+                imgView1.ImageUrl = alterImage;
+                imgView2.ImageUrl = alterImage;
+                imgView3.ImageUrl = alterImage;
             }
+
         }
         protected void Login_Click(object sender, EventArgs e)
         {
