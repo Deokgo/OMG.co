@@ -56,6 +56,20 @@ namespace IT114_MP_LOGIC
                     MyTableDaily.Rows.Add(tr2);
                     //dailySales.Text = dt.Rows[0]["daily_sales"].ToString();
                 }
+                else
+                {
+                    tr2 = new TableRow();
+                    cellDaily = new TableCell();
+                    cellDailySales = new TableCell();
+
+                    cellDaily.Text = DateTime.Now.ToString("MMMM d, yyyy");
+                    cellDailySales.Text = "0";
+
+                    tr2.Cells.Add(cellDaily);
+                    tr2.Cells.Add(cellDailySales);
+
+                    MyTableDaily.Rows.Add(tr2);
+                }
 
 
                 TableRow tr3 = new TableRow();
@@ -84,6 +98,17 @@ namespace IT114_MP_LOGIC
                     MyTableOverall.Rows.Add(tr3);
 
                     //overallSales.Text = dt.Rows[0]["overall_sales"].ToString();
+                }
+                else
+                {
+                    tr3 = new TableRow();
+                    cellOverallSales = new TableCell();
+
+                    cellOverallSales.Text = "0";
+
+                    tr3.Cells.Add(cellOverallSales);
+
+                    MyTableOverall.Rows.Add(tr3);
                 }
 
                 if (!this.IsPostBack)
@@ -124,7 +149,21 @@ namespace IT114_MP_LOGIC
 
                         MyTableMonthly.Rows.Add(tr1);
                         // monthlySales.Text = dt.Rows[0]["monthly_sales"].ToString();
-                    }                    
+                    }
+                    else
+                    {
+                        tr1 = new TableRow();
+                        cellMonth = new TableCell();
+                        cellMonthlySales = new TableCell();
+
+                        cellMonth.Text = DateTime.Now.ToString("MMMM");
+                        cellMonthlySales.Text = "0";
+
+                        tr1.Cells.Add(cellMonth);
+                        tr1.Cells.Add(cellMonthlySales);
+
+                        MyTableMonthly.Rows.Add(tr1);
+                    }
                 }
             }   
         }
@@ -173,6 +212,20 @@ namespace IT114_MP_LOGIC
 
                 MyTableMonthly.Rows.Add(tr1);
                 // monthlySales.Text = dt.Rows[0]["monthly_sales"].ToString();
+            }
+            else
+            {
+                tr1 = new TableRow();
+                cellMonth = new TableCell();
+                cellMonthlySales = new TableCell();
+
+                cellMonth.Text = month_name;
+                cellMonthlySales.Text = "0";
+
+                tr1.Cells.Add(cellMonth);
+                tr1.Cells.Add(cellMonthlySales);
+
+                MyTableMonthly.Rows.Add(tr1);
             }
         }
     }
