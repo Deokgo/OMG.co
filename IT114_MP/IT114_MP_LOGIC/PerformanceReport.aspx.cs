@@ -180,80 +180,29 @@ namespace IT114_MP_LOGIC
                 }
                 db.connectionclose();
 
+
                 //Get Top 3 Sold Products
-                dt = db.Show("SELECT pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo, SUM(tt.qty) AS total_qty FROM prod_info_tbl pi INNER JOIN trans_tbl tt ON pi.prod_id = tt.prod_id WHERE pi.prod_status = 'Available' AND YEAR(tt.trans_date) = YEAR(CURDATE()) AND MONTH(tt.trans_date) = MONTH(CURDATE()) GROUP BY pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo ORDER BY SUM(tt.qty) DESC LIMIT 3; ");
+                dt = db.Show("SELECT pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo, SUM(tt.qty) AS total_qty FROM prod_info_tbl pi INNER JOIN trans_tbl tt ON pi.prod_id = tt.prod_id WHERE pi.prod_status = 'Available' AND YEAR(tt.trans_date) = YEAR(CURDATE()) AND MONTH(tt.trans_date) = MONTH(CURDATE()) GROUP BY pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo ORDER BY SUM(tt.qty) DESC; ");
                 if (dt.Rows.Count > 0)
                 {
-                    tr2 = new TableRow();
-                    cellProdImg2 = new TableCell();
-                    cellProdName2 = new TableCell();
-                    cellProdPrice2 = new TableCell();
-                    cellNoSold2 = new TableCell();
-                    Image img2 = new Image();
-
-                    img2.Width = 250;
-                    img2.Height = 200;
-
-                    img2.ImageUrl = dt.Rows[0]["prod_photo"].ToString();
-                    cellProdImg2.Controls.Add(img2);
-
-                    cellProdName2.Text = dt.Rows[0]["prod_name"].ToString();
-                    cellProdPrice2.Text = dt.Rows[0]["prod_price"].ToString();
-                    cellNoSold2.Text = dt.Rows[0]["total_qty"].ToString();
-
-                    tr2.Cells.Add(cellProdImg2);
-                    tr2.Cells.Add(cellProdName2);
-                    tr2.Cells.Add(cellProdPrice2);
-                    tr2.Cells.Add(cellNoSold2);
-
-                    MyTable.Rows.Add(tr2);
-
-                    if (dt.Rows.Count > 1)
+                    foreach(DataRow row in dt.Rows)
                     {
                         tr2 = new TableRow();
                         cellProdImg2 = new TableCell();
                         cellProdName2 = new TableCell();
                         cellProdPrice2 = new TableCell();
                         cellNoSold2 = new TableCell();
-                        Image img3 = new Image();
+                        Image img2 = new Image();
 
-                        img3.Width = 250;
-                        img3.Height = 200;
+                        img2.Width = 250;
+                        img2.Height = 200;
 
-                        img3.ImageUrl = dt.Rows[1]["prod_photo"].ToString();
-                        cellProdImg2.Controls.Add(img3);
+                        img2.ImageUrl = row["prod_photo"].ToString();
+                        cellProdImg2.Controls.Add(img2);
 
-                        cellProdName2.Text = dt.Rows[1]["prod_name"].ToString();
-                        cellProdPrice2.Text = dt.Rows[1]["prod_price"].ToString();
-                        cellNoSold2.Text = dt.Rows[1]["total_qty"].ToString();
-
-                        tr2.Cells.Add(cellProdImg2);
-                        tr2.Cells.Add(cellProdName2);
-                        tr2.Cells.Add(cellProdPrice2);
-                        tr2.Cells.Add(cellNoSold2);
-
-                        MyTable.Rows.Add(tr2);
-
-                    }
-
-                    if (dt.Rows.Count > 2)
-                    {
-                        tr2 = new TableRow();
-                        cellProdImg2 = new TableCell();
-                        cellProdName2 = new TableCell();
-                        cellProdPrice2 = new TableCell();
-                        cellNoSold2 = new TableCell();
-                        Image img3 = new Image();
-
-                        img3.Width = 250;
-                        img3.Height = 200;
-
-                        img3.ImageUrl = dt.Rows[2]["prod_photo"].ToString();
-                        cellProdImg2.Controls.Add(img3);
-
-                        cellProdName2.Text = dt.Rows[2]["prod_name"].ToString();
-                        cellProdPrice2.Text = dt.Rows[2]["prod_price"].ToString();
-                        cellNoSold2.Text = dt.Rows[2]["total_qty"].ToString();
+                        cellProdName2.Text = row["prod_name"].ToString();
+                        cellProdPrice2.Text = row["prod_price"].ToString();
+                        cellNoSold2.Text = row["total_qty"].ToString();
 
                         tr2.Cells.Add(cellProdImg2);
                         tr2.Cells.Add(cellProdName2);
@@ -263,7 +212,7 @@ namespace IT114_MP_LOGIC
                         MyTable.Rows.Add(tr2);
                     }
                 }
-                else
+                else 
                 {
                     NoDataSold.Text = "[ No Data to Show ]";
                 }

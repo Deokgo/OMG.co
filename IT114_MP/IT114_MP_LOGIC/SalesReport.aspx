@@ -22,8 +22,7 @@
                 </ul>            
             </ul>
         </nav>
-        <div>
-
+        <div class="pt-lg-5">
              <div class="container-fluid m-xl-5 p-xl-5">
             <div class="form-group mx-5 text-center">
                 <asp:Label ID="Label1" runat="server" CssClass="h1 text-center font-weight-bold m-lg-5 p-lg-5 text-primary" Text="Sales Report"></asp:Label>
