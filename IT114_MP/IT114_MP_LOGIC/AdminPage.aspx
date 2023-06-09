@@ -22,7 +22,7 @@
                         <li class="nav-item">
                             <div class="dropdown">
                                 <button class="btn btn-dark dropdown-toggle mt-4 mr-3 text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Manage Employee
+                                    Manage Accounts
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="AddAccount.aspx">Add Account</a>
