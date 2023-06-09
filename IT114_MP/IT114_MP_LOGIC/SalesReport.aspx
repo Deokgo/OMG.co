@@ -66,7 +66,7 @@
             
                 <div class="container col-8 m-lg-auto bg-light p-lg-5 my-5">
                     <div class="form-group mx-5 text-center">
-                        <asp:Label ID="Label5" runat="server" CssClass="h3" Text="Yearly Sales"></asp:Label>
+                        <asp:Label ID="Label5" runat="server" CssClass="h3" Text="Overall Sales"></asp:Label>
                     </div>
                     <div class="form-group mx-5">
                         <div class="form-group mx-5">
