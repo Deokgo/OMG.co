@@ -135,8 +135,8 @@
         </div>      
             
         <div class="row justify-content-center mt-5">
-            <asp:Button id="btnRegister" runat="server" type="button" class="btn btn-outline-light" OnClick="btnRegister_Click" Text="Sign Up" width="150px" height="50px" ValidationGroup="submitInfo"/>
-            <asp:Button id="btnBack" runat="server" type="button" class="btn btn-dark ml-5" OnClick="btnBack_Click" Text="Cancel" width="150px" height="50px"/>
+            <asp:Button id="btnRegister" runat="server" type="button" class="btn btn-dark" OnClick="btnRegister_Click" Text="Sign Up" width="150px" height="50px" ValidationGroup="submitInfo"/>
+            <asp:Button id="btnBack" runat="server" type="button" class="btn btn-outline-light ml-5" OnClick="btnBack_Click" Text="Cancel" width="150px" height="50px"/>
         </div>  
         <div class="container-md bg-trasnparent pt-lg-1"> </div>
         <div class="container-md bg-trasnparent pt-lg-1"> </div>
