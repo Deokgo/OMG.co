@@ -18,7 +18,7 @@ namespace IT114_MP_LOGIC
             Random rnd = new Random();
             try
             {
-                rdr = db.getRec("Select * from prod_info_tbl where prod_status='available';");
+                rdr = db.getRec("Select * from prod_info_tbl where prod_status='available' and prod_photo!='~/images/default.jpg';");
                 products = new string[(rdr.FieldCount) - 1];
                 images = new string[(rdr.FieldCount) - 1];
                 prices = new string[(rdr.FieldCount) - 1];
