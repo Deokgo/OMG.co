@@ -58,7 +58,7 @@
                 </div>
                 <div class="form-row ">
                     <div class="input-group">
-                        <asp:TextBox ID="txtSearch" CssClass="form-control" placeholder="Product Name" aria-label="Recipient's username" aria-describedby="basic-addon2" Width="300px" runat="server" ></asp:TextBox>
+                        <asp:TextBox ID="txtSearch" CssClass="form-control" placeholder="Search product" aria-label="Recipient's username" aria-describedby="basic-addon2" Width="300px" runat="server" ></asp:TextBox>
                         <asp:DropDownList ID="ddlProdStatus" CssClass="form-control"  runat="server" >
                         <asp:ListItem Text="Available" Value="available"></asp:ListItem>
                         <asp:ListItem Text="Not Available" Value="not available"></asp:ListItem>

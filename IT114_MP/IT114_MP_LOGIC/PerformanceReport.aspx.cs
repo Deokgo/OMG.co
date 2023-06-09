@@ -147,6 +147,7 @@ namespace IT114_MP_LOGIC
                 {
                     NoDataBest.Text = "[ No Data to Show ]";
                 }
+                db.connectionclose();
 
                 //Get Least Sold Product
                 dt = db.Show("SELECT pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo, SUM(tt.qty) AS total_qty FROM prod_info_tbl pi INNER JOIN trans_tbl tt ON pi.prod_id = tt.prod_id WHERE pi.prod_status = 'Available' AND YEAR(tt.trans_date) = YEAR(CURDATE()) AND MONTH(tt.trans_date) = MONTH(CURDATE()) GROUP BY pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo ORDER BY SUM(tt.qty) ASC LIMIT 1; ");
@@ -187,6 +188,7 @@ namespace IT114_MP_LOGIC
                 {
                     NoDataLeast.Text = "[ No Data to Show ]";
                 }
+                db.connectionclose();
 
                 //Get Top 3 Sold Products
                 dt = db.Show("SELECT pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo, SUM(tt.qty) AS total_qty FROM prod_info_tbl pi INNER JOIN trans_tbl tt ON pi.prod_id = tt.prod_id WHERE pi.prod_status = 'Available' AND YEAR(tt.trans_date) = YEAR(CURDATE()) AND MONTH(tt.trans_date) = MONTH(CURDATE()) GROUP BY pi.prod_id, pi.prod_name, pi.prod_price, pi.prod_photo ORDER BY SUM(tt.qty) DESC LIMIT 3; ");
@@ -289,6 +291,7 @@ namespace IT114_MP_LOGIC
                 {
                     NoDataSold.Text = "[ No Data to Show ]";
                 }
+                db.connectionclose();
             }
         }
 

@@ -125,7 +125,8 @@ namespace IT114_MP_LOGIC
 
                             }
                         }
-                    }      
+                    }
+                    db.connectionclose();
                 }
                 catch
                 {

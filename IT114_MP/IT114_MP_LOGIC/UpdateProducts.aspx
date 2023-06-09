@@ -58,7 +58,7 @@
                     <asp:Label ID="Label7" runat="server" CssClass="h3" Text="Edit Product Details"></asp:Label>
                 </div>
                     <div class="input-group col my-5 mx-4">
-                        <asp:TextBox ID="txtSearch" CssClass="form-control" placeholder="Product name" aria-label="Product name" aria-describedby="basic-addon2" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtSearch" CssClass="form-control" placeholder="Search product" aria-label="Product name" aria-describedby="basic-addon2" runat="server"></asp:TextBox>
                         <div class="input-group-append">
                             <asp:Button ID="btnSearch" CssClass="btn btn-outline-secondary" runat="server" Text="Search" OnClick="btnSearch_Click" />
                         </div>

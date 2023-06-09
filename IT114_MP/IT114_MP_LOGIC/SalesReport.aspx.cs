@@ -70,6 +70,7 @@ namespace IT114_MP_LOGIC
 
                     MyTableDaily.Rows.Add(tr2);
                 }
+                db.connectionclose();
 
 
                 TableRow tr3 = new TableRow();
@@ -110,6 +111,7 @@ namespace IT114_MP_LOGIC
 
                     MyTableOverall.Rows.Add(tr3);
                 }
+                db.connectionclose();
 
                 if (!this.IsPostBack)
                 {
@@ -164,6 +166,7 @@ namespace IT114_MP_LOGIC
 
                         MyTableMonthly.Rows.Add(tr1);
                     }
+                    db.connectionclose();
                 }
             }   
         }
@@ -227,6 +230,7 @@ namespace IT114_MP_LOGIC
 
                 MyTableMonthly.Rows.Add(tr1);
             }
+            db.connectionclose();
         }
     }
 }

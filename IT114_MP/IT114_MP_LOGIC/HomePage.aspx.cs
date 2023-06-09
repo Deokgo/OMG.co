@@ -57,7 +57,7 @@ namespace IT114_MP_LOGIC
                 imgView2.ImageUrl = alterImage;
                 imgView3.ImageUrl = alterImage;
             }
-
+            db.connectionclose();
         }
         protected void Login_Click(object sender, EventArgs e)
         {

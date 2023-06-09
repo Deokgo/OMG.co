@@ -73,12 +73,10 @@ namespace IT114_MP_LOGIC
                         prodTable.Rows.Add(prodtr);
                     }
                 }
+                db.connectionclose();
             }   
         }
-        protected void Page_Init(object sender, EventArgs e)
-        {
-            
-        }
+
         protected void AddToCart(object sender, EventArgs e) //bali need ko muna kunin yung id pati qty pre
         {
             DatabaseClass db = new DatabaseClass(); //gagawin ko nalang is yung text part pangdisplay, yung value id saka qty
@@ -126,6 +124,7 @@ namespace IT114_MP_LOGIC
             {
                 Response.Write("<script>alert('Quantity should be integer.')</script>");
             }
+            db.connectionclose();
         }
         protected void RemoveToCart(object sender, EventArgs e)
         {
@@ -184,6 +183,7 @@ namespace IT114_MP_LOGIC
             {
                 Response.Write("<script>alert('Please add an item to the cart first!')</script>");
             }
+            db.connectionclose();
         }
         protected void btnLogout_Click(object sender, EventArgs e)
         {

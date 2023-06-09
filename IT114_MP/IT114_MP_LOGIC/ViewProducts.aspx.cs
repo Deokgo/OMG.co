@@ -103,33 +103,33 @@ namespace IT114_MP_LOGIC
             MySqlDataReader reader = view.getRec("SELECT * FROM prod_info_tbl WHERE (prod_id='" + txtSearch.Text
                 + "' OR prod_name LIKE '" + txtSearch.Text + "%') AND prod_status='" + ddlProdStatus.SelectedValue + "';");
 
+            TableRow tr = new TableRow();
+            MyTable.GridLines = GridLines.Both;
+            tr.BackColor = System.Drawing.Color.Indigo;
+            tr.ForeColor = System.Drawing.Color.White;
+            TableCell cellProdImg = new TableCell();
+            cellProdImg.Width = 600;
+            TableCell cellProdName = new TableCell();
+            cellProdName.Width = 300;
+            TableCell cellProdPrice = new TableCell();
+            cellProdPrice.Width = 300;
+            TableCell cellProdDesc = new TableCell();
+            cellProdDesc.Width = 600;
+
+            cellProdImg.Text = "IMAGE PRODUCT";
+            cellProdName.Text = "PRODUCT";
+            cellProdPrice.Text = "PRICE";
+            cellProdDesc.Text = "DESCRIPTION";
+
+            tr.Cells.Add(cellProdImg);
+            tr.Cells.Add(cellProdName);
+            tr.Cells.Add(cellProdPrice);
+            tr.Cells.Add(cellProdDesc);
+
+            MyTable.Rows.Add(tr);
+
             if (reader.HasRows)
             {
-                TableRow tr = new TableRow();
-                MyTable.GridLines = GridLines.Both;
-                tr.BackColor = System.Drawing.Color.Indigo;
-                tr.ForeColor = System.Drawing.Color.White;
-                TableCell cellProdImg = new TableCell();
-                cellProdImg.Width = 600;
-                TableCell cellProdName = new TableCell();
-                cellProdName.Width = 300;
-                TableCell cellProdPrice = new TableCell();
-                cellProdPrice.Width = 300;
-                TableCell cellProdDesc = new TableCell();
-                cellProdDesc.Width = 600;
-
-                cellProdImg.Text = "IMAGE PRODUCT";
-                cellProdName.Text = "PRODUCT";
-                cellProdPrice.Text = "PRICE";
-                cellProdDesc.Text = "DESCRIPTION";
-
-                tr.Cells.Add(cellProdImg);
-                tr.Cells.Add(cellProdName);
-                tr.Cells.Add(cellProdPrice);
-                tr.Cells.Add(cellProdDesc);
-
-                MyTable.Rows.Add(tr);
-
                 foreach (DataRow access in dataTable.Rows)
                 {
                     tr = new TableRow();

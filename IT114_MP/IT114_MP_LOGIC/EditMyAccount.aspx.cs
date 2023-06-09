@@ -87,7 +87,6 @@ namespace IT114_MP_LOGIC
 
             if(acc_state == "disabled")
             {
-                Session.Contents.RemoveAll();
                 Response.Redirect("MessageAccDisabled.aspx");
             }
         }

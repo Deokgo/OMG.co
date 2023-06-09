@@ -46,7 +46,7 @@ namespace IT114_MP_LOGIC
                     }
                     else if (role == "customer")
                     {
-                        MySqlDataReader prodReader = db.getRec("SELECT * FROM prod_info_tbl;");
+                        MySqlDataReader prodReader = db.getRec("SELECT * FROM prod_info_tbl WHERE prod_status <> 'not available';");
                         if (prodReader.HasRows)
                         {
                             Response.Redirect("TransactionPage.aspx");

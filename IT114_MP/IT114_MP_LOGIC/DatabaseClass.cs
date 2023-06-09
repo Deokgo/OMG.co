@@ -54,6 +54,7 @@ namespace IT114_MP_LOGIC
             sqlAdapter = new MySqlDataAdapter(sqlCom);
             tb = new DataTable();
             sqlAdapter.Fill(tb);
+
             return tb;
         }
         public DataSet getDataSet(string cmd)
@@ -73,6 +74,7 @@ namespace IT114_MP_LOGIC
 
             }
             sqlCon.Close();
+
             return ds;
         }
 
