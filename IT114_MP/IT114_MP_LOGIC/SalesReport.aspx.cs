@@ -20,6 +20,8 @@ namespace IT114_MP_LOGIC
             }
             else
             {
+                admin_name.Text = "Hi, " + Session["uname"] + "!";
+
                 DatabaseClass db = new DatabaseClass();
 
                 TableRow tr2 = new TableRow();
@@ -39,7 +41,6 @@ namespace IT114_MP_LOGIC
 
                 MyTableDaily.Rows.Add(tr2);
 
-                //dateLbl.Text = DateTime.Now.ToString("MMMM d, yyyy");
                 dt = db.Show("SELECT SUM(prod_price*qty) AS daily_sales FROM trans_tbl tt INNER JOIN prod_info_tbl pt ON tt.prod_id=pt.prod_id WHERE YEAR(tt.trans_date)=YEAR(CURDATE()) AND MONTH(tt.trans_date)=MONTH(CURDATE()) AND DAY(tt.trans_date)=DAY(CURDATE());");
                 if (dt.Rows.Count > 0 && dt.Rows[0]["daily_sales"] != DBNull.Value)
                 {
@@ -54,7 +55,7 @@ namespace IT114_MP_LOGIC
                     tr2.Cells.Add(cellDailySales);
 
                     MyTableDaily.Rows.Add(tr2);
-                    //dailySales.Text = dt.Rows[0]["daily_sales"].ToString();
+
                 }
                 else
                 {
@@ -98,7 +99,6 @@ namespace IT114_MP_LOGIC
 
                     MyTableOverall.Rows.Add(tr3);
 
-                    //overallSales.Text = dt.Rows[0]["overall_sales"].ToString();
                 }
                 else
                 {
@@ -135,7 +135,6 @@ namespace IT114_MP_LOGIC
 
                     MyTableMonthly.Rows.Add(tr1);
 
-                    // monthLbl.Text = DateTime.Now.ToString("MMMM");
                     dt = db.Show("SELECT SUM(prod_price*qty) AS monthly_sales FROM trans_tbl tt INNER JOIN prod_info_tbl pt ON tt.prod_id=pt.prod_id WHERE YEAR(tt.trans_date)=YEAR(CURDATE()) AND MONTH(tt.trans_date)=MONTH(CURDATE());");
                     if (dt.Rows.Count > 0 && dt.Rows[0]["monthly_sales"] != DBNull.Value)
                     {
@@ -150,7 +149,6 @@ namespace IT114_MP_LOGIC
                         tr1.Cells.Add(cellMonthlySales);
 
                         MyTableMonthly.Rows.Add(tr1);
-                        // monthlySales.Text = dt.Rows[0]["monthly_sales"].ToString();
                     }
                     else
                     {
@@ -197,7 +195,6 @@ namespace IT114_MP_LOGIC
 
             MyTableMonthly.Rows.Add(tr1);
 
-            // monthLbl.Text = DateTime.Now.ToString("MMMM");
             DateTime date = new DateTime(2023, Convert.ToInt32(ddlMonths.SelectedValue), 1);
             string month_name = date.ToString("MMMM");
             dt = db.Show("SELECT SUM(prod_price*qty) AS monthly_sales FROM trans_tbl tt INNER JOIN prod_info_tbl pt ON tt.prod_id=pt.prod_id WHERE YEAR(tt.trans_date)=YEAR(CURDATE()) AND MONTH(tt.trans_date)='"+ddlMonths.SelectedValue+"';");
@@ -214,7 +211,7 @@ namespace IT114_MP_LOGIC
                 tr1.Cells.Add(cellMonthlySales);
 
                 MyTableMonthly.Rows.Add(tr1);
-                // monthlySales.Text = dt.Rows[0]["monthly_sales"].ToString();
+
             }
             else
             {

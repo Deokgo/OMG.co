@@ -22,6 +22,8 @@ namespace IT114_MP_LOGIC
             {
                 DatabaseClass db = new DatabaseClass();
 
+                admin_name.Text = "Hi, " + Session["uname"] + "!";
+
                 //------TABLE LAYOUT----------
 
                 //Best Sold Product Layout
@@ -136,12 +138,6 @@ namespace IT114_MP_LOGIC
 
                     MyTableBest.Rows.Add(tr);
 
-                    //bestNameLbl.Text = dt.Rows[0]["prod_name"].ToString();
-                    //bestImage.ImageUrl = dt.Rows[0]["prod_photo"].ToString();
-                    //bestImage.Width = Unit.Pixel(100);
-                    //bestImage.Height = Unit.Pixel(100);
-                    //bestPriceLbl.Text = "Price: " + dt.Rows[0]["prod_price"].ToString();
-                    //bestSoldLbl.Text = "Sold: " + dt.Rows[0]["total_qty"].ToString();
                 }
                 else
                 {
@@ -177,12 +173,6 @@ namespace IT114_MP_LOGIC
 
                     MyTableLeast.Rows.Add(tr1);
 
-                    //worstNameLbl.Text = dt.Rows[0]["prod_name"].ToString();
-                    //worstImage.ImageUrl = dt.Rows[0]["prod_photo"].ToString();
-                    //worstImage.Width = Unit.Pixel(100);
-                    //worstImage.Height = Unit.Pixel(100);
-                    //worstPriceLbl.Text = "Price: " + dt.Rows[0]["prod_price"].ToString();
-                    //worstSoldLbl.Text = "Sold: " + dt.Rows[0]["total_qty"].ToString();
                 }
                 else
                 {
@@ -218,13 +208,6 @@ namespace IT114_MP_LOGIC
 
                     MyTable.Rows.Add(tr2);
 
-                    //bestNameLbl.Text = dt.Rows[0]["prod_name"].ToString();
-                    //bestImage.ImageUrl = dt.Rows[0]["prod_photo"].ToString();
-                    //bestImage.Width = Unit.Pixel(100);
-                    //bestImage.Height = Unit.Pixel(100);
-                    //bestPriceLbl.Text = "Price: " + dt.Rows[0]["prod_price"].ToString();
-                    //bestSoldLbl.Text = "Sold: " + dt.Rows[0]["total_qty"].ToString();
-
                     if (dt.Rows.Count > 1)
                     {
                         tr2 = new TableRow();
@@ -251,9 +234,6 @@ namespace IT114_MP_LOGIC
 
                         MyTable.Rows.Add(tr2);
 
-                        //secNameLbl.Text = "1st Runner-up: " + dt.Rows[1]["prod_name"].ToString();
-                        //secPriceLbl.Text = "Price: " + dt.Rows[1]["prod_price"].ToString();
-                        //secSoldLbl.Text = "Sold: " + dt.Rows[1]["total_qty"].ToString();
                     }
 
                     if (dt.Rows.Count > 2)
@@ -281,10 +261,6 @@ namespace IT114_MP_LOGIC
                         tr2.Cells.Add(cellNoSold2);
 
                         MyTable.Rows.Add(tr2);
-
-                        //thirdNameLbl.Text = "2nd Runner-up: " + dt.Rows[2]["prod_name"].ToString();
-                        //thirdPriceLbl.Text = "Price: " + dt.Rows[2]["prod_price"].ToString();
-                        //thirdSoldLbl.Text = "Sold: " + dt.Rows[2]["total_qty"].ToString();
                     }
                 }
                 else

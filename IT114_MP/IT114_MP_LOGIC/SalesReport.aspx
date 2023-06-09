@@ -9,21 +9,20 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <!--Navigation Bar-->
+        <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-dark">
+            <!-- Brand/logo -->
+            <asp:Label class="text-white navbar-brand" runat="server" style="font-size:40px; font-family:Broadway ;font-weight:bold">OMG <span class="badge badge-pill badge-secondary text">.co</span></asp:Label>
+            <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav">
+                    <%--<span class="badge badge-pill badge-primary text-center pt-2" style="font-size:20px; font-family:'Century Gothic'">dashboard</span>--%>
+                    <li class="nav-item">
+                        <asp:Label ID="admin_name" runat="server" class="badge badge-pill badge-primary text-center pt-2" style="font-size:20px; font-family:'Century Gothic'"></asp:Label>
+                    </li> 
+                </ul>            
+            </ul>
+        </nav>
         <div>
-            <%--<div id="daily-sales-container">
-                <asp:Label runat="server" ID="dailyLbl">Daily Sales</asp:Label><br />
-                <asp:Label runat="server" ID="dateLbl"></asp:Label><br />
-                <asp:Label runat="server" ID="dailySales" Text="0"></asp:Label>
-            </div>
-            <div id="monthly-sales-container">
-                <asp:Label runat="server" ID="monthlyLbl">Monthly Sales</asp:Label><br />
-                <asp:Label runat="server" ID="monthLbl"></asp:Label><br />
-                <asp:Label runat="server" ID="monthlySales">0</asp:Label>
-            </div>
-            <div id="overall-sales-container">
-                <asp:Label runat="server" ID="overallLbl">Overall Sales</asp:Label><br />
-                <asp:Label runat="server" ID="overallSales">0</asp:Label>
-            </div>--%>
 
              <div class="container-fluid m-xl-5 p-xl-5">
             <div class="form-group mx-5 text-center">
