@@ -25,8 +25,8 @@
                                     Manage Employee
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="AddAccount.aspx">Add Employee Account</a>
-                                    <a class="dropdown-item" href="UpdateAccount.aspx">Update Employee Account</a>
+                                    <a class="dropdown-item" href="AddAccount.aspx">Add Account</a>
+                                    <a class="dropdown-item" href="UpdateAccount.aspx">Update Account</a>
                                 </div>
                             </div>
                         </li>   

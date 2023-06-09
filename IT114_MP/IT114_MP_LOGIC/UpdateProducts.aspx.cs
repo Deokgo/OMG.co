@@ -119,7 +119,7 @@ namespace IT114_MP_LOGIC
 
                         if (reader1.HasRows)
                         {
-                            Response.Write("<script>alert('Product cannot be added.')</script>");
+                            Response.Write("<script>alert('Product cannot be updated.')</script>");
 
                         }
                         else
