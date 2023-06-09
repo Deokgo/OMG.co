@@ -89,6 +89,11 @@ namespace IT114_MP_LOGIC
                 }
                 else
                 {
+                    txtUname.Text = "";
+                    txtEmail.Text = "";
+                    ddlAccStat.SelectedValue = "enabled";
+                    txtFname.Text = "";
+                    txtLname.Text = "";
                     Response.Write("<script>alert('Account not found.')</script>");
                 }
 

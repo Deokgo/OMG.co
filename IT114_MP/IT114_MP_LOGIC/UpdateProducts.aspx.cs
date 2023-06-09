@@ -47,7 +47,7 @@ namespace IT114_MP_LOGIC
                 string prodName = textInfo.ToTitleCase(txtSearch.Text.Trim());
 
                 DatabaseClass search = new DatabaseClass();
-                MySqlDataReader reader = search.getRec("SELECT * FROM prod_info_tbl where prod_name='" + prodName + "' OR prod_id='" + txtSearch.Text + "';");
+                MySqlDataReader reader = search.getRec("SELECT * FROM prod_info_tbl where prod_name='" + prodName + "';");
 
                 if (reader.HasRows)
                 {
@@ -69,6 +69,12 @@ namespace IT114_MP_LOGIC
                 }
                 else
                 {
+                    txtSearch.Text = "";
+                    txtProdName.Text = "";
+                    txtPrice.Text = "";
+                    imgProd.ImageUrl = "~/images/default.jpg";
+                    txtDesc.Text = "";
+                    ddlStatus.SelectedValue = "available";
                     Response.Write("<script>alert('Product not found.')</script>");
                 }
                 search.connectionclose();
@@ -105,34 +111,7 @@ namespace IT114_MP_LOGIC
                     if(txtSearch.Text.ToLower() == txtProdName.Text.ToLower())
                     {
                         double price = Convert.ToDouble(txtPrice.Text);
-
-                        if (price <= 0)
-                        {
-                            Response.Write("<script>alert('Invalid price.')</script>");
-                        }
-                        else
-                        {
-                            string sql = vd.GetSQLUpdate(txtSearch.Text, txtProdName.Text, txtPrice.Text, imgProd.ImageUrl,
-                                txtDesc.Text, ddlStatus.SelectedValue);
-
-                            int returnX = db.insDelUp(sql);
-
-                            if (returnX > 0)
-                            {
-                                txtSearch.Text = "";
-                                txtProdName.Text = "";
-                                txtPrice.Text = "";
-                                imgProd.ImageUrl = "~/images/default.jpg";
-                                txtDesc.Text = "";
-                                ddlStatus.SelectedValue = "available";
-                                Response.Write("<script>alert('Product Updated Successfully!')</script>");
-                            }
-                            else
-                            {
-                                Response.Write("<script>alert('Try Again.')</script>");
-
-                            }
-                        }
+                        UpdateProd(price, vd, db);
                     }
                     else
                     {
@@ -141,38 +120,12 @@ namespace IT114_MP_LOGIC
                         if (reader1.HasRows)
                         {
                             Response.Write("<script>alert('Product cannot be added.')</script>");
+
                         }
                         else
                         {
                             double price = Convert.ToDouble(txtPrice.Text);
-
-                            if (price <= 0)
-                            {
-                                Response.Write("<script>alert('Invalid price.')</script>");
-                            }
-                            else
-                            {
-                                string sql = vd.GetSQLUpdate(txtSearch.Text, txtProdName.Text, txtPrice.Text, imgProd.ImageUrl,
-                                    txtDesc.Text, ddlStatus.SelectedValue);
-
-                                int returnX = db.insDelUp(sql);
-
-                                if (returnX > 0)
-                                {
-                                    txtSearch.Text = "";
-                                    txtProdName.Text = "";
-                                    txtPrice.Text = "";
-                                    imgProd.ImageUrl = "~/images/default.jpg";
-                                    txtDesc.Text = "";
-                                    ddlStatus.SelectedValue = "available";
-                                    Response.Write("<script>alert('Product Updated Successfully!')</script>");
-                                }
-                                else
-                                {
-                                    Response.Write("<script>alert('Try Again.')</script>");
-
-                                }
-                            }
+                            UpdateProd(price, vd, db);
                         }
                         db.connectionclose();
                     }        
@@ -187,6 +140,37 @@ namespace IT114_MP_LOGIC
         protected void btnBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("AdminPage.aspx");
+        }
+
+        protected void UpdateProd(double price, Validation vd, DatabaseClass db)
+        {
+            if (price <= 0)
+            {
+                Response.Write("<script>alert('Invalid price.')</script>");
+            }
+            else
+            {
+                string sql = vd.GetSQLUpdate(txtSearch.Text, txtProdName.Text, txtPrice.Text, imgProd.ImageUrl,
+                    txtDesc.Text, ddlStatus.SelectedValue);
+
+                int returnX = db.insDelUp(sql);
+
+                if (returnX > 0)
+                {
+                    txtSearch.Text = "";
+                    txtProdName.Text = "";
+                    txtPrice.Text = "";
+                    imgProd.ImageUrl = "~/images/default.jpg";
+                    txtDesc.Text = "";
+                    ddlStatus.SelectedValue = "available";
+                    Response.Write("<script>alert('Product Updated Successfully!')</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Try Again.')</script>");
+
+                }
+            }
         }
     }
 }

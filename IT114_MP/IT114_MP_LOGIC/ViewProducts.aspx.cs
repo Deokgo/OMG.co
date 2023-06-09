@@ -26,8 +26,10 @@ namespace IT114_MP_LOGIC
             {
                 Validation vd = new Validation();
                 DatabaseClass view = new DatabaseClass();
-                DataTable dataTable = view.Show("SELECT * FROM prod_info_tbl;");
-                MySqlDataReader reader = view.getRec("SELECT * FROM prod_info_tbl;");
+                DataTable dataTable = view.Show("SELECT * FROM prod_info_tbl WHERE (prod_id='" + txtSearch.Text
+                + "' OR prod_name LIKE '" + txtSearch.Text + "%') AND prod_status='" + ddlProdStatus.SelectedValue + "';");
+                MySqlDataReader reader = view.getRec("SELECT * FROM prod_info_tbl WHERE (prod_id='" + txtSearch.Text
+                + "' OR prod_name LIKE '" + txtSearch.Text + "%') AND prod_status='" + ddlProdStatus.SelectedValue + "';");
 
                 if (reader.HasRows)
                 {
