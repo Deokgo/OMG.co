@@ -79,7 +79,7 @@
             <asp:Label class="text-white mt-5" id="Label1" runat="server" style="font-size:40px; font-family:Tahoma; font-weight:bold">What would you like to do?</asp:Label>
         </div>
 
-        <div class="container-md bg-trasnparent pt-lg-5 mt-5"> </div>
+        <div class="container-md bg-trasnparent pt-lg-5 mt-3"> </div>
         <div id="editUserInfo" class="container-md bg-light mt-4 pt-lg-5 text-center" style="opacity:.25; z-index:-1; position:relative"></div>
         <div class="container-md bg-dark text-center" style="z-index:-1; position:relative"></div>
     </form>
