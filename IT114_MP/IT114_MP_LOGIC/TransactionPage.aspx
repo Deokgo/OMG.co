@@ -65,7 +65,7 @@
             <div class="col-6 text-center" style="font-family:'Century Gothic'; z-index:0">
                 <span class="badge badge-pill badge-secondary text mt-5" style="font-size:30px; font-family:Broadway ;font-weight:bold">Products</span>
                 <div class="container-md bg-dark pt-1 m-4"></div>
-                <asp:Table class="m-3" runat="server" ID="prodTable">
+                <asp:Table class="m-3 mb-5" runat="server" ID="prodTable">
                     <asp:TableHeaderRow style="font-family:Tahoma; font-size:20px">
                         <asp:TableCell ID="prodImage"></asp:TableCell>
                         <asp:TableCell ID="prodName">Product Name</asp:TableCell>
@@ -74,7 +74,7 @@
                 </asp:Table>
             </div>
 
-            <div class="col-6 text-center" style="z-index:0">
+            <div class="col-6 text-center mb-5" style="z-index:0">
                 <span class="badge badge-pill badge-primary text mt-5" style="font-size:30px; font-family:Broadway ;font-weight:bold">My Cart</span>
                 <div class="container-md bg-dark pt-1 m-4"></div>
                 <div class="row text-dark text-center mb-3" style="font-family:Tahoma; font-size:20px">
@@ -105,13 +105,13 @@
                 </div>     
                 <asp:RequiredFieldValidator class="text-danger" runat="server" ControlToValidate="qtyTxt" ErrorMessage="Quantity should be filled out." ValidationGroup="submitOrder" ></asp:RequiredFieldValidator><br />
                 
-                <div class="row m-2">
+                <div class="row m-2 mb-5">
                     <div class="col-6">
                         <asp:Label class="text-secondary" runat="server" style="font-size:25px; font-family:Tahoma ;font-weight:bold">Total: PHP </asp:Label>
                         <asp:Label class="text-dark" runat="server" ID="totalLbl" style="font-size:25px; font-family:Tahoma ;font-weight:bold">0.00</asp:Label>
                     </div>
-                    <div class="col-6">
-                        <asp:Button id="transactBtn" runat="server" type="button" class="btn btn-dark w-50 h-100 p-3" OnClick="AddTransaction" Text="Confirm Order" CausesValidation="false"/>
+                    <div class="col-6 md-5">
+                        <asp:Button id="transactBtn" runat="server" type="button" class="btn btn-dark w-50 h-75 mb-5" OnClick="AddTransaction" Text="Confirm Order" CausesValidation="false"/>
                     </div>
                 </div>
             </div>
