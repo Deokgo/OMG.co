@@ -7,7 +7,7 @@
     <title>TRANSACTION</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>  
 </head>
-<body style="background-image: url('../images/minishopBG.png'); background-size:contain ">
+<body style="background-image: url('../images/minishopBG1.png'); background-size:contain ">
     <form class="justify-content-center text-center" id="form1" runat="server">
         <!-- Navigation Bar-->
         <div class="container-md" style="position:fixed; z-index:1; top:0; width:100%">
