@@ -65,7 +65,7 @@
             <div class="col-6 text-center" style="font-family:'Century Gothic'; z-index:0">
                 <span class="badge badge-pill badge-secondary text mt-5" style="font-size:30px; font-family:Broadway ;font-weight:bold">Products</span>
                 <div class="container-md bg-dark pt-1 m-4"></div>
-                <asp:Table class="m-3 mb-5" runat="server" ID="prodTable">
+                <asp:Table class="ml-5 mb-5" runat="server" ID="prodTable">
                     <asp:TableHeaderRow style="font-family:Tahoma; font-size:20px">
                         <asp:TableCell ID="prodImage"></asp:TableCell>
                         <asp:TableCell ID="prodName">Product Name</asp:TableCell>

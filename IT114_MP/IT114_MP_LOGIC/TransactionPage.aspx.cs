@@ -57,7 +57,7 @@ namespace IT114_MP_LOGIC
                         Image prodPic = new Image();
                         prodPic.ImageUrl = row["prod_photo"].ToString();
 
-                        prodPic.Width = 250;
+                        prodPic.Width = 160;
                         prodPic.Height = 120;
                         prodName.Width = 250;
                         prodName.Height = 120;
