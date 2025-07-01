@@ -125,7 +125,7 @@ The application relies on a MySQL database named `it114l_mp` with at least the f
 
 ## License
 
-[Specify license here]
+This project is licensed under the terms described in the repository or source files.
 
 ---
 
